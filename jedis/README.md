@@ -114,6 +114,15 @@ Project jedis use [junit 5](https://junit.org/) test framework, you will see the
 
 # Run test cases for redis-server 7.2
 
+## Cleanup
+
+```bash
+sudo pkill redis-server
+docker stop jedis-stack
+docker rm jedis-stack
+rm /tmp/redis*
+```
+
 ## Build redis-server 7.2
 
 ```bash
@@ -137,11 +146,21 @@ redis-cli -v
 
 ```bash
 docker rmi redislabs/client-libs-test:8.2
-docker pull redislabs/client-libs-test:8.2
+docker pull docker.1ms.run/redislabs/client-libs-test:8.2
+docker tag docker.1ms.run/redislabs/client-libs-test:8.2 redislabs/client-libs-test:8.2
 ```
 
 ## Run
 
 ```bash
 TEST_ENV_PROVIDER=not_in_docker make test
+```
+
+## Cleanup
+
+```bash
+sudo pkill redis-server
+docker stop jedis-stack
+docker rm jedis-stack
+rm /tmp/redis*
 ```

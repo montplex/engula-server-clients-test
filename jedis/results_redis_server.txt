@@ -1,0 +1,25 @@
+[INFO] Results:
+[INFO]
+[ERROR] Errors:
+[ERROR]   RedisJsonV1Test.testDefaultJsonGsonParserStringsMustBeDifferent:528 » JsonIO Failed making field 'java.time.Instant#seconds' accessible; either increase its visibility or write a custom TypeAdapter for its declaring type.
+See https://github.com/google/gson/blob/main/Troubleshooting.md#reflection-inaccessible
+[INFO]
+[ERROR] Tests run: 9079, Failures: 0, Errors: 1, Skipped: 409
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  07:05 min
+[INFO] Finished at: 2025-11-07T18:49:05+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.5.3:test (default-test) on project jedis:
+[ERROR]
+[ERROR] See /home/kerry/ws/src_learn/jedis/target/surefire-reports for the individual test results.
+[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
