@@ -1,0 +1,868 @@
+[INFO] Results:
+[INFO]
+[ERROR] Failures:
+[ERROR] redis.clients.jedis.commands.jedis.AllKindOfValuesCommandsTest.scanType
+[ERROR]   Run 1: AllKindOfValuesCommandsTest.scanType:841 expected: <false> but was: <true>
+[ERROR]   Run 2: AllKindOfValuesCommandsTest.scanType:841 expected: <false> but was: <true>
+[ERROR]   Run 3: AllKindOfValuesCommandsTest.scanType:841 expected: <false> but was: <true>
+[INFO]
+[ERROR] redis.clients.jedis.commands.unified.cluster.ClusterAllKindOfValuesCommandsTest.scanType
+[ERROR]   Run 1: ClusterAllKindOfValuesCommandsTest.scanType:242 expected: <false> but was: <true>
+[ERROR]   Run 2: ClusterAllKindOfValuesCommandsTest.scanType:242 expected: <false> but was: <true>
+[ERROR]   Run 3: ClusterAllKindOfValuesCommandsTest.scanType:242 expected: <false> but was: <true>
+[INFO]
+[ERROR] redis.clients.jedis.commands.unified.pooled.PooledAllKindOfValuesCommandsTest.scanType
+[ERROR]   Run 1: PooledAllKindOfValuesCommandsTest>AllKindOfValuesCommandsTestBase.scanType:648 expected: <false> but was: <true>
+[ERROR]   Run 2: PooledAllKindOfValuesCommandsTest>AllKindOfValuesCommandsTestBase.scanType:648 expected: <false> but was: <true>
+[ERROR]   Run 3: PooledAllKindOfValuesCommandsTest>AllKindOfValuesCommandsTestBase.scanType:648 expected: <false> but was: <true>
+[INFO]
+[ERROR] Errors:
+[ERROR]   ACLJedisTest.prepare:33 » IllegalArgument Missing required fields in Redis server info.
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsBloomFilterCommandsTest.testBfAddAndExists
+[ERROR]   Run 1: CommandObjectsBloomFilterCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsBloomFilterCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsBloomFilterCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsBloomFilterCommandsTest.testBfInfo
+[ERROR]   Run 1: CommandObjectsBloomFilterCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsBloomFilterCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsBloomFilterCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsBloomFilterCommandsTest.testBfInsert
+[ERROR]   Run 1: CommandObjectsBloomFilterCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsBloomFilterCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsBloomFilterCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsBloomFilterCommandsTest.testBfMAddMExistsAndCard
+[ERROR]   Run 1: CommandObjectsBloomFilterCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsBloomFilterCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsBloomFilterCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsBloomFilterCommandsTest.testBfScanDumpAndLoadChunk
+[ERROR]   Run 1: CommandObjectsBloomFilterCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsBloomFilterCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsBloomFilterCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsCountMinSketchCommandsTest.testCMSInfo
+[ERROR]   Run 1: CommandObjectsCountMinSketchCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsCountMinSketchCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsCountMinSketchCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsCountMinSketchCommandsTest.testCMSInitByProb
+[ERROR]   Run 1: CommandObjectsCountMinSketchCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsCountMinSketchCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsCountMinSketchCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsCountMinSketchCommandsTest.testCMSMerge
+[ERROR]   Run 1: CommandObjectsCountMinSketchCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsCountMinSketchCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsCountMinSketchCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsCountMinSketchCommandsTest.testCMSMergeWithWeights
+[ERROR]   Run 1: CommandObjectsCountMinSketchCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsCountMinSketchCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsCountMinSketchCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsCountMinSketchCommandsTest.testIncrByAndQuery
+[ERROR]   Run 1: CommandObjectsCountMinSketchCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsCountMinSketchCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsCountMinSketchCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsCuckooFilterCommandsTest.testCuckooFilterAdd
+[ERROR]   Run 1: CommandObjectsCuckooFilterCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsCuckooFilterCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsCuckooFilterCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsCuckooFilterCommandsTest.testCuckooFilterExistsAndDel
+[ERROR]   Run 1: CommandObjectsCuckooFilterCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsCuckooFilterCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsCuckooFilterCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsCuckooFilterCommandsTest.testCuckooFilterInfo
+[ERROR]   Run 1: CommandObjectsCuckooFilterCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsCuckooFilterCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsCuckooFilterCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsCuckooFilterCommandsTest.testCuckooFilterInsertNx
+[ERROR]   Run 1: CommandObjectsCuckooFilterCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsCuckooFilterCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsCuckooFilterCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsCuckooFilterCommandsTest.testCuckooFilterMExists
+[ERROR]   Run 1: CommandObjectsCuckooFilterCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsCuckooFilterCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsCuckooFilterCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsCuckooFilterCommandsTest.testCuckooFilterReserveInsertAndCount
+[ERROR]   Run 1: CommandObjectsCuckooFilterCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsCuckooFilterCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsCuckooFilterCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsCuckooFilterCommandsTest.testCuckooFilterScanDumpAndLoadChunk
+[ERROR]   Run 1: CommandObjectsCuckooFilterCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsCuckooFilterCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsCuckooFilterCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonArrAppend
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonArrAppendOldPath
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonArrAppendWithEscape
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonArrIndex
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonArrIndexDeprecated
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonArrIndexWithEscape
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonArrInsert
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonArrInsertOldPath
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonArrInsertWithEscape
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonArrLenOldPath
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonArrLenRoot
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonArrLenWithPath
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonArrPopOldPath
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonArrPopOldPathAndIndex
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonArrPopRoot
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonArrPopRootWithType
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonArrPopWithOldPathAndType
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonArrPopWithOldPathTypeAndIndex
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonArrPopWithPath2
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonArrPopWithPathAndIndex
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonArrTrimOldPath
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonArrTrimWithPath
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonClear
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonClearOldPath
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonClearPath
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonDebugMemoryOldPath
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonDebugMemoryRoot
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonDebugMemoryWithPath2
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonDel
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonDelOldPath
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonDelPath
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonGenericObject
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonGetAsPlainString
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonGetWithClass
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonGetWithPathAndClass
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonMGet
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonMGetOldPath
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonMerge
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonMergeOldPath
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonNumIncrBy
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonObjKeysOldPath
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonObjKeysRoot
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonObjKeysWithPath
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonObjLenOldPath
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonObjLenRoot
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonObjLenWithPath2
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonSetAndJsonGet
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonSetJsonGetOldPath
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonSetOldPathWithParams
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonSetWithEscape
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonSetWithEscapeAndParams
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonSetWithParams
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonSetWithPlainString
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonStrAppend
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonStrAppendOldPath
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonStrAppendRootPath
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonStrLen
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonStrLenOldPath
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonStrLenRootPath
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonToggle
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonType
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsJsonCommandsTest.testJsonTypeOldPath
+[ERROR]   Run 1: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsJsonCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsScriptingCommandsTest.testEvalWithOnlyScript
+[ERROR]   Run 1: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsScriptingCommandsTest.testEvalWithScriptAndSampleKey
+[ERROR]   Run 1: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsScriptingCommandsTest.testEvalWithScriptKeyCountAndParams
+[ERROR]   Run 1: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsScriptingCommandsTest.testEvalWithScriptKeyCountAndParamsSha
+[ERROR]   Run 1: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsScriptingCommandsTest.testEvalWithScriptKeysAndArgsList
+[ERROR]   Run 1: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsScriptingCommandsTest.testEvalWithScriptKeysAndArgsListSha
+[ERROR]   Run 1: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsScriptingCommandsTest.testEvalshaWithSha1
+[ERROR]   Run 1: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsScriptingCommandsTest.testEvalshaWithSha1AndSampleKey
+[ERROR]   Run 1: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsScriptingCommandsTest.testScriptExists
+[ERROR]   Run 1: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsScriptingCommandsTest.testScriptFlush
+[ERROR]   Run 1: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsScriptingCommandsTest.testScriptFlushBinary
+[ERROR]   Run 1: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsScriptingCommandsTest.testScriptFlushSampleKey
+[ERROR]   Run 1: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsScriptingCommandsTest.testScriptFlushSampleKeyAndMode
+[ERROR]   Run 1: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsScriptingCommandsTest.testScriptFlushSampleKeyAndModeBinary
+[ERROR]   Run 1: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsScriptingCommandsTest.testScriptKill
+[ERROR]   Run 1: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsScriptingCommandsTest.testScriptLoadAndRun
+[ERROR]   Run 1: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsScriptingCommandsTest.testScriptLoadAndRunSampleKey
+[ERROR]   Run 1: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsScriptingCommandsTest.testScriptLoadAndRunSampleKeyBinary
+[ERROR]   Run 1: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: CommandObjectsScriptingCommandsTest.setUp:46 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsSearchAndQueryCommandsTest.testFtAggregate
+[ERROR]   Run 1: CommandObjectsSearchAndQueryCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsSearchAndQueryCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsSearchAndQueryCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsSearchAndQueryCommandsTest.testFtAlterWithParams
+[ERROR]   Run 1: CommandObjectsSearchAndQueryCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsSearchAndQueryCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsSearchAndQueryCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsSearchAndQueryCommandsTest.testFtCreateWithParams
+[ERROR]   Run 1: CommandObjectsSearchAndQueryCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsSearchAndQueryCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsSearchAndQueryCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsSearchAndQueryCommandsTest.testFtDictAddDelAndDump
+[ERROR]   Run 1: CommandObjectsSearchAndQueryCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsSearchAndQueryCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsSearchAndQueryCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsSearchAndQueryCommandsTest.testFtDictAddDelAndDumpWithSampleKeys
+[ERROR]   Run 1: CommandObjectsSearchAndQueryCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsSearchAndQueryCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsSearchAndQueryCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsSearchAndQueryCommandsTest.testFtExplain
+[ERROR]   Run 1: CommandObjectsSearchAndQueryCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsSearchAndQueryCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsSearchAndQueryCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsSearchAndQueryCommandsTest.testFtInfo
+[ERROR]   Run 1: CommandObjectsSearchAndQueryCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsSearchAndQueryCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsSearchAndQueryCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsSearchAndQueryCommandsTest.testFtSearchHash
+[ERROR]   Run 1: CommandObjectsSearchAndQueryCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsSearchAndQueryCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsSearchAndQueryCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsSearchAndQueryCommandsTest.testFtSearchJson
+[ERROR]   Run 1: CommandObjectsSearchAndQueryCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsSearchAndQueryCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsSearchAndQueryCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsSearchAndQueryCommandsTest.testFtSugAddAndGet
+[ERROR]   Run 1: CommandObjectsSearchAndQueryCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsSearchAndQueryCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsSearchAndQueryCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsSearchAndQueryCommandsTest.testFtTags
+[ERROR]   Run 1: CommandObjectsSearchAndQueryCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsSearchAndQueryCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsSearchAndQueryCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsSearchAndQueryCommandsTest.testSpellCheck
+[ERROR]   Run 1: CommandObjectsSearchAndQueryCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsSearchAndQueryCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsSearchAndQueryCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsTDigestCommandsTest.testTDigestAddMinMax
+[ERROR]   Run 1: CommandObjectsTDigestCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsTDigestCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsTDigestCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsTDigestCommandsTest.testTDigestByRankAndByRevRank
+[ERROR]   Run 1: CommandObjectsTDigestCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsTDigestCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsTDigestCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsTDigestCommandsTest.testTDigestCdf
+[ERROR]   Run 1: CommandObjectsTDigestCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsTDigestCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsTDigestCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsTDigestCommandsTest.testTDigestInfo
+[ERROR]   Run 1: CommandObjectsTDigestCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsTDigestCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsTDigestCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsTDigestCommandsTest.testTDigestMerge
+[ERROR]   Run 1: CommandObjectsTDigestCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsTDigestCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsTDigestCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsTDigestCommandsTest.testTDigestMergeWithParams
+[ERROR]   Run 1: CommandObjectsTDigestCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsTDigestCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsTDigestCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsTDigestCommandsTest.testTDigestQuantile
+[ERROR]   Run 1: CommandObjectsTDigestCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsTDigestCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsTDigestCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsTDigestCommandsTest.testTDigestRankAndRevRank
+[ERROR]   Run 1: CommandObjectsTDigestCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsTDigestCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsTDigestCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsTDigestCommandsTest.testTDigestReset
+[ERROR]   Run 1: CommandObjectsTDigestCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsTDigestCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsTDigestCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsTDigestCommandsTest.testTDigestTrimmedMean
+[ERROR]   Run 1: CommandObjectsTDigestCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsTDigestCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsTDigestCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsTimeSeriesCommandsTest.testTsAddAndRange
+[ERROR]   Run 1: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsTimeSeriesCommandsTest.testTsAddWithParams
+[ERROR]   Run 1: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsTimeSeriesCommandsTest.testTsAddWithTimestampDelAndRangeWithPreDeleteAssert
+[ERROR]   Run 1: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsTimeSeriesCommandsTest.testTsAlterAndInfo
+[ERROR]   Run 1: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsTimeSeriesCommandsTest.testTsCreateRule
+[ERROR]   Run 1: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsTimeSeriesCommandsTest.testTsCreateRuleWithAlign
+[ERROR]   Run 1: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsTimeSeriesCommandsTest.testTsDeleteRule
+[ERROR]   Run 1: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsTimeSeriesCommandsTest.testTsGet
+[ERROR]   Run 1: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsTimeSeriesCommandsTest.testTsIncrByAndDecrBy
+[ERROR]   Run 1: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsTimeSeriesCommandsTest.testTsIncrByAndDecrByWithTimestamp
+[ERROR]   Run 1: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsTimeSeriesCommandsTest.testTsMAdd
+[ERROR]   Run 1: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsTimeSeriesCommandsTest.testTsMGet
+[ERROR]   Run 1: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsTimeSeriesCommandsTest.testTsMRangeCommands
+[ERROR]   Run 1: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsTimeSeriesCommandsTest.testTsQueryIndexWithKeyCreation
+[ERROR]   Run 1: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsTimeSeriesCommandsTest.testTsRange
+[ERROR]   Run 1: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsTimeSeriesCommandsTest.testTsRevRange
+[ERROR]   Run 1: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsTimeSeriesCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsTopkCommandsTest.testTopKAddAndQuery
+[ERROR]   Run 1: CommandObjectsTopkCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsTopkCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsTopkCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsTopkCommandsTest.testTopKIncrBy
+[ERROR]   Run 1: CommandObjectsTopkCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsTopkCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsTopkCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsTopkCommandsTest.testTopKInfo
+[ERROR]   Run 1: CommandObjectsTopkCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsTopkCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsTopkCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR] redis.clients.jedis.commands.commandobjects.CommandObjectsTopkCommandsTest.testTopKListAndListWithCount
+[ERROR]   Run 1: CommandObjectsTopkCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 2: CommandObjectsTopkCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[ERROR]   Run 3: CommandObjectsTopkCommandsTest>CommandObjectsTestBase.setUp:75->CommandObjectsTestBase.exec:82 » JedisConnection Failed to connect to localhost:6479.
+[INFO]
+[ERROR]   AccessControlListCommandsTest.prepare:55 » IllegalArgument Missing required fields in Redis server info.
+[ERROR] redis.clients.jedis.commands.jedis.ScriptingCommandsTest.emptyLuaTableReply
+[ERROR]   Run 1: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.jedis.ScriptingCommandsTest.evalBulk
+[ERROR]   Run 1: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.jedis.ScriptingCommandsTest.evalInt
+[ERROR]   Run 1: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.jedis.ScriptingCommandsTest.evalMultiBulk
+[ERROR]   Run 1: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.jedis.ScriptingCommandsTest.evalMultiBulkWithBinaryJedis
+[ERROR]   Run 1: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.jedis.ScriptingCommandsTest.evalNestedLists
+[ERROR]   Run 1: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.jedis.ScriptingCommandsTest.evalNoArgs
+[ERROR]   Run 1: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.jedis.ScriptingCommandsTest.evalsha
+[ERROR]   Run 1: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.jedis.ScriptingCommandsTest.evalshaBinary
+[ERROR]   Run 1: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.jedis.ScriptingCommandsTest.evalshaShaNotFound
+[ERROR]   Run 1: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.jedis.ScriptingCommandsTest.scriptEvalReturnNullValues
+[ERROR]   Run 1: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.jedis.ScriptingCommandsTest.scriptEvalShaReturnNullValues
+[ERROR]   Run 1: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.jedis.ScriptingCommandsTest.scriptEvalShaReturnValues
+[ERROR]   Run 1: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.jedis.ScriptingCommandsTest.scriptEvalShaReturnValuesBinary
+[ERROR]   Run 1: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.jedis.ScriptingCommandsTest.scriptExists
+[ERROR]   Run 1: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.jedis.ScriptingCommandsTest.scriptExistsBinary
+[ERROR]   Run 1: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.jedis.ScriptingCommandsTest.scriptExistsWithBrokenConnection
+[ERROR]   Run 1: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.jedis.ScriptingCommandsTest.scriptFlush
+[ERROR]   Run 1: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.jedis.ScriptingCommandsTest.scriptFlushMode
+[ERROR]   Run 1: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.jedis.ScriptingCommandsTest.scriptKill
+[ERROR]   Run 1: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.jedis.ScriptingCommandsTest.scriptLoad
+[ERROR]   Run 1: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.jedis.ScriptingCommandsTest.scriptLoadBinary
+[ERROR]   Run 1: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: ScriptingCommandsTest.setUp:54 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.jedis.StreamsCommandsTest.xinfo
+[ERROR]   Run 1: StreamsCommandsTest.xinfo:1224 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: StreamsCommandsTest.xinfo:1224 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: StreamsCommandsTest.xinfo:1224 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.jedis.StreamsCommandsTest.xinfoStreamFullWithPending
+[ERROR]   Run 1: StreamsCommandsTest.xinfoStreamFullWithPending:1379 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: StreamsCommandsTest.xinfoStreamFullWithPending:1379 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: StreamsCommandsTest.xinfoStreamFullWithPending:1379 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.unified.pipeline.StreamsPipelineCommandsTest.xinfo
+[ERROR]   Run 1: StreamsPipelineCommandsTest.xinfo:1216 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: StreamsPipelineCommandsTest.xinfo:1216 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: StreamsPipelineCommandsTest.xinfo:1216 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] redis.clients.jedis.commands.unified.pipeline.StreamsPipelineCommandsTest.xinfoStreamFullWithPending
+[ERROR]   Run 1: StreamsPipelineCommandsTest.xinfoStreamFullWithPending:1317 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 2: StreamsPipelineCommandsTest.xinfoStreamFullWithPending:1317 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   Run 3: StreamsPipelineCommandsTest.xinfoStreamFullWithPending:1317 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR]   JedisSentineledClientSideCacheTest.prepare:46 » IllegalArgument Missing required fields in Redis server info.
+[ERROR]   SSLJedisPooledClientSideCacheTest.prepare:32 » IllegalArgument Missing required fields in Redis server info.
+[INFO]
+[ERROR] Tests run: 7478, Failures: 3, Errors: 169, Skipped: 640
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  05:38 min
+[INFO] Finished at: 2025-11-07T18:34:46+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.5.3:test (default-test) on project jedis: There are test failures.
+[ERROR]
+[ERROR] See /home/kerry/ws/src_learn/jedis/target/surefire-reports for the individual test results.
+[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
