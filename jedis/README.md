@@ -2,6 +2,8 @@
 
 Jedis version: v6.2.0
 
+OpenJDK version: 17.0.2
+
 Jedis supported Redis versions, [detail](https://github.com/redis/jedis)
 
 # Prepare
@@ -58,10 +60,10 @@ Update file ~/.m2/settings.xml
           xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
 <mirrors>
 	<mirror>
-	  <id>alimaven</id>
-	  <name>aliyun maven</name>
-	  <url>https://maven.aliyun.com/repository/public</url>
-	  <mirrorOf>central</mirrorOf>
+        <id>nexus-163</id>
+        <mirrorOf>*</mirrorOf>
+        <name>Nexus 163</name>
+        <url>http://mirrors.163.com/maven/repository/maven-public/</url>
 	</mirror>
   </mirrors>
 </settings>
@@ -91,6 +93,55 @@ cd jedis
 git checkout v6.2.0
 ```
 
+## Change config
+
+Update maven options in Makefile. Change target mvn-test:
+
+```makefile
+mvn-test:
+	MAVEN_OPTS="--add-opens=java.base/java.io=ALL-UNNAMED" mvn -Dtest=${TEST} clean compile test
+```
+
+Add sleep after redis-server start in Makefile. Change target start:
+
+```makefile
+start: cleanup compile-module
+	echo "$$REDIS1_CONF" | redis-server -
+	echo "$$REDIS2_CONF" | redis-server -
+	echo "$$REDIS3_CONF" | redis-server -
+	echo "$$REDIS4_CONF" | redis-server -
+	echo "$$REDIS5_CONF" | redis-server -
+	echo "$$REDIS6_CONF" | redis-server -
+	echo "$$REDIS7_CONF" | redis-server -
+	echo "$$REDIS8_CONF" | redis-server -
+	echo "$$REDIS9_CONF" | redis-server -
+	echo "$$REDIS10_CONF" | redis-server -
+	echo "$$REDIS11_CONF" | redis-server -
+	echo "$$REDIS_SENTINEL1" > /tmp/sentinel1.conf && redis-server /tmp/sentinel1.conf --sentinel
+	@sleep 0.5
+	echo "$$REDIS_SENTINEL2" > /tmp/sentinel2.conf && redis-server /tmp/sentinel2.conf --sentinel
+	@sleep 0.5
+	echo "$$REDIS_SENTINEL3" > /tmp/sentinel3.conf && redis-server /tmp/sentinel3.conf --sentinel
+	@sleep 0.5
+	echo "$$REDIS_SENTINEL4" > /tmp/sentinel4.conf && redis-server /tmp/sentinel4.conf --sentinel
+	@sleep 0.5
+	echo "$$REDIS_SENTINEL5" > /tmp/sentinel5.conf && redis-server /tmp/sentinel5.conf --sentinel
+	@sleep 0.5
+	echo "$$REDIS_CLUSTER_NODE1_CONF" | redis-server -
+	echo "$$REDIS_CLUSTER_NODE2_CONF" | redis-server -
+	echo "$$REDIS_CLUSTER_NODE3_CONF" | redis-server -
+	echo "$$REDIS_CLUSTER_NODE4_CONF" | redis-server -
+	echo "$$REDIS_CLUSTER_NODE5_CONF" | redis-server -
+	echo "$$REDIS_STABLE_CLUSTER_NODE1_CONF" | redis-server -
+	echo "$$REDIS_STABLE_CLUSTER_NODE2_CONF" | redis-server -
+	echo "$$REDIS_STABLE_CLUSTER_NODE3_CONF" | redis-server -
+	echo "$$REDIS_UDS" | redis-server -
+	echo "$$REDIS_UNAVAILABLE_CONF" | redis-server -
+	@sleep 2
+	redis-cli -a cluster --cluster create 127.0.0.1:7479 127.0.0.1:7480 127.0.0.1:7481 --cluster-yes
+	docker run -p 6479:6379 --name jedis-stack -e PORT=6379 -d redislabs/client-libs-test:8.2
+```
+
 ## Run
 
 ```bash
@@ -117,10 +168,7 @@ Project jedis use [junit 5](https://junit.org/) test framework, you will see the
 ## Cleanup
 
 ```bash
-sudo pkill redis-server
-docker stop jedis-stack
-docker rm jedis-stack
-rm /tmp/redis*
+make stop
 ```
 
 ## Build redis-server 7.2
@@ -159,8 +207,5 @@ TEST_ENV_PROVIDER=not_in_docker make test
 ## Cleanup
 
 ```bash
-sudo pkill redis-server
-docker stop jedis-stack
-docker rm jedis-stack
-rm /tmp/redis*
+make stop
 ```
