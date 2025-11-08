@@ -1,0 +1,1148 @@
+Summarizing 85 Failures:
+  [FAIL] JSON Commands arrays [It] should JSONArrAppend [json, arrays, json.arrappend]
+  /home/kerry/ws/src_learn/go-redis/json_test.go:32
+  [FAIL] JSON Commands arrays [It] should JSONArrIndex and JSONArrIndexWithArgs [json, arrays, json.arrindex]
+  /home/kerry/ws/src_learn/go-redis/json_test.go:42
+  [FAIL] JSON Commands arrays [It] should JSONArrIndex and JSONArrIndexWithArgs with $ [json, arrays, json.arrindex]
+  /home/kerry/ws/src_learn/go-redis/json_test.go:119
+  [FAIL] JSON Commands arrays [It] should JSONArrInsert [json, arrays, json.arrinsert]
+  /home/kerry/ws/src_learn/go-redis/json_test.go:133
+  [FAIL] JSON Commands arrays [It] should JSONArrLen [json, arrays, json.arrlen]
+  /home/kerry/ws/src_learn/go-redis/json_test.go:150
+  [FAIL] JSON Commands arrays [It] should JSONArrPop [json, arrays, json.arrpop]
+  /home/kerry/ws/src_learn/go-redis/json_test.go:160
+  [FAIL] JSON Commands arrays [It] should JSONArrTrim [json, arrays, json.arrtrim]
+  /home/kerry/ws/src_learn/go-redis/json_test.go:174
+  [FAIL] JSON Commands arrays [It] should JSONArrPop [json, arrays, json.arrpop]
+  /home/kerry/ws/src_learn/go-redis/json_test.go:225
+  [FAIL] JSON Commands get/set [It] should JSONSet [json, getset, json.set]
+  /home/kerry/ws/src_learn/go-redis/json_test.go:241
+  [FAIL] JSON Commands get/set [It] should JSONGet [json, getset, json.get]
+  /home/kerry/ws/src_learn/go-redis/json_test.go:247
+  [FAIL] JSON Commands get/set [It] should JSONMerge [json, getset, json.merge]
+  /home/kerry/ws/src_learn/go-redis/json_test.go:261
+  [FAIL] JSON Commands get/set [It] should JSONMSet [json, getset, json.mset]
+  /home/kerry/ws/src_learn/go-redis/json_test.go:279
+  [FAIL] JSON Commands get/set [It] should JSONMGet [json, getset, json.mget]
+  /home/kerry/ws/src_learn/go-redis/json_test.go:296
+  [FAIL] JSON Commands get/set [It] should JSONMget with $ [json, getset, json.mget]
+  /home/kerry/ws/src_learn/go-redis/json_test.go:311
+  [FAIL] JSON Commands Misc [It] should JSONClear [json, misc, json.clear]
+  /home/kerry/ws/src_learn/go-redis/json_test.go:335
+  [FAIL] JSON Commands Misc [It] should JSONClear with $ [json, misc, json.clear]
+  /home/kerry/ws/src_learn/go-redis/json_test.go:355
+  [FAIL] JSON Commands Misc [It] should JSONDel [json, misc, json.del]
+  /home/kerry/ws/src_learn/go-redis/json_test.go:381
+  [FAIL] JSON Commands Misc [It] should JSONDel with $ [json, misc, json.del]
+  /home/kerry/ws/src_learn/go-redis/json_test.go:395
+  [FAIL] JSON Commands Misc [It] should JSONForget [json, misc, json.forget]
+  /home/kerry/ws/src_learn/go-redis/json_test.go:446
+  [FAIL] JSON Commands Misc [It] should JSONForget with $ [json, misc, json.forget]
+  /home/kerry/ws/src_learn/go-redis/json_test.go:460
+  [FAIL] JSON Commands Misc [It] should JSONNumIncrBy [json, misc, json.numincrby]
+  /home/kerry/ws/src_learn/go-redis/json_test.go:511
+  [FAIL] JSON Commands Misc [It] should JSONNumIncrBy with $ [json, misc, json.numincrby]
+  /home/kerry/ws/src_learn/go-redis/json_test.go:521
+  [FAIL] JSON Commands Misc [It] should JSONObjKeys [json, misc, json.objkeys]
+  /home/kerry/ws/src_learn/go-redis/json_test.go:543
+  [FAIL] JSON Commands Misc [It] should JSONObjKeys with $ [json, misc, json.objkeys]
+  /home/kerry/ws/src_learn/go-redis/json_test.go:559
+  [FAIL] JSON Commands Misc [It] should JSONObjLen [json, misc, json.objlen]
+  /home/kerry/ws/src_learn/go-redis/json_test.go:580
+  [FAIL] JSON Commands Misc [It] should JSONStrLen [json, misc, json.strlen]
+  /home/kerry/ws/src_learn/go-redis/json_test.go:592
+  [FAIL] JSON Commands Misc [It] should JSONStrAppend [json, misc, json.strappend]
+  /home/kerry/ws/src_learn/go-redis/json_test.go:609
+  [FAIL] JSON Commands Misc [It] should JSONStrAppend and JSONStrLen with $ [json, misc, json.strappend, json.strlen]
+  /home/kerry/ws/src_learn/go-redis/json_test.go:621
+  [FAIL] JSON Commands Misc [It] should JSONToggle [json, misc, json.toggle]
+  /home/kerry/ws/src_learn/go-redis/json_test.go:639
+  [FAIL] JSON Commands Misc [It] should JSONType [json, misc, json.type]
+  /home/kerry/ws/src_learn/go-redis/json_test.go:650
+  [FAIL] RedisGears commands [It] should TFunctionLoad, TFunctionLoadArgs and TFunctionDelete  [gears, tfunctionload]
+  /home/kerry/ws/src_learn/go-redis/gears_commands_test.go:53
+  [FAIL] RedisGears commands [It] should TFunctionList [gears, tfunctionlist]
+  /home/kerry/ws/src_learn/go-redis/gears_commands_test.go:62
+  [FAIL] RedisGears commands [It] should TFCall [gears, tfcall]
+  /home/kerry/ws/src_learn/go-redis/gears_commands_test.go:76
+  [FAIL] RedisGears commands [It] should TFCallArgs [gears, tfcallargs]
+  /home/kerry/ws/src_learn/go-redis/gears_commands_test.go:86
+  [FAIL] RedisGears commands [It] should TFCallASYNC [gears, TFCallASYNC]
+  /home/kerry/ws/src_learn/go-redis/gears_commands_test.go:97
+  [FAIL] RedisGears commands [It] should TFCallASYNCArgs [gears, TFCallASYNCargs]
+  /home/kerry/ws/src_learn/go-redis/gears_commands_test.go:107
+  [FAIL] RedisTimeseries commands [It] should TSCreate and TSCreateWithArgs [timeseries, tscreate, tscreateWithArgs]
+  /home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:28
+  [FAIL] RedisTimeseries commands [It] should TSAdd and TSAddWithArgs [timeseries, tsadd, tsaddWithArgs]
+  /home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:70
+  [FAIL] RedisTimeseries commands [It] should TSAlter [timeseries, tsalter]
+  /home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:145
+  [FAIL] RedisTimeseries commands [It] should TSCreateRule and TSDeleteRule [timeseries, tscreaterule, tsdeleterule]
+  /home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:186
+  [FAIL] RedisTimeseries commands [It] should TSIncrBy, TSIncrByWithArgs, TSDecrBy and TSDecrByWithArgs [timeseries, tsincrby, tsdecrby, tsincrbyWithArgs, tsdecrbyWithArgs]
+  /home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:222
+  [FAIL] RedisTimeseries commands [It] should TSGet [timeseries, tsget]
+  /home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:285
+  [FAIL] RedisTimeseries commands [It] should TSGet Latest [timeseries, tsgetlatest]
+  /home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:295
+  [FAIL] RedisTimeseries commands [It] should TSInfo [timeseries, tsinfo]
+  /home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:323
+  [FAIL] RedisTimeseries commands [It] should TSMAdd [timeseries, tsmadd]
+  /home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:332
+  [FAIL] RedisTimeseries commands [It] should TSMGet and TSMGetWithArgs [timeseries, tsmget, tsmgetWithArgs]
+  /home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:350
+  [FAIL] RedisTimeseries commands [It] should TSQueryIndex [timeseries, tsqueryindex]
+  /home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:400
+  [FAIL] RedisTimeseries commands [It] should TSDel and TSRange [timeseries, tsdel, tsrange]
+  /home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:417
+  [FAIL] RedisTimeseries commands [It] should TSRange, TSRangeWithArgs [timeseries, tsrange, tsrangeWithArgs]
+  /home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:435
+  [FAIL] RedisTimeseries commands [It] should TSRevRange, TSRevRangeWithArgs [timeseries, tsrevrange, tsrevrangeWithArgs]
+  /home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:547
+  [FAIL] RedisTimeseries commands [It] should TSMRange and TSMRangeWithArgs [timeseries, tsmrange, tsmrangeWithArgs]
+  /home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:675
+  [FAIL] RedisTimeseries commands [It] should TSMRangeWithArgs Latest [timeseries, tsmrangeWithArgs, tsmrangelatest]
+  /home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:760
+  [FAIL] RedisTimeseries commands [It] should TSMRevRange and TSMRevRangeWithArgs [timeseries, tsmrevrange, tsmrevrangeWithArgs]
+  /home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:808
+  [FAIL] RedisTimeseries commands [It] should TSMRevRangeWithArgs Latest [timeseries, tsmrevrangeWithArgs, tsmrevrangelatest]
+  /home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:893
+  [FAIL] Probabilistic commands bloom [It] should BFAdd [probabilistic, bloom, bfadd]
+  /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:31
+  [FAIL] Probabilistic commands bloom [It] should BFCard [probabilistic, bloom, bfcard]
+  /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:47
+  [FAIL] Probabilistic commands bloom [It] should BFExists [probabilistic, bloom, bfexists]
+  /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:61
+  [FAIL] Probabilistic commands bloom [It] should BFInfo and BFReserve [probabilistic, bloom, bfinfo, bfreserve]
+  /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:75
+  [FAIL] Probabilistic commands bloom [It] should BFInfoCapacity, BFInfoSize, BFInfoFilters, BFInfoItems, BFInfoExpansion,  [probabilistic, bloom, bfinfocapacity, bfinfosize, bfinfofilters, bfinfoitems, bfinfoexpansion]
+  /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:85
+  [FAIL] Probabilistic commands bloom [It] should BFInsert [probabilistic, bloom, bfinsert]
+  /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:122
+  [FAIL] Probabilistic commands bloom [It] should BFMAdd [probabilistic, bloom, bfmadd]
+  /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:150
+  [FAIL] Probabilistic commands bloom [It] should BFMExists [probabilistic, bloom, bfmexists]
+  /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:167
+  [FAIL] Probabilistic commands bloom [It] should BFReserveExpansion [probabilistic, bloom, bfreserveexpansion]
+  /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:188
+  [FAIL] Probabilistic commands bloom [It] should BFReserveNonScaling [probabilistic, bloom, bfreservenonscaling]
+  /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:199
+  [FAIL] Probabilistic commands bloom [It] should BFScanDump and BFLoadChunk [probabilistic, bloom, bfscandump, bfloadchunk]
+  /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:207
+  [FAIL] Probabilistic commands bloom [It] should BFReserveWithArgs [probabilistic, bloom, bfreserveargs]
+  /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:238
+  [FAIL] Probabilistic commands cuckoo [It] should CFAdd [probabilistic, cuckoo, cfadd]
+  /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:251
+  [FAIL] Probabilistic commands cuckoo [It] should CFAddNX [probabilistic, cuckoo, cfaddnx]
+  /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:266
+  [FAIL] Probabilistic commands cuckoo [It] should CFCount [probabilistic, cuckoo, cfcount]
+  /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:286
+  [FAIL] Probabilistic commands cuckoo [It] should CFDel and CFExists [probabilistic, cuckoo, cfdel, cfexists]
+  /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:299
+  [FAIL] Probabilistic commands cuckoo [It] should CFInfo and CFReserve [probabilistic, cuckoo, cfinfo, cfreserve]
+  /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:316
+  [FAIL] Probabilistic commands cuckoo [It] should CFScanDump and CFLoadChunk [probabilistic, cuckoo, bloom, cfscandump, cfloadchunk]
+  /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:331
+  [FAIL] Probabilistic commands cuckoo [It] should CFInfo and CFReserveWithArgs [probabilistic, cuckoo, cfinfo, cfreserveargs]
+  /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:364
+  [FAIL] Probabilistic commands cuckoo [It] should CFInsert [probabilistic, cuckoo, cfinsert]
+  /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:389
+  [FAIL] Probabilistic commands cuckoo [It] should CFInsertNX [probabilistic, cuckoo, cfinsertnx]
+  /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:408
+  [FAIL] Probabilistic commands cuckoo [It] should CFMexists [probabilistic, cuckoo, cfmexists]
+  /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:417
+  [FAIL] Probabilistic commands CMS [It] should CMSIncrBy [probabilistic, cms, cmsincrby]
+  /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:432
+  [FAIL] Probabilistic commands CMS [It] should CMSInitByDim and CMSInfo [probabilistic, cms, cmsinitbydim, cmsinfo]
+  /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:444
+  [FAIL] Probabilistic commands CMS [It] should CMSInitByProb [probabilistic, cms, cmsinitbyprob]
+  /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:456
+  [FAIL] Probabilistic commands CMS [It] should CMSMerge, CMSMergeWithWeight and CMSQuery [probabilistic, cms, cmsmerge, cmsquery]
+  /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:466
+  [FAIL] Probabilistic commands TopK [It] should TopKReserve, TopKInfo, TopKAdd, TopKQuery, TopKCount, TopKIncrBy, TopKList, TopKListWithCount [probabilistic, topk, topkreserve, topkinfo, topkadd, topkquery, topkcount, topkincrby, topklist, topklistwithcount]
+  /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:519
+  [FAIL] Probabilistic commands TopK [It] should TopKReserveWithOptions [probabilistic, topk, topkreservewithoptions]
+  /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:570
+  [FAIL] Probabilistic commands t-digest [It] should TDigestAdd, TDigestCreate, TDigestInfo, TDigestByRank, TDigestByRevRank, TDigestCDF, TDigestMax, TDigestMin, TDigestQuantile, TDigestRank, TDigestRevRank, TDigestTrimmedMean, TDigestReset,  [probabilistic, tdigest, tdigestadd, tdigestcreate, tdigestinfo, tdigestbyrank, tdigestbyrevrank, tdigestcdf, tdigestmax, tdigestmin, tdigestquantile, tdigestrank, tdigestrevrank, tdigesttrimmedmean, tdigestreset]
+  /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:584
+  [FAIL] Probabilistic commands t-digest [It] should TDigestCreateWithCompression [probabilistic, tdigest, tcreatewithcompression]
+  /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:693
+  [FAIL] Probabilistic commands t-digest [It] should TDigestMerge [probabilistic, tdigest, tmerge]
+  /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:702
+
+Ran 669 of 678 Specs in 89.754 seconds
+FAIL! -- 584 Passed | 85 Failed | 2 Pending | 7 Skipped
+
+Detail:
+• [FAILED] [0.000 seconds]
+JSON Commands arrays [It] should JSONArrAppend [json, arrays, json.arrappend]
+/home/kerry/ws/src_learn/go-redis/json_test.go:30
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'JSON.SET', with args beginning with: 'append2' '$' '{"a": [10], "b": {"a": [12, 13]}}'
+      ERR unknown command 'JSON.SET', with args beginning with: 'append2' '$' '{"a": [10], "b": {"a": [12, 13]}}'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/json_test.go:32 @ 11/08/25 18:32:49.219
+------------------------------
+• [FAILED] [0.000 seconds]
+JSON Commands arrays [It] should JSONArrIndex and JSONArrIndexWithArgs [json, arrays, json.arrindex]
+/home/kerry/ws/src_learn/go-redis/json_test.go:40
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'JSON.SET', with args beginning with: 'index1' '$' '{"a": [10], "b": {"a": [12, 10]}}'
+      ERR unknown command 'JSON.SET', with args beginning with: 'index1' '$' '{"a": [10], "b": {"a": [12, 10]}}'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/json_test.go:42 @ 11/08/25 18:32:49.219
+------------------------------
+• [FAILED] [0.000 seconds]
+JSON Commands arrays [It] should JSONArrIndex and JSONArrIndexWithArgs with $ [json, arrays, json.arrindex]
+/home/kerry/ws/src_learn/go-redis/json_test.go:80
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'JSON.SET', with args beginning with: 'doc1' '$' '{                           "store": {                                      "book": [                                               {           "category": "reference",                                                         "author": "Nigel Rees",                                                         "title"'
+      ERR unknown command 'JSON.SET', with args beginning with: 'doc1' '$' '{                           "store": {                                      "book": [                                               {           "category": "reference",                                                         "author": "Nigel Rees",                                                         "title"'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/json_test.go:119 @ 11/08/25 18:32:49.219
+------------------------------
+• [FAILED] [0.000 seconds]
+JSON Commands arrays [It] should JSONArrInsert [json, arrays, json.arrinsert]
+/home/kerry/ws/src_learn/go-redis/json_test.go:131
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'JSON.SET', with args beginning with: 'insert2' '$' '[100, 200, 300, 200]'
+      ERR unknown command 'JSON.SET', with args beginning with: 'insert2' '$' '[100, 200, 300, 200]'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/json_test.go:133 @ 11/08/25 18:32:49.22
+------------------------------
+• [FAILED] [0.000 seconds]
+JSON Commands arrays [It] should JSONArrLen [json, arrays, json.arrlen]
+/home/kerry/ws/src_learn/go-redis/json_test.go:148
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'JSON.SET', with args beginning with: 'length2' '$' '{"a": [10], "b": {"a": [12, 10, 20, 12, 90, 10]}}'
+      ERR unknown command 'JSON.SET', with args beginning with: 'length2' '$' '{"a": [10], "b": {"a": [12, 10, 20, 12, 90, 10]}}'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/json_test.go:150 @ 11/08/25 18:32:49.22
+------------------------------
+• [FAILED] [0.000 seconds]
+JSON Commands arrays [It] should JSONArrPop [json, arrays, json.arrpop]
+/home/kerry/ws/src_learn/go-redis/json_test.go:158
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'JSON.SET', with args beginning with: 'pop4' '$' '[100, 200, 300, 200]'
+      ERR unknown command 'JSON.SET', with args beginning with: 'pop4' '$' '[100, 200, 300, 200]'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/json_test.go:160 @ 11/08/25 18:32:49.22
+------------------------------
+• [FAILED] [0.000 seconds]
+JSON Commands arrays [It] should JSONArrTrim [json, arrays, json.arrtrim]
+/home/kerry/ws/src_learn/go-redis/json_test.go:172
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'JSON.SET', with args beginning with: 'trim1' '$' '[0,1,2,3,4]'
+      ERR unknown command 'JSON.SET', with args beginning with: 'trim1' '$' '[0,1,2,3,4]'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/json_test.go:174 @ 11/08/25 18:32:49.221
+------------------------------
+• [FAILED] [0.000 seconds]
+JSON Commands arrays [It] should JSONArrPop [json, arrays, json.arrpop]
+/home/kerry/ws/src_learn/go-redis/json_test.go:223
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'JSON.SET', with args beginning with: 'pop4' '$' '[100, 200, 300, 200]'
+      ERR unknown command 'JSON.SET', with args beginning with: 'pop4' '$' '[100, 200, 300, 200]'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/json_test.go:225 @ 11/08/25 18:32:49.221
+------------------------------
+• [FAILED] [0.000 seconds]
+JSON Commands get/set [It] should JSONSet [json, getset, json.set]
+/home/kerry/ws/src_learn/go-redis/json_test.go:239
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'JSON.SET', with args beginning with: 'set1' '$' '{"a": 1, "b": 2, "hello": "world"}'
+      ERR unknown command 'JSON.SET', with args beginning with: 'set1' '$' '{"a": 1, "b": 2, "hello": "world"}'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/json_test.go:241 @ 11/08/25 18:32:49.221
+------------------------------
+• [FAILED] [0.000 seconds]
+JSON Commands get/set [It] should JSONGet [json, getset, json.get]
+/home/kerry/ws/src_learn/go-redis/json_test.go:245
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'JSON.SET', with args beginning with: 'get3' '$' '{"a": 1, "b": 2}'
+      ERR unknown command 'JSON.SET', with args beginning with: 'get3' '$' '{"a": 1, "b": 2}'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/json_test.go:247 @ 11/08/25 18:32:49.222
+------------------------------
+• [FAILED] [0.000 seconds]
+JSON Commands get/set [It] should JSONMerge [json, getset, json.merge]
+/home/kerry/ws/src_learn/go-redis/json_test.go:259
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'JSON.SET', with args beginning with: 'merge1' '$' '{"a": 1, "b": 2}'
+      ERR unknown command 'JSON.SET', with args beginning with: 'merge1' '$' '{"a": 1, "b": 2}'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/json_test.go:261 @ 11/08/25 18:32:49.222
+------------------------------
+• [FAILED] [0.000 seconds]
+JSON Commands get/set [It] should JSONMSet [json, getset, json.mset]
+/home/kerry/ws/src_learn/go-redis/json_test.go:273
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'JSON.MSET', with args beginning with: 'mset1' '$' '{"a": 1}' 'mset2' '$' '2'
+      ERR unknown command 'JSON.MSET', with args beginning with: 'mset1' '$' '{"a": 1}' 'mset2' '$' '2'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/json_test.go:279 @ 11/08/25 18:32:49.222
+------------------------------
+• [FAILED] [0.000 seconds]
+JSON Commands get/set [It] should JSONMGet [json, getset, json.mget]
+/home/kerry/ws/src_learn/go-redis/json_test.go:294
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'JSON.SET', with args beginning with: 'mget2a' '$' '{"a": ["aa", "ab", "ac", "ad"], "b": {"a": ["ba", "bb", "bc", "bd"]}}'
+      ERR unknown command 'JSON.SET', with args beginning with: 'mget2a' '$' '{"a": ["aa", "ab", "ac", "ad"], "b": {"a": ["ba", "bb", "bc", "bd"]}}'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/json_test.go:296 @ 11/08/25 18:32:49.222
+------------------------------
+• [FAILED] [0.000 seconds]
+JSON Commands get/set [It] should JSONMget with $ [json, getset, json.mget]
+/home/kerry/ws/src_learn/go-redis/json_test.go:309
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'JSON.SET', with args beginning with: 'doc1' '$' '{"a": 1, "b": 2, "nested": {"a": 3}, "c": "", "nested2": {"a": ""}}'
+      ERR unknown command 'JSON.SET', with args beginning with: 'doc1' '$' '{"a": 1, "b": 2, "nested": {"a": 3}, "c": "", "nested2": {"a": ""}}'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/json_test.go:311 @ 11/08/25 18:32:49.223
+------------------------------
+• [FAILED] [0.000 seconds]
+JSON Commands Misc [It] should JSONClear [json, misc, json.clear]
+/home/kerry/ws/src_learn/go-redis/json_test.go:333
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'JSON.SET', with args beginning with: 'clear1' '$' '[1]'
+      ERR unknown command 'JSON.SET', with args beginning with: 'clear1' '$' '[1]'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/json_test.go:335 @ 11/08/25 18:32:49.223
+------------------------------
+• [FAILED] [0.000 seconds]
+JSON Commands Misc [It] should JSONClear with $ [json, misc, json.clear]
+/home/kerry/ws/src_learn/go-redis/json_test.go:347
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'JSON.SET', with args beginning with: 'doc1' '$' '{                           "nested1": {"a": {"foo": 10, "bar": 20}},                               "a": ["foo"],                           "nested2": {"a": "claro"},                           "nested3": {"a":'
+      ERR unknown command 'JSON.SET', with args beginning with: 'doc1' '$' '{                           "nested1": {"a": {"foo": 10, "bar": 20}},                               "a": ["foo"],                           "nested2": {"a": "claro"},                           "nested3": {"a":'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/json_test.go:355 @ 11/08/25 18:32:49.223
+------------------------------
+• [FAILED] [0.000 seconds]
+JSON Commands Misc [It] should JSONDel [json, misc, json.del]
+/home/kerry/ws/src_learn/go-redis/json_test.go:379
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'JSON.SET', with args beginning with: 'del1' '$' '[1]'
+      ERR unknown command 'JSON.SET', with args beginning with: 'del1' '$' '[1]'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/json_test.go:381 @ 11/08/25 18:32:49.223
+------------------------------
+• [FAILED] [0.000 seconds]
+JSON Commands Misc [It] should JSONDel with $ [json, misc, json.del]
+/home/kerry/ws/src_learn/go-redis/json_test.go:393
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'JSON.SET', with args beginning with: 'del1' '$' '{"a": 1, "nested": {"a": 2, "b": 3}}'
+      ERR unknown command 'JSON.SET', with args beginning with: 'del1' '$' '{"a": 1, "nested": {"a": 2, "b": 3}}'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/json_test.go:395 @ 11/08/25 18:32:49.224
+------------------------------
+• [FAILED] [0.000 seconds]
+JSON Commands Misc [It] should JSONForget [json, misc, json.forget]
+/home/kerry/ws/src_learn/go-redis/json_test.go:444
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'JSON.SET', with args beginning with: 'forget3' '$' '{"a": [1,2,3], "b": {"a": [1,2,3], "b": "annie"}}'
+      ERR unknown command 'JSON.SET', with args beginning with: 'forget3' '$' '{"a": [1,2,3], "b": {"a": [1,2,3], "b": "annie"}}'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/json_test.go:446 @ 11/08/25 18:32:49.224
+------------------------------
+• [FAILED] [0.000 seconds]
+JSON Commands Misc [It] should JSONForget with $ [json, misc, json.forget]
+/home/kerry/ws/src_learn/go-redis/json_test.go:458
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'JSON.SET', with args beginning with: 'doc1' '$' '{"a": 1, "nested": {"a": 2, "b": 3}}'
+      ERR unknown command 'JSON.SET', with args beginning with: 'doc1' '$' '{"a": 1, "nested": {"a": 2, "b": 3}}'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/json_test.go:460 @ 11/08/25 18:32:49.224
+------------------------------
+• [FAILED] [0.000 seconds]
+JSON Commands Misc [It] should JSONNumIncrBy [json, misc, json.numincrby]
+/home/kerry/ws/src_learn/go-redis/json_test.go:509
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'JSON.SET', with args beginning with: 'incr3' '$' '{"a": [1, 2], "b": {"a": [0, -1]}}'
+      ERR unknown command 'JSON.SET', with args beginning with: 'incr3' '$' '{"a": [1, 2], "b": {"a": [0, -1]}}'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/json_test.go:511 @ 11/08/25 18:32:49.224
+------------------------------
+• [FAILED] [0.000 seconds]
+JSON Commands Misc [It] should JSONNumIncrBy with $ [json, misc, json.numincrby]
+/home/kerry/ws/src_learn/go-redis/json_test.go:519
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'JSON.SET', with args beginning with: 'doc1' '$' '{"a": "b", "b": [{"a": 2}, {"a": 5.0}, {"a": "c"}]}'
+      ERR unknown command 'JSON.SET', with args beginning with: 'doc1' '$' '{"a": "b", "b": [{"a": 2}, {"a": 5.0}, {"a": "c"}]}'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/json_test.go:521 @ 11/08/25 18:32:49.225
+------------------------------
+• [FAILED] [0.000 seconds]
+JSON Commands Misc [It] should JSONObjKeys [json, misc, json.objkeys]
+/home/kerry/ws/src_learn/go-redis/json_test.go:541
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'JSON.SET', with args beginning with: 'objkeys1' '$' '{"a": [1, 2], "b": {"a": [0, -1]}}'
+      ERR unknown command 'JSON.SET', with args beginning with: 'objkeys1' '$' '{"a": [1, 2], "b": {"a": [0, -1]}}'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/json_test.go:543 @ 11/08/25 18:32:49.225
+------------------------------
+• [FAILED] [0.000 seconds]
+JSON Commands Misc [It] should JSONObjKeys with $ [json, misc, json.objkeys]
+/home/kerry/ws/src_learn/go-redis/json_test.go:552
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'JSON.SET', with args beginning with: 'objkeys1' '$' '{                               "nested1": {"a": {"foo": 10, "bar": 20}},                               "a": ["foo"],                       "nested2": {"a": {"baz": 50}}                    }'
+      ERR unknown command 'JSON.SET', with args beginning with: 'objkeys1' '$' '{                               "nested1": {"a": {"foo": 10, "bar": 20}},                               "a": ["foo"],                       "nested2": {"a": {"baz": 50}}                    }'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/json_test.go:559 @ 11/08/25 18:32:49.225
+------------------------------
+• [FAILED] [0.000 seconds]
+JSON Commands Misc [It] should JSONObjLen [json, misc, json.objlen]
+/home/kerry/ws/src_learn/go-redis/json_test.go:578
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'JSON.SET', with args beginning with: 'objlen2' '$' '{"a": [1, 2], "b": {"a": [0, -1]}}'
+      ERR unknown command 'JSON.SET', with args beginning with: 'objlen2' '$' '{"a": [1, 2], "b": {"a": [0, -1]}}'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/json_test.go:580 @ 11/08/25 18:32:49.225
+------------------------------
+• [FAILED] [0.000 seconds]
+JSON Commands Misc [It] should JSONStrLen [json, misc, json.strlen]
+/home/kerry/ws/src_learn/go-redis/json_test.go:590
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'JSON.SET', with args beginning with: 'strlen2' '$' '{"a": "alice", "b": "bob", "c": {"a": "alice", "b": "bob"}}'
+      ERR unknown command 'JSON.SET', with args beginning with: 'strlen2' '$' '{"a": "alice", "b": "bob", "c": {"a": "alice", "b": "bob"}}'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/json_test.go:592 @ 11/08/25 18:32:49.225
+------------------------------
+• [FAILED] [0.000 seconds]
+JSON Commands Misc [It] should JSONStrAppend [json, misc, json.strappend]
+/home/kerry/ws/src_learn/go-redis/json_test.go:607
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'JSON.SET', with args beginning with: 'strapp1' '$' '"foo"'
+      ERR unknown command 'JSON.SET', with args beginning with: 'strapp1' '$' '"foo"'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/json_test.go:609 @ 11/08/25 18:32:49.226
+------------------------------
+• [FAILED] [0.000 seconds]
+JSON Commands Misc [It] should JSONStrAppend and JSONStrLen with $ [json, misc, json.strappend, json.strlen]
+/home/kerry/ws/src_learn/go-redis/json_test.go:619
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'JSON.SET', with args beginning with: 'doc1' '$' '{"a": "foo", "nested1": {"a": "hello"}, "nested2": {"a": 31}}'
+      ERR unknown command 'JSON.SET', with args beginning with: 'doc1' '$' '{"a": "foo", "nested1": {"a": "hello"}, "nested2": {"a": 31}}'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/json_test.go:621 @ 11/08/25 18:32:49.226
+------------------------------
+• [FAILED] [0.000 seconds]
+JSON Commands Misc [It] should JSONToggle [json, misc, json.toggle]
+/home/kerry/ws/src_learn/go-redis/json_test.go:637
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'JSON.SET', with args beginning with: 'toggle1' '$' '[true]'
+      ERR unknown command 'JSON.SET', with args beginning with: 'toggle1' '$' '[true]'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/json_test.go:639 @ 11/08/25 18:32:49.226
+------------------------------
+• [FAILED] [0.000 seconds]
+JSON Commands Misc [It] should JSONType [json, misc, json.type]
+/home/kerry/ws/src_learn/go-redis/json_test.go:648
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'JSON.SET', with args beginning with: 'type1' '$' '[true]'
+      ERR unknown command 'JSON.SET', with args beginning with: 'type1' '$' '[true]'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/json_test.go:650 @ 11/08/25 18:32:49.226
+------------------------------
+•redis: 2025/11/08 18:32:49 sentinel.go:734: sentinel: discovered new sentinel="127.0.0.1:9128" for master="mymaster"
+redis: 2025/11/08 18:32:49 sentinel.go:734: sentinel: discovered new sentinel="127.0.0.1:9127" for master="mymaster"
+redis: 2025/11/08 18:32:49 sentinel.go:698: sentinel: new master="mymaster" addr="127.0.0.1:9123"
+•
+------------------------------
+• [FAILED] [0.000 seconds]
+RedisGears commands [It] should TFunctionLoad, TFunctionLoadArgs and TFunctionDelete  [gears, tfunctionload]
+/home/kerry/ws/src_learn/go-redis/gears_commands_test.go:51
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'TFUNCTION', with args beginning with: 'LOAD' '#!js api_version=1.0 name=lib1  redis.registerFunction('foo', ()=>{{return 'bar'}})'
+      ERR unknown command 'TFUNCTION', with args beginning with: 'LOAD' '#!js api_version=1.0 name=lib1  redis.registerFunction('foo', ()=>{{return 'bar'}})'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/gears_commands_test.go:53 @ 11/08/25 18:32:49.227
+------------------------------
+• [FAILED] [0.000 seconds]
+RedisGears commands [It] should TFunctionList [gears, tfunctionlist]
+/home/kerry/ws/src_learn/go-redis/gears_commands_test.go:60
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'TFUNCTION', with args beginning with: 'LOAD' '#!js api_version=1.0 name=lib1  redis.registerFunction('foo', ()=>{{return 'bar'}})'
+      ERR unknown command 'TFUNCTION', with args beginning with: 'LOAD' '#!js api_version=1.0 name=lib1  redis.registerFunction('foo', ()=>{{return 'bar'}})'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/gears_commands_test.go:62 @ 11/08/25 18:32:49.227
+------------------------------
+• [FAILED] [0.000 seconds]
+RedisGears commands [It] should TFCall [gears, tfcall]
+/home/kerry/ws/src_learn/go-redis/gears_commands_test.go:73
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'TFUNCTION', with args beginning with: 'LOAD' '#!js api_version=1.0 name=lib1  redis.registerFunction('foo', ()=>{{return 'bar'}})'
+      ERR unknown command 'TFUNCTION', with args beginning with: 'LOAD' '#!js api_version=1.0 name=lib1  redis.registerFunction('foo', ()=>{{return 'bar'}})'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/gears_commands_test.go:76 @ 11/08/25 18:32:49.227
+------------------------------
+• [FAILED] [0.000 seconds]
+RedisGears commands [It] should TFCallArgs [gears, tfcallargs]
+/home/kerry/ws/src_learn/go-redis/gears_commands_test.go:83
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'TFUNCTION', with args beginning with: 'LOAD' '#!js api_version=1.0 name=lib1  redis.registerFunction('foo', ()=>{{return 'bar'}})'
+      ERR unknown command 'TFUNCTION', with args beginning with: 'LOAD' '#!js api_version=1.0 name=lib1  redis.registerFunction('foo', ()=>{{return 'bar'}})'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/gears_commands_test.go:86 @ 11/08/25 18:32:49.227
+------------------------------
+• [FAILED] [0.001 seconds]
+RedisGears commands [It] should TFCallASYNC [gears, TFCallASYNC]
+/home/kerry/ws/src_learn/go-redis/gears_commands_test.go:94
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'TFUNCTION', with args beginning with: 'LOAD' '#!js api_version=1.0 name=lib1  redis.registerFunction('foo', ()=>{{return 'bar'}})'
+      ERR unknown command 'TFUNCTION', with args beginning with: 'LOAD' '#!js api_version=1.0 name=lib1  redis.registerFunction('foo', ()=>{{return 'bar'}})'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/gears_commands_test.go:97 @ 11/08/25 18:32:49.228
+------------------------------
+• [FAILED] [0.000 seconds]
+RedisGears commands [It] should TFCallASYNCArgs [gears, TFCallASYNCargs]
+/home/kerry/ws/src_learn/go-redis/gears_commands_test.go:104
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'TFUNCTION', with args beginning with: 'LOAD' '#!js api_version=1.0 name=lib1  redis.registerFunction('foo', ()=>{{return 'bar'}})'
+      ERR unknown command 'TFUNCTION', with args beginning with: 'LOAD' '#!js api_version=1.0 name=lib1  redis.registerFunction('foo', ()=>{{return 'bar'}})'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/gears_commands_test.go:107 @ 11/08/25 18:32:49.228
+------------------------------
+•••••••redis: 2025/11/08 18:32:49 ring.go:412: ring shard state changed: Redis<:6391 db:0> is down
+redis: 2025/11/08 18:32:49 ring.go:412: ring shard state changed: Redis<:6391 db:0> is down
+redis: 2025/11/08 18:32:49 ring.go:412: ring shard state changed: Redis<:6391 db:0> is up
+redis: 2025/11/08 18:32:49 ring.go:412: ring shard state changed: Redis<:6391 db:0> is up
+•••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+------------------------------
+• [FAILED] [0.000 seconds]
+RedisTimeseries commands [It] should TSCreate and TSCreateWithArgs [timeseries, tscreate, tscreateWithArgs]
+/home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:26
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'TS.CREATE', with args beginning with: '1'
+      ERR unknown command 'TS.CREATE', with args beginning with: '1'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:28 @ 11/08/25 18:32:50.631
+------------------------------
+• [FAILED] [0.000 seconds]
+RedisTimeseries commands [It] should TSAdd and TSAddWithArgs [timeseries, tsadd, tsaddWithArgs]
+/home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:68
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'TS.ADD', with args beginning with: '1' '1' '1'
+      ERR unknown command 'TS.ADD', with args beginning with: '1' '1' '1'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:70 @ 11/08/25 18:32:50.631
+------------------------------
+• [FAILED] [0.000 seconds]
+RedisTimeseries commands [It] should TSAlter [timeseries, tsalter]
+/home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:143
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'TS.CREATE', with args beginning with: '1'
+      ERR unknown command 'TS.CREATE', with args beginning with: '1'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:145 @ 11/08/25 18:32:50.631
+------------------------------
+• [FAILED] [0.000 seconds]
+RedisTimeseries commands [It] should TSCreateRule and TSDeleteRule [timeseries, tscreaterule, tsdeleterule]
+/home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:184
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'TS.CREATE', with args beginning with: '1'
+      ERR unknown command 'TS.CREATE', with args beginning with: '1'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:186 @ 11/08/25 18:32:50.632
+------------------------------
+• [FAILED] [0.001 seconds]
+RedisTimeseries commands [It] should TSIncrBy, TSIncrByWithArgs, TSDecrBy and TSDecrByWithArgs [timeseries, tsincrby, tsdecrby, tsincrbyWithArgs, tsdecrbyWithArgs]
+/home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:219
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'TS.INCRBY', with args beginning with: '1' '1'
+      ERR unknown command 'TS.INCRBY', with args beginning with: '1' '1'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:222 @ 11/08/25 18:32:50.633
+------------------------------
+• [FAILED] [0.000 seconds]
+RedisTimeseries commands [It] should TSGet [timeseries, tsget]
+/home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:282
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'TS.ADD', with args beginning with: 'foo' '2265985' '151' 'DUPLICATE_POLICY' 'max'
+      ERR unknown command 'TS.ADD', with args beginning with: 'foo' '2265985' '151' 'DUPLICATE_POLICY' 'max'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:285 @ 11/08/25 18:32:50.633
+------------------------------
+• [FAILED] [0.000 seconds]
+RedisTimeseries commands [It] should TSGet Latest [timeseries, tsgetlatest]
+/home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:293
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'TS.CREATE', with args beginning with: 'tsgl-1'
+      ERR unknown command 'TS.CREATE', with args beginning with: 'tsgl-1'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:295 @ 11/08/25 18:32:50.633
+------------------------------
+• [FAILED] [0.000 seconds]
+RedisTimeseries commands [It] should TSInfo [timeseries, tsinfo]
+/home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:321
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'TS.ADD', with args beginning with: 'foo' '2265985' '151'
+      ERR unknown command 'TS.ADD', with args beginning with: 'foo' '2265985' '151'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:323 @ 11/08/25 18:32:50.633
+------------------------------
+• [FAILED] [0.000 seconds]
+RedisTimeseries commands [It] should TSMAdd [timeseries, tsmadd]
+/home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:330
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'TS.CREATE', with args beginning with: 'a'
+      ERR unknown command 'TS.CREATE', with args beginning with: 'a'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:332 @ 11/08/25 18:32:50.634
+------------------------------
+• [FAILED] [0.000 seconds]
+RedisTimeseries commands [It] should TSMGet and TSMGetWithArgs [timeseries, tsmget, tsmgetWithArgs]
+/home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:347
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'TS.CREATE', with args beginning with: 'a' 'LABELS' 'Test' 'This'
+      ERR unknown command 'TS.CREATE', with args beginning with: 'a' 'LABELS' 'Test' 'This'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:350 @ 11/08/25 18:32:50.634
+------------------------------
+• [FAILED] [0.000 seconds]
+RedisTimeseries commands [It] should TSQueryIndex [timeseries, tsqueryindex]
+/home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:397
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'TS.CREATE', with args beginning with: 'a' 'LABELS' 'Test' 'This'
+      ERR unknown command 'TS.CREATE', with args beginning with: 'a' 'LABELS' 'Test' 'This'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:400 @ 11/08/25 18:32:50.634
+------------------------------
+• [FAILED] [0.000 seconds]
+RedisTimeseries commands [It] should TSDel and TSRange [timeseries, tsdel, tsrange]
+/home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:414
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'TS.ADD', with args beginning with: 'a' '0' '0'
+      ERR unknown command 'TS.ADD', with args beginning with: 'a' '0' '0'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:417 @ 11/08/25 18:32:50.634
+------------------------------
+• [FAILED] [0.000 seconds]
+RedisTimeseries commands [It] should TSRange, TSRangeWithArgs [timeseries, tsrange, tsrangeWithArgs]
+/home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:432
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'TS.ADD', with args beginning with: 'a' '0' '0'
+      ERR unknown command 'TS.ADD', with args beginning with: 'a' '0' '0'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:435 @ 11/08/25 18:32:50.635
+------------------------------
+• [FAILED] [0.000 seconds]
+RedisTimeseries commands [It] should TSRevRange, TSRevRangeWithArgs [timeseries, tsrevrange, tsrevrangeWithArgs]
+/home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:544
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'TS.ADD', with args beginning with: 'a' '0' '0'
+      ERR unknown command 'TS.ADD', with args beginning with: 'a' '0' '0'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:547 @ 11/08/25 18:32:50.635
+------------------------------
+• [FAILED] [0.000 seconds]
+RedisTimeseries commands [It] should TSMRange and TSMRangeWithArgs [timeseries, tsmrange, tsmrangeWithArgs]
+/home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:672
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'TS.CREATE', with args beginning with: 'a' 'LABELS' 'Test' 'This' 'team' 'ny'
+      ERR unknown command 'TS.CREATE', with args beginning with: 'a' 'LABELS' 'Test' 'This' 'team' 'ny'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:675 @ 11/08/25 18:32:50.635
+------------------------------
+• [FAILED] [0.000 seconds]
+RedisTimeseries commands [It] should TSMRangeWithArgs Latest [timeseries, tsmrangeWithArgs, tsmrangelatest]
+/home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:758
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'TS.CREATE', with args beginning with: 'a'
+      ERR unknown command 'TS.CREATE', with args beginning with: 'a'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:760 @ 11/08/25 18:32:50.636
+------------------------------
+• [FAILED] [0.000 seconds]
+RedisTimeseries commands [It] should TSMRevRange and TSMRevRangeWithArgs [timeseries, tsmrevrange, tsmrevrangeWithArgs]
+/home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:805
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'TS.CREATE', with args beginning with: 'a' 'LABELS' 'Test' 'This' 'team' 'ny'
+      ERR unknown command 'TS.CREATE', with args beginning with: 'a' 'LABELS' 'Test' 'This' 'team' 'ny'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:808 @ 11/08/25 18:32:50.636
+------------------------------
+• [FAILED] [0.000 seconds]
+RedisTimeseries commands [It] should TSMRevRangeWithArgs Latest [timeseries, tsmrevrangeWithArgs, tsmrevrangelatest]
+/home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:891
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'TS.CREATE', with args beginning with: 'a'
+      ERR unknown command 'TS.CREATE', with args beginning with: 'a'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/timeseries_commands_test.go:893 @ 11/08/25 18:32:50.636
+------------------------------
+redis: 2025/11/08 18:32:50 sentinel.go:734: sentinel: discovered new sentinel="127.0.0.1:9128" for master="mymaster"
+redis: 2025/11/08 18:32:50 sentinel.go:734: sentinel: discovered new sentinel="127.0.0.1:9127" for master="mymaster"
+Sredis: 2025/11/08 18:32:50 sentinel.go:734: sentinel: discovered new sentinel="127.0.0.1:9128" for master="mymaster"
+redis: 2025/11/08 18:32:50 sentinel.go:734: sentinel: discovered new sentinel="127.0.0.1:9127" for master="mymaster"
+Sredis: 2025/11/08 18:32:50 sentinel.go:734: sentinel: discovered new sentinel="127.0.0.1:9128" for master="mymaster"
+redis: 2025/11/08 18:32:50 sentinel.go:734: sentinel: discovered new sentinel="127.0.0.1:9127" for master="mymaster"
+S•••••••••••S•••••••••••••••S••SS•••••••••••••••••••••••••••••
+------------------------------
+P [PENDING]
+Commands debugging should DebugObject
+/home/kerry/ws/src_learn/go-redis/commands_test.go:470
+------------------------------
+••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+------------------------------
+P [PENDING]
+races should BLPop
+/home/kerry/ws/src_learn/go-redis/race_test.go:217
+------------------------------
+••••redis: 2025/11/08 18:33:40 sentinel.go:734: sentinel: discovered new sentinel="127.0.0.1:9128" for master="mymaster"
+redis: 2025/11/08 18:33:40 sentinel.go:734: sentinel: discovered new sentinel="127.0.0.1:9127" for master="mymaster"
+••••••••••••••••••••••••••••••redis: 2025/11/08 18:33:41 sentinel.go:734: sentinel: discovered new sentinel="127.0.0.1:9126" for master="mymaster"
+redis: 2025/11/08 18:33:41 sentinel.go:734: sentinel: discovered new sentinel="127.0.0.1:9127" for master="mymaster"
+redis: 2025/11/08 18:33:41 sentinel.go:698: sentinel: new master="mymaster" addr="127.0.0.1:9123"
+•••
+------------------------------
+• [FAILED] [0.000 seconds]
+Probabilistic commands bloom [It] should BFAdd [probabilistic, bloom, bfadd]
+/home/kerry/ws/src_learn/go-redis/probabilistic_test.go:28
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'BF.ADD', with args beginning with: 'testbf1' '1'
+      ERR unknown command 'BF.ADD', with args beginning with: 'testbf1' '1'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:31 @ 11/08/25 18:33:41.529
+------------------------------
+• [FAILED] [0.000 seconds]
+Probabilistic commands bloom [It] should BFCard [probabilistic, bloom, bfcard]
+/home/kerry/ws/src_learn/go-redis/probabilistic_test.go:41
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'BF.ADD', with args beginning with: 'testbf1' 'item1'
+      ERR unknown command 'BF.ADD', with args beginning with: 'testbf1' 'item1'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:47 @ 11/08/25 18:33:41.529
+------------------------------
+• [FAILED] [0.000 seconds]
+Probabilistic commands bloom [It] should BFExists [probabilistic, bloom, bfexists]
+/home/kerry/ws/src_learn/go-redis/probabilistic_test.go:59
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'BF.EXISTS', with args beginning with: 'testbf1' 'item1'
+      ERR unknown command 'BF.EXISTS', with args beginning with: 'testbf1' 'item1'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:61 @ 11/08/25 18:33:41.53
+------------------------------
+• [FAILED] [0.000 seconds]
+Probabilistic commands bloom [It] should BFInfo and BFReserve [probabilistic, bloom, bfinfo, bfreserve]
+/home/kerry/ws/src_learn/go-redis/probabilistic_test.go:73
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'BF.RESERVE', with args beginning with: 'testbf1' '0.001' '2000'
+      ERR unknown command 'BF.RESERVE', with args beginning with: 'testbf1' '0.001' '2000'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:75 @ 11/08/25 18:33:41.53
+------------------------------
+• [FAILED] [0.000 seconds]
+Probabilistic commands bloom [It] should BFInfoCapacity, BFInfoSize, BFInfoFilters, BFInfoItems, BFInfoExpansion,  [probabilistic, bloom, bfinfocapacity, bfinfosize, bfinfofilters, bfinfoitems, bfinfoexpansion]
+/home/kerry/ws/src_learn/go-redis/probabilistic_test.go:83
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'BF.RESERVE', with args beginning with: 'testbf1' '0.001' '2000'
+      ERR unknown command 'BF.RESERVE', with args beginning with: 'testbf1' '0.001' '2000'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:85 @ 11/08/25 18:33:41.53
+------------------------------
+• [FAILED] [0.000 seconds]
+Probabilistic commands bloom [It] should BFInsert [probabilistic, bloom, bfinsert]
+/home/kerry/ws/src_learn/go-redis/probabilistic_test.go:111
+
+  [FAILED] Expected
+      <proto.RedisError>:
+      ERR unknown command 'BF.INSERT', with args beginning with: 'testbf1' 'CAPACITY' '2000' 'ERROR' '0.001' 'EXPANSION' '3' 'NOCREATE' 'ITEMS' 'item1'
+      ERR unknown command 'BF.INSERT', with args beginning with: 'testbf1' 'CAPACITY' '2000' 'ERROR' '0.001' 'EXPANSION' '3' 'NOCREATE' 'ITEMS' 'item1'
+  to match error
+      <string>: ERR not found
+  In [It] at: /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:122 @ 11/08/25 18:33:41.53
+------------------------------
+• [FAILED] [0.000 seconds]
+Probabilistic commands bloom [It] should BFMAdd [probabilistic, bloom, bfmadd]
+/home/kerry/ws/src_learn/go-redis/probabilistic_test.go:147
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'BF.MADD', with args beginning with: 'testbf1' 'item1' 'item2' 'item3'
+      ERR unknown command 'BF.MADD', with args beginning with: 'testbf1' 'item1' 'item2' 'item3'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:150 @ 11/08/25 18:33:41.531
+------------------------------
+• [FAILED] [0.000 seconds]
+Probabilistic commands bloom [It] should BFMExists [probabilistic, bloom, bfmexists]
+/home/kerry/ws/src_learn/go-redis/probabilistic_test.go:165
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'BF.MEXISTS', with args beginning with: 'testbf1' 'item1' 'item2' 'item3'
+      ERR unknown command 'BF.MEXISTS', with args beginning with: 'testbf1' 'item1' 'item2' 'item3'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:167 @ 11/08/25 18:33:41.531
+------------------------------
+• [FAILED] [0.000 seconds]
+Probabilistic commands bloom [It] should BFReserveExpansion [probabilistic, bloom, bfreserveexpansion]
+/home/kerry/ws/src_learn/go-redis/probabilistic_test.go:186
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'BF.RESERVE', with args beginning with: 'testbf1' '0.001' '2000' 'EXPANSION' '3'
+      ERR unknown command 'BF.RESERVE', with args beginning with: 'testbf1' '0.001' '2000' 'EXPANSION' '3'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:188 @ 11/08/25 18:33:41.531
+------------------------------
+• [FAILED] [0.000 seconds]
+Probabilistic commands bloom [It] should BFReserveNonScaling [probabilistic, bloom, bfreservenonscaling]
+/home/kerry/ws/src_learn/go-redis/probabilistic_test.go:197
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'BF.RESERVE', with args beginning with: 'testbfns1' '0.001' '1000' 'NONSCALING'
+      ERR unknown command 'BF.RESERVE', with args beginning with: 'testbfns1' '0.001' '1000' 'NONSCALING'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:199 @ 11/08/25 18:33:41.532
+------------------------------
+• [FAILED] [0.000 seconds]
+Probabilistic commands bloom [It] should BFScanDump and BFLoadChunk [probabilistic, bloom, bfscandump, bfloadchunk]
+/home/kerry/ws/src_learn/go-redis/probabilistic_test.go:205
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'BF.RESERVE', with args beginning with: 'testbfsd1' '0.001' '3000'
+      ERR unknown command 'BF.RESERVE', with args beginning with: 'testbfsd1' '0.001' '3000'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:207 @ 11/08/25 18:33:41.532
+------------------------------
+• [FAILED] [0.000 seconds]
+Probabilistic commands bloom [It] should BFReserveWithArgs [probabilistic, bloom, bfreserveargs]
+/home/kerry/ws/src_learn/go-redis/probabilistic_test.go:230
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'BF.RESERVE', with args beginning with: 'testbf' '0.001' '2000' 'EXPANSION' '3'
+      ERR unknown command 'BF.RESERVE', with args beginning with: 'testbf' '0.001' '2000' 'EXPANSION' '3'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:238 @ 11/08/25 18:33:41.532
+------------------------------
+• [FAILED] [0.000 seconds]
+Probabilistic commands cuckoo [It] should CFAdd [probabilistic, cuckoo, cfadd]
+/home/kerry/ws/src_learn/go-redis/probabilistic_test.go:249
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'CF.ADD', with args beginning with: 'testcf1' 'item1'
+      ERR unknown command 'CF.ADD', with args beginning with: 'testcf1' 'item1'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:251 @ 11/08/25 18:33:41.533
+------------------------------
+• [FAILED] [0.000 seconds]
+Probabilistic commands cuckoo [It] should CFAddNX [probabilistic, cuckoo, cfaddnx]
+/home/kerry/ws/src_learn/go-redis/probabilistic_test.go:264
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'CF.ADDNX', with args beginning with: 'testcf1' 'item1'
+      ERR unknown command 'CF.ADDNX', with args beginning with: 'testcf1' 'item1'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:266 @ 11/08/25 18:33:41.533
+------------------------------
+• [FAILED] [0.000 seconds]
+Probabilistic commands cuckoo [It] should CFCount [probabilistic, cuckoo, cfcount]
+/home/kerry/ws/src_learn/go-redis/probabilistic_test.go:283
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'CF.COUNT', with args beginning with: 'testcf1' 'item1'
+      ERR unknown command 'CF.COUNT', with args beginning with: 'testcf1' 'item1'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:286 @ 11/08/25 18:33:41.533
+------------------------------
+• [FAILED] [0.000 seconds]
+Probabilistic commands cuckoo [It] should CFDel and CFExists [probabilistic, cuckoo, cfdel, cfexists]
+/home/kerry/ws/src_learn/go-redis/probabilistic_test.go:297
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'CF.ADD', with args beginning with: 'testcf1' 'item1'
+      ERR unknown command 'CF.ADD', with args beginning with: 'testcf1' 'item1'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:299 @ 11/08/25 18:33:41.534
+------------------------------
+• [FAILED] [0.000 seconds]
+Probabilistic commands cuckoo [It] should CFInfo and CFReserve [probabilistic, cuckoo, cfinfo, cfreserve]
+/home/kerry/ws/src_learn/go-redis/probabilistic_test.go:314
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'CF.RESERVE', with args beginning with: 'testcf1' '1000'
+      ERR unknown command 'CF.RESERVE', with args beginning with: 'testcf1' '1000'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:316 @ 11/08/25 18:33:41.534
+------------------------------
+• [FAILED] [0.000 seconds]
+Probabilistic commands cuckoo [It] should CFScanDump and CFLoadChunk [probabilistic, cuckoo, bloom, cfscandump, cfloadchunk]
+/home/kerry/ws/src_learn/go-redis/probabilistic_test.go:329
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'CF.RESERVE', with args beginning with: 'testcfsd1' '1000'
+      ERR unknown command 'CF.RESERVE', with args beginning with: 'testcfsd1' '1000'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:331 @ 11/08/25 18:33:41.534
+------------------------------
+• [FAILED] [0.000 seconds]
+Probabilistic commands cuckoo [It] should CFInfo and CFReserveWithArgs [probabilistic, cuckoo, cfinfo, cfreserveargs]
+/home/kerry/ws/src_learn/go-redis/probabilistic_test.go:355
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'CF.RESERVE', with args beginning with: 'testcf1' '2048' 'BUCKETSIZE' '3' 'MAXITERATIONS' '15' 'EXPANSION' '2'
+      ERR unknown command 'CF.RESERVE', with args beginning with: 'testcf1' '2048' 'BUCKETSIZE' '3' 'MAXITERATIONS' '15' 'EXPANSION' '2'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:364 @ 11/08/25 18:33:41.535
+------------------------------
+• [FAILED] [0.000 seconds]
+Probabilistic commands cuckoo [It] should CFInsert [probabilistic, cuckoo, cfinsert]
+/home/kerry/ws/src_learn/go-redis/probabilistic_test.go:374
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'CF.INSERT', with args beginning with: 'testcf1' 'CAPACITY' '3000' 'ITEMS' 'item1' 'item2' 'item3'
+      ERR unknown command 'CF.INSERT', with args beginning with: 'testcf1' 'CAPACITY' '3000' 'ITEMS' 'item1' 'item2' 'item3'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:389 @ 11/08/25 18:33:41.535
+------------------------------
+• [FAILED] [0.000 seconds]
+Probabilistic commands cuckoo [It] should CFInsertNX [probabilistic, cuckoo, cfinsertnx]
+/home/kerry/ws/src_learn/go-redis/probabilistic_test.go:393
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'CF.INSERTNX', with args beginning with: 'testcf2' 'CAPACITY' '3000' 'ITEMS' 'item1' 'item2' 'item2'
+      ERR unknown command 'CF.INSERTNX', with args beginning with: 'testcf2' 'CAPACITY' '3000' 'ITEMS' 'item1' 'item2' 'item2'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:408 @ 11/08/25 18:33:41.535
+------------------------------
+• [FAILED] [0.000 seconds]
+Probabilistic commands cuckoo [It] should CFMexists [probabilistic, cuckoo, cfmexists]
+/home/kerry/ws/src_learn/go-redis/probabilistic_test.go:415
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'CF.INSERT', with args beginning with: 'testcf1' 'ITEMS' 'item1' 'item2' 'item3'
+      ERR unknown command 'CF.INSERT', with args beginning with: 'testcf1' 'ITEMS' 'item1' 'item2' 'item3'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:417 @ 11/08/25 18:33:41.535
+------------------------------
+• [FAILED] [0.000 seconds]
+Probabilistic commands CMS [It] should CMSIncrBy [probabilistic, cms, cmsincrby]
+/home/kerry/ws/src_learn/go-redis/probabilistic_test.go:430
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'CMS.INITBYDIM', with args beginning with: 'testcms1' '5' '10'
+      ERR unknown command 'CMS.INITBYDIM', with args beginning with: 'testcms1' '5' '10'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:432 @ 11/08/25 18:33:41.536
+------------------------------
+• [FAILED] [0.000 seconds]
+Probabilistic commands CMS [It] should CMSInitByDim and CMSInfo [probabilistic, cms, cmsinitbydim, cmsinfo]
+/home/kerry/ws/src_learn/go-redis/probabilistic_test.go:442
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'CMS.INITBYDIM', with args beginning with: 'testcms1' '5' '10'
+      ERR unknown command 'CMS.INITBYDIM', with args beginning with: 'testcms1' '5' '10'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:444 @ 11/08/25 18:33:41.536
+------------------------------
+• [FAILED] [0.000 seconds]
+Probabilistic commands CMS [It] should CMSInitByProb [probabilistic, cms, cmsinitbyprob]
+/home/kerry/ws/src_learn/go-redis/probabilistic_test.go:454
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'CMS.INITBYPROB', with args beginning with: 'testcms1' '0.002' '0.01'
+      ERR unknown command 'CMS.INITBYPROB', with args beginning with: 'testcms1' '0.002' '0.01'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:456 @ 11/08/25 18:33:41.536
+------------------------------
+• [FAILED] [0.000 seconds]
+Probabilistic commands CMS [It] should CMSMerge, CMSMergeWithWeight and CMSQuery [probabilistic, cms, cmsmerge, cmsquery]
+/home/kerry/ws/src_learn/go-redis/probabilistic_test.go:463
+
+  [FAILED] Expected
+      <proto.RedisError>:
+      ERR unknown command 'CMS.MERGE', with args beginning with: 'destCms1' '2' 'testcms2' 'testcms3'
+      ERR unknown command 'CMS.MERGE', with args beginning with: 'destCms1' '2' 'testcms2' 'testcms3'
+  to match error
+      <string>: CMS: key does not exist
+  In [It] at: /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:466 @ 11/08/25 18:33:41.537
+------------------------------
+• [FAILED] [0.000 seconds]
+Probabilistic commands TopK [It] should TopKReserve, TopKInfo, TopKAdd, TopKQuery, TopKCount, TopKIncrBy, TopKList, TopKListWithCount [probabilistic, topk, topkreserve, topkinfo, topkadd, topkquery, topkcount, topkincrby, topklist, topklistwithcount]
+/home/kerry/ws/src_learn/go-redis/probabilistic_test.go:517
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'TOPK.RESERVE', with args beginning with: 'topk1' '3'
+      ERR unknown command 'TOPK.RESERVE', with args beginning with: 'topk1' '3'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:519 @ 11/08/25 18:33:41.537
+------------------------------
+• [FAILED] [0.000 seconds]
+Probabilistic commands TopK [It] should TopKReserveWithOptions [probabilistic, topk, topkreservewithoptions]
+/home/kerry/ws/src_learn/go-redis/probabilistic_test.go:568
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'TOPK.RESERVE', with args beginning with: 'topk1' '3' '1500' '8' '0.5'
+      ERR unknown command 'TOPK.RESERVE', with args beginning with: 'topk1' '3' '1500' '8' '0.5'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:570 @ 11/08/25 18:33:41.537
+------------------------------
+• [FAILED] [0.000 seconds]
+Probabilistic commands t-digest [It] should TDigestAdd, TDigestCreate, TDigestInfo, TDigestByRank, TDigestByRevRank, TDigestCDF, TDigestMax, TDigestMin, TDigestQuantile, TDigestRank, TDigestRevRank, TDigestTrimmedMean, TDigestReset,  [probabilistic, tdigest, tdigestadd, tdigestcreate, tdigestinfo, tdigestbyrank, tdigestbyrevrank, tdigestcdf, tdigestmax, tdigestmin, tdigestquantile, tdigestrank, tdigestrevrank, tdigesttrimmedmean, tdigestreset]
+/home/kerry/ws/src_learn/go-redis/probabilistic_test.go:582
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'TDIGEST.CREATE', with args beginning with: 'tdigest1'
+      ERR unknown command 'TDIGEST.CREATE', with args beginning with: 'tdigest1'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:584 @ 11/08/25 18:33:41.538
+------------------------------
+• [FAILED] [0.000 seconds]
+Probabilistic commands t-digest [It] should TDigestCreateWithCompression [probabilistic, tdigest, tcreatewithcompression]
+/home/kerry/ws/src_learn/go-redis/probabilistic_test.go:691
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'TDIGEST.CREATE', with args beginning with: 'tdigest1' 'COMPRESSION' '2000'
+      ERR unknown command 'TDIGEST.CREATE', with args beginning with: 'tdigest1' 'COMPRESSION' '2000'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:693 @ 11/08/25 18:33:41.538
+------------------------------
+• [FAILED] [0.000 seconds]
+Probabilistic commands t-digest [It] should TDigestMerge [probabilistic, tdigest, tmerge]
+/home/kerry/ws/src_learn/go-redis/probabilistic_test.go:700
+
+  [FAILED] Unexpected error:
+      <proto.RedisError>:
+      ERR unknown command 'TDIGEST.CREATE', with args beginning with: 'tdigest1'
+      ERR unknown command 'TDIGEST.CREATE', with args beginning with: 'tdigest1'
+  occurred
+  In [It] at: /home/kerry/ws/src_learn/go-redis/probabilistic_test.go:702 @ 11/08/25 18:33:41.538
