@@ -1,0 +1,4037 @@
+> test
+> npm run test -ws --if-present --redis-version=7.2
+
+
+> @redis/client@5.8.3 test
+> nyc -r text-summary -r lcov mocha -r tsx './lib/**/*.spec.ts'
+
+Skipping test hGetDel empty single field because server version 7.2 is not within range 8 - LATEST
+Skipping test hGetDel empty multiple fields because server version 7.2 is not within range 8 - LATEST
+Skipping test hGetDel partially populated multiple fields because server version 7.2 is not within range 8 - LATEST
+Skipping test hGetEx empty single field because server version 7.2 is not within range 8 - LATEST
+Skipping test hGetEx empty multiple fields because server version 7.2 is not within range 8 - LATEST
+Skipping test hGetEx set expiry because server version 7.2 is not within range 8 - LATEST
+Skipping test gGetEx set expiry PERSIST because server version 7.2 is not within range 8 - LATEST
+Skipping test hSetEx calls because server version 7.2 is not within range 8 - LATEST
+
+
+  TokenManager
+    constructor validation
+      ✔ should throw error if ratio is greater than 1
+      ✔ should throw error if ratio is negative
+      ✔ should accept ratio of 1
+      ✔ should accept ratio of 0
+    calculateRefreshTime
+      ✔ should calculate correct refresh time with 0.8 ratio
+      ✔ should return 0 for ratio of 0
+      ✔ should refresh at expiration time with ratio of 1
+      ✔ should handle short TTL tokens
+      ✔ should handle expired tokens
+      token refresh scenarios
+        token refresh
+          ✔ should handle token refresh (223ms)
+    TokenManager error handling
+      error scenarios
+        ✔ should not recover if retries are not enabled (203ms)
+        ✔ should handle retries with exponential backoff (464ms)
+        ✔ should stop after max retries exceeded (467ms)
+    TokenManager retry delay calculations
+      calculateRetryDelay
+        ✔ should apply exponential backoff
+        ✔ should respect maxDelayMs
+        ✔ should return 0 when no retry config is present
+
+  Client Side Cache
+    ✔ should reflect comprehensive cache operations in stats via BasicClientSideCache
+    Basic Cache
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6379, Mode: server
+      ✔ Basic Cache Miss (63ms)
+      ✔ Basic Cache Hit
+      ✔ Max Cache Entries (40ms)
+      ✔ LRU works correctly (54ms)
+      ✔ Basic Cache Clear (49ms)
+      ✔ Null Invalidate acts as clear (44ms)
+      ✔ flushdb causes an invalidate null (43ms)
+      ✔ Basic Cache Invalidate (50ms)
+      ✔ Cached Replies Don't Mutate (39ms)
+      ✔ Cached cleared on disconnect (40ms)
+    Pooled Cache
+      ✔ Virtual Pool Disconnect (63ms)
+      ✔ Basic Cache Miss and Clear (62ms)
+      ✔ Basic Cache Hit (59ms)
+      ✔ Basic Cache Manually Invalidate (52ms)
+      ✔ Basic Cache Invalidate via message (52ms)
+    Cluster Caching
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6380, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6381, Mode: server
+      ✔ Basic Cache Miss and Clear (46ms)
+      ✔ Basic Cache Hit
+      ✔ Basic Cache Invalidate
+    CacheStats
+      CacheStats.of()
+        ✔ should correctly initialize stats and calculate derived values
+        ✔ should handle zero values and division by zero for derived values
+      CacheStats.empty()
+        ✔ should return stats with all zero counts and 0 for rates/penalties
+      instance methods
+        plus()
+          ✔ should correctly add two CacheStats instances
+          ✔ should correctly sum large numbers
+        minus()
+          ✔ should correctly subtract one CacheStats instance from another, flooring at 0
+          ✔ should floor results at 0 if minuend is smaller than subtrahend
+        hitRate()
+          ✔ should return 0 if requestCount is 0
+          ✔ should return 0 if hitCount is 0 but missCount > 0
+          ✔ should return 1 if missCount is 0 but hitCount > 0
+        missRate()
+          ✔ should return 0 if requestCount is 0
+          ✔ should return 1 if hitCount is 0 but missCount > 0
+          ✔ should return 0 if missCount is 0 but hitCount > 0
+        loadFailureRate()
+          ✔ should return 0 if loadCount is 0
+          ✔ should return 0 if loadFailureCount is 0 but loadSuccessCount > 0
+          ✔ should return 1 if loadSuccessCount is 0 but loadFailureCount > 0
+        averageLoadPenalty()
+          ✔ should return 0 if loadCount is 0, even if totalLoadTime > 0
+          ✔ should return 0 if totalLoadTime is 0 and loadCount > 0
+
+  FUNCTION LOAD
+    ✔ client.functionLoad (41ms)
+    transformArguments
+      ✔ simple
+      ✔ with REPLACE
+
+  Client
+    ✔ should set connection name (48ms)
+    ✔ scripts (64ms)
+    ✔ modules (70ms)
+    ✔ functions (72ms)
+    ✔ duplicate should reuse command options
+    ✔ should reconnect when socket disconnects (46ms)
+    ✔ should remember selected db (38ms)
+    ✔ scanIterator
+    ✔ hScanIterator (38ms)
+    - hScanNoValuesIterator
+    ✔ sScanIterator (43ms)
+    ✔ zScanIterator (53ms)
+    ✔ ConnectionTimeoutError
+    ✔ client.quit
+    ✔ client.disconnect
+    ✔ should be able to connect after disconnect (see #1801) (47ms)
+    ✔ should be able to use ref and unref (47ms)
+    ✔ pingInterval (56ms)
+    ✔ should reject commands in connect phase when `disableOfflineQueue`
+    initialization
+      clientSideCache validation
+        ✔ should throw error when clientSideCache is enabled with RESP 2
+        ✔ should throw error when clientSideCache is enabled with RESP undefined
+        ✔ should not throw when clientSideCache is enabled with RESP 3
+    parseURL
+      ✔ redis://user:secret@localhost:6379/0
+      ✔ rediss://user:secret@localhost:6379/0
+      ✔ Invalid protocol
+      ✔ Invalid pathname
+      ✔ redis://localhost
+      ✔ DB in URL should be parsed
+    parseOptions
+      ✔ should throw error if tls socket option is set to true and the url protocol is "redis:"
+      ✔ should throw error if tls socket option is set to false and the url protocol is "rediss:"
+      ✔ should not throw when tls socket option and url protocol matches"
+    authentication
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6382, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6383, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6384, Mode: server
+      ✔ Client should be authenticated (57ms)
+      ✔ Client can authenticate asynchronously  (59ms)
+disposing credentials provider subscription
+      ✔ Client can authenticate using the streaming credentials provider for initial token acquisition (42ms)
+      ✔ should execute AUTH before SELECT (51ms)
+    sendCommand
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6385, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6386, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6387, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6388, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6389, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6390, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6391, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6392, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6393, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6394, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6395, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6396, Mode: sentinel
+      ✔ PING (78ms)
+      ✔ Unactivated AbortController should not abort (41ms)
+      ✔ AbortError (58ms)
+      ✔ Timeout with custom timeout config (59ms)
+      ✔ Timeout with custom timeout config (cluster) (81ms)
+      ✔ Timeout with custom timeout config (sentinel) (86ms)
+      ✔ Timeout with global timeout config (95ms)
+      ✔ Timeout with global timeout config (cluster) (74ms)
+      ✔ Timeout with global timeout config (sentinel) (106ms)
+      ✔ undefined and null should not break the client (80ms)
+    multi
+      ✔ simple (57ms)
+      ✔ should reject the whole chain on error (58ms)
+      ✔ should reject the whole chain upon client disconnect
+      ✔ with script (74ms)
+      ✔ WatchError (69ms)
+      ✔ should remember selected db (46ms)
+      ✔ should handle error replies (#2665) (42ms)
+      execAsPipeline
+        ✔ exec(true) (57ms)
+        ✔ empty execAsPipeline (57ms)
+    PubSub
+      ✔ should be able to publish and subscribe to messages (211ms)
+      ✔ should resubscribe (102ms)
+      ✔ should not fail when message arrives right after subscribe (56ms)
+      ✔ should be able to quit in PubSub mode
+    MONITOR
+      ✔ should be able to monitor commands (89ms)
+      ✔ should keep monitoring after reconnection (91ms)
+      ✔ should be able to go back to "normal mode" (42ms)
+      ✔ should respect type mapping (98ms)
+
+  Legacy Mode
+    client.sendCommand
+      ✔ resolve (59ms)
+      ✔ reject (62ms)
+      ✔ reject without a callback (59ms)
+    hGetAll (TRANSFORM_LEGACY_REPLY)
+      ✔ resolve (47ms)
+      ✔ reject
+    client.set
+      ✔ vardict (51ms)
+      ✔ array (54ms)
+      ✔ vardict & arrays (51ms)
+      ✔ reject without a callback (62ms)
+    client.multi
+      ✔ resolve (67ms)
+      ✔ reject (46ms)
+      ✔ reject without a callback (61ms)
+
+  DoublyLinkedList
+    ✔ should start empty
+    ✔ shift empty
+    ✔ push 1
+    ✔ push 2
+    ✔ unshift 0
+    ✔ remove middle node
+    ✔ remove head
+    ✔ remove tail
+    ✔ unshift empty queue
+    ✔ push 1
+    ✔ shift
+    ✔ shift last element
+
+  SinglyLinkedList
+    ✔ should start empty
+    ✔ shift empty
+    ✔ push 1
+    ✔ push 2
+    ✔ push 3
+    ✔ shift 1
+    ✔ shift 2
+    ✔ shift 3
+    ✔ should be empty
+
+  RedisClientPool
+    ✔ sendCommand (50ms)
+    ✔ proper error propagation in sequential operations
+
+  PubSub
+    ✔ subscribe to already subscribed channel
+    ✔ unsubscribe all
+    subscribe to new channel
+      ✔ resolve
+      ✔ reject
+    unsubscribe from channel
+      ✔ when not subscribed
+      ✔ when already subscribed
+    unsubscribe from listener
+      ✔ when it's the only listener
+      ✔ when there are more listeners
+      non-existing listener
+        ✔ on subscribed channel
+        ✔ on unsubscribed channel
+
+  Socket
+    reconnectStrategy
+      ✔ false
+      ✔ 0
+      ✔ custom strategy
+      ✔ should handle errors (214ms)
+    socketTimeout
+      ✔ should timeout with positive socketTimeout values (143ms)
+      ✔ should not timeout with undefined socketTimeout (154ms)
+
+  RedisClusterSlots
+    initialization
+      clientSideCache validation
+        ✔ should throw error when clientSideCache is enabled with RESP 2
+        ✔ should throw error when clientSideCache is enabled with RESP undefined
+        ✔ should not throw when clientSideCache is enabled with RESP 3
+
+  Cluster
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6397, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6398, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6399, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6400, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6401, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6402, Mode: server
+    ✔ sendCommand (74ms)
+    ✔ isOpen
+    ✔ connect should throw if already connected
+    ✔ multi
+    ✔ scripts (53ms)
+    ✔ should throw RootNodesUnavailableError
+    ✔ should handle live resharding (102ms)
+    ✔ getRandomNode should spread the the load evenly
+    ✔ getSlotRandomNode should spread the the load evenly
+    ✔ cluster topology
+    ✔ getMasters should be backwards competiable (without `minimizeConnections`) (56ms)
+    ✔ getSlotMaster should be backwards competiable (without `minimizeConnections`) (41ms)
+    ✔ should throw CROSSSLOT error (47ms)
+    minimizeConnections
+      ✔ false (66ms)
+      ✔ true
+    PubSub
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6403, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6404, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6405, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6406, Mode: server
+      ✔ subscribe & unsubscribe (89ms)
+      ✔ psubscribe & punsubscribe (75ms)
+      ✔ should move listeners when PubSub node disconnects from the cluster (228ms)
+      ✔ ssubscribe & sunsubscribe (127ms)
+      ✔ should handle sharded-channel-moved events (105ms)
+
+  ACL CAT
+    ✔ client.aclCat (73ms)
+    transformArguments
+      ✔ simple
+      ✔ with categoryName
+
+  ACL DELUSER
+    ✔ client.aclDelUser (48ms)
+    transformArguments
+      ✔ string
+      ✔ array
+
+  ACL DRYRUN
+    ✔ transformArguments
+    ✔ client.aclDryRun (51ms)
+
+  ACL GENPASS
+    ✔ client.aclGenPass (47ms)
+    transformArguments
+      ✔ simple
+      ✔ with bits
+
+  ACL GETUSER
+    ✔ transformArguments
+    ✔ client.aclGetUser (47ms)
+
+  ACL LIST
+    ✔ transformArguments
+    ✔ client.aclList (47ms)
+
+  ACL LOAD
+    ✔ transformArguments
+
+  ACL LOG RESET
+    ✔ transformArguments
+    ✔ client.aclLogReset (46ms)
+
+  ACL LOG
+    ✔ client.aclLog (47ms)
+    transformArguments
+      ✔ simple
+      ✔ with count
+
+  ACL SAVE
+    ✔ transformArguments
+
+  ACL SETUSER
+    transformArguments
+      ✔ string
+      ✔ array
+
+  ACL USERS
+    ✔ transformArguments
+
+  ACL WHOAMI
+    ✔ transformArguments
+
+  APPEND
+    ✔ transformArguments
+    ✔ client.append (44ms)
+    ✔ cluster.append (63ms)
+
+  ASKING
+    ✔ transformArguments
+
+  AUTH
+    transformArguments
+      ✔ password only
+      ✔ username & password
+
+  BGREWRITEAOF
+    ✔ transformArguments
+    ✔ client.bgRewriteAof (59ms)
+
+  BGSAVE
+    ✔ client.bgSave (72ms)
+    transformArguments
+      ✔ simple
+      ✔ with SCHEDULE
+
+  BITCOUNT
+    ✔ client.bitCount (45ms)
+    ✔ cluster.bitCount (49ms)
+    parseCommand
+      ✔ simple
+      with range
+        ✔ simple
+        ✔ with mode
+
+  BITFIELD_RO
+    ✔ parseCommand
+    ✔ client.bitFieldRo (52ms)
+    ✔ cluster.bitFieldRo (42ms)
+
+  BITFIELD
+    ✔ transformArguments
+    ✔ client.bitField (63ms)
+    ✔ cluster.bitField (48ms)
+
+  BITOP
+    ✔ client.bitOp AND with non-existing keys (65ms)
+    ✔ cluster.bitOp AND with non-existing keys
+    ✔ client.bitOp AND with existing keys (48ms)
+    ✔ cluster.bitOp AND with existing keys (43ms)
+    ✔ client.bitOp OR with non-existing keys (65ms)
+    ✔ cluster.bitOp OR with non-existing keys (49ms)
+    ✔ client.bitOp OR with existing keys (54ms)
+    ✔ cluster.bitOp OR with existing keys (44ms)
+    ✔ client.bitOp XOR with non-existing keys (47ms)
+    ✔ cluster.bitOp XOR with non-existing keys (43ms)
+    ✔ client.bitOp XOR with existing keys (66ms)
+    ✔ cluster.bitOp XOR with existing keys
+    ✔ client.bitOp NOT with non-existing keys (66ms)
+    ✔ cluster.bitOp NOT with non-existing keys (49ms)
+    ✔ client.bitOp NOT with existing keys (56ms)
+    ✔ cluster.bitOp NOT with existing keys (43ms)
+    - client.bitOp DIFF with non-existing keys
+    - cluster.bitOp DIFF with non-existing keys
+    - client.bitOp DIFF with existing keys
+    - cluster.bitOp DIFF with existing keys
+    - client.bitOp DIFF1 with non-existing keys
+    - cluster.bitOp DIFF1 with non-existing keys
+    - client.bitOp DIFF1 with existing keys
+    - cluster.bitOp DIFF1 with existing keys
+    - client.bitOp ANDOR with non-existing keys
+    - cluster.bitOp ANDOR with non-existing keys
+    - client.bitOp ANDOR with existing keys
+    - cluster.bitOp ANDOR with existing keys
+    - client.bitOp ONE with non-existing keys
+    - cluster.bitOp ONE with non-existing keys
+    - client.bitOp ONE with existing keys
+    - cluster.bitOp ONE with existing keys
+    transformArguments
+      ✔ single key
+      ✔ multiple keys
+
+  BITPOS
+    ✔ client.bitPos (52ms)
+    ✔ cluster.bitPos (44ms)
+    parseCommand
+      ✔ simple
+      ✔ with start
+      ✔ with start and end
+      ✔ with start, end and mode
+
+  BLMOVE
+    ✔ transformArguments
+    ✔ client.blMove - null (78ms)
+    ✔ cluster.blMove - null (140ms)
+    ✔ client.blMove - with member (64ms)
+    ✔ cluster.blMove - with member
+
+  BLMPOP
+    ✔ client.blmPop - null (56ms)
+    ✔ cluster.blmPop - null (64ms)
+    ✔ client.blmPop - with member (54ms)
+    ✔ cluster.blmPop - with member (44ms)
+    transformArguments
+      ✔ simple
+      ✔ with COUNT
+
+  BLPOP
+    ✔ client.blPop - null (79ms)
+    ✔ cluster.blPop - null (102ms)
+    ✔ client.blPop - with member (56ms)
+    ✔ cluster.blPop - with member (50ms)
+    transformArguments
+      ✔ single
+      ✔ multiple
+
+  BRPOP
+    ✔ client.brPop - null (78ms)
+    ✔ cluster.brPop - null (48ms)
+    ✔ client.brPopblPop - with member (55ms)
+    ✔ cluster.brPopblPop - with member (45ms)
+    transformArguments
+      ✔ single
+      ✔ multiple
+
+  BRPOPLPUSH
+    ✔ transformArguments
+    ✔ client.brPopLPush - null (75ms)
+    ✔ cluster.brPopLPush - null (82ms)
+    ✔ client.brPopLPush - with member (68ms)
+    ✔ cluster.brPopLPush - with member (42ms)
+
+  BZMPOP
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6407, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6408, Mode: server
+    ✔ client.bzmPop - null (107ms)
+    ✔ cluster.bzmPop - null (163ms)
+    ✔ client.bzmPop - with member (73ms)
+    ✔ cluster.bzmPop - with member (43ms)
+    transformArguments
+      ✔ simple
+      ✔ with COUNT
+
+  BZPOPMAX
+    ✔ client.bzPopMax - null (119ms)
+    ✔ cluster.bzPopMax - null (69ms)
+    ✔ client.bzPopMax - with member (67ms)
+    ✔ cluster.bzPopMax - with member
+    transformArguments
+      ✔ single
+      ✔ multiple
+
+  BZPOPMIN
+    ✔ client.bzPopMin - null (88ms)
+    ✔ cluster.bzPopMin - null (103ms)
+    ✔ client.bzPopMin - with member
+    ✔ cluster.bzPopMin - with member
+    transformArguments
+      ✔ single
+      ✔ multiple
+
+  CLIENT CACHING
+    transformArguments
+      ✔ true
+      ✔ false
+
+  CLIENT GETNAME
+    ✔ transformArguments
+    ✔ client.clientGetName (55ms)
+
+  CLIENT GETREDIR
+    ✔ transformArguments
+
+  CLIENT ID
+    ✔ transformArguments
+    ✔ client.clientId (41ms)
+
+  CLIENT INFO
+    ✔ transformArguments
+    ✔ client.clientInfo (43ms)
+    ✔ client.clientInfo Redis < 7 (41ms)
+    ✔ client.clientInfo Redis>=7 info disabled  [7] - [LATEST]  (56ms)
+    ✔ client.clientInfo Redis>=7 resp unset, info enabled, tag set  [7] - [LATEST]  (66ms)
+    ✔ client.clientInfo Redis>=7 resp unset, info enabled, tag unset  [7] - [LATEST]  (62ms)
+    ✔ client.clientInfo Redis>=7 resp2 info enabled  [7] - [LATEST]  (72ms)
+    ✔ client.clientInfo Redis>=7 resp2 info disabled  [7] - [LATEST]  (70ms)
+    ✔ client.clientInfo Redis>=7 resp3 info enabled  [7] - [LATEST]  (67ms)
+    ✔ client.clientInfo Redis>=7 resp3 info disabled  [7] - [LATEST]  (56ms)
+
+  CLIENT KILL
+    transformArguments
+      ✔ ADDRESS
+      ✔ LOCAL_ADDRESS
+      ✔ TYPE
+      ✔ USER
+      ✔ MAXAGE
+      ✔ TYPE & SKIP_ME
+      ID
+        ✔ string
+        ✔ number
+      SKIP_ME
+        ✔ undefined
+        ✔ true
+        ✔ false
+
+  CLIENT LIST
+    ✔ client.clientList (64ms)
+    transformArguments
+      ✔ simple
+      ✔ with TYPE
+      ✔ with ID
+
+  CLIENT NO-EVICT
+    ✔ client.clientNoEvict (47ms)
+    transformArguments
+      ✔ true
+      ✔ false
+
+  CLIENT NO-TOUCH
+    ✔ client.clientNoTouch (46ms)
+    transformArguments
+      ✔ true
+      ✔ false
+
+  CLIENT PAUSE
+    ✔ client.clientPause (48ms)
+    transformArguments
+      ✔ simple
+      ✔ with mode
+
+  CLIENT SETNAME
+    ✔ transformArguments
+    ✔ client.clientSetName (46ms)
+
+  CLIENT TRACKING
+    ✔ client.clientTracking (47ms)
+    transformArguments
+      ✔ false
+      true
+        ✔ simple
+        ✔ with REDIRECT
+        ✔ with OPTIN
+        ✔ with OPTOUT
+        ✔ with NOLOOP
+        with BCAST
+          ✔ simple
+          with PREFIX
+            ✔ string
+            ✔ array
+
+  CLIENT TRACKINGINFO
+    ✔ transformArguments
+    ✔ client.clientTrackingInfo
+
+  CLIENT UNPAUSE
+    ✔ transformArguments
+    ✔ client.clientUnpause (41ms)
+
+  CLUSTER ADDSLOTS
+    transformArguments
+      ✔ single
+      ✔ multiple
+
+  CLUSTER ADDSLOTSRANGE
+    transformArguments
+      ✔ single
+      ✔ multiple
+
+  CLUSTER BUMPEPOCH
+    ✔ transformArguments
+    ✔ clusterNode.clusterBumpEpoch
+
+  CLUSTER COUNT-FAILURE-REPORTS
+    ✔ transformArguments
+    ✔ clusterNode.clusterCountFailureReports (41ms)
+
+  CLUSTER COUNTKEYSINSLOT
+    ✔ transformArguments
+    ✔ clusterNode.clusterCountKeysInSlot
+
+  CLUSTER DELSLOTS
+    transformArguments
+      ✔ single
+      ✔ multiple
+
+  CLUSTER DELSLOTSRANGE
+    transformArguments
+      ✔ single
+      ✔ multiple
+
+  CLUSTER FAILOVER
+    transformArguments
+      ✔ simple
+      ✔ with mode
+
+  CLUSTER FLUSHSLOTS
+    ✔ transformArguments
+
+  CLUSTER FORGET
+    ✔ transformArguments
+
+  CLUSTER GETKEYSINSLOT
+    ✔ transformArguments
+    ✔ clusterNode.clusterGetKeysInSlot
+
+  CLUSTER INFO
+    ✔ transformArguments
+    ✔ clusterNode.clusterInfo
+
+  CLUSTER KEYSLOT
+    ✔ transformArguments
+    ✔ clusterNode.clusterKeySlot
+
+  CLUSTER LINKS
+    ✔ transformArguments
+    ✔ clusterNode.clusterLinks
+
+  CLUSTER MEET
+    ✔ transformArguments
+
+  CLUSTER MYID
+    ✔ transformArguments
+    ✔ clusterNode.clusterMyId
+
+  CLUSTER MYSHARDID
+    ✔ transformArguments
+    ✔ clusterNode.clusterMyShardId
+
+  CLUSTER NODES
+    ✔ transformArguments
+    ✔ clusterNode.clusterNodes
+
+  CLUSTER REPLICAS
+    ✔ transformArguments
+    ✔ clusterNode.clusterReplicas
+
+  CLUSTER REPLICATE
+    ✔ transformArguments
+
+  CLUSTER RESET
+    transformArguments
+      ✔ simple
+      ✔ with mode
+
+  CLUSTER SAVECONFIG
+    ✔ transformArguments
+    ✔ clusterNode.clusterSaveConfig (48ms)
+
+  CLUSTER SET-CONFIG-EPOCH
+    ✔ transformArguments
+
+  CLUSTER SETSLOT
+    transformArguments
+      ✔ simple
+      ✔ with nodeId
+
+  CLUSTER SLOTS
+    ✔ transformArguments
+    ✔ clusterNode.clusterSlots (70ms)
+
+  COMMAND COUNT
+    ✔ transformArguments
+    ✔ client.commandCount (59ms)
+
+  COMMAND GETKEYS
+    ✔ transformArguments
+    ✔ client.commandGetKeys (48ms)
+
+  COMMAND LIST
+    ✔ client.commandList (47ms)
+    transformArguments
+      ✔ simple
+      with FILTERBY
+        ✔ MODULE
+        ✔ ACLCAT
+        ✔ PATTERN
+
+  CONFIG GET
+    ✔ client.configGet (49ms)
+    ✔ client.configSet.getSearchConfigSettingTest | Redis >= 8 (41ms)
+    ✔ client.configSet.getTSConfigSettingTest | Redis >= 8
+    ✔ client.configSet.getBFConfigSettingTest | Redis >= 8
+    ✔ client.configSet.getCFConfigSettingTest | Redis >= 8 (48ms)
+    transformArguments
+      ✔ string
+      ✔ Array
+
+  CONFIG RESETSTAT
+    ✔ transformArguments
+
+  CONFIG REWRITE
+    ✔ transformArguments
+
+  CONFIG SET
+    ✔ client.configSet (45ms)
+    ✔ client.configSet.setReadOnlySearchConfigTest | Redis >= 8 (54ms)
+    transformArguments
+      ✔ set one parameter (old version)
+      ✔ set muiltiple parameters
+
+  COPY
+    ✔ client.copy
+    ✔ cluster.copy (43ms)
+    transformArguments
+      ✔ simple
+      ✔ with destination DB flag
+      ✔ with replace flag
+      ✔ with both flags
+
+  DBSIZE
+    ✔ transformArguments
+    ✔ client.dbSize (64ms)
+
+  DECR
+    ✔ transformArguments
+    ✔ client.decr (47ms)
+    ✔ cluster.decr (49ms)
+
+  DECRBY
+    ✔ transformArguments
+    ✔ client.decrBy (59ms)
+    ✔ cluster.decrBy (38ms)
+
+  DEL
+    ✔ client.del (61ms)
+    ✔ cluster.del
+    transformArguments
+      ✔ string
+      ✔ array
+
+  DISCARD
+    ✔ transformArguments
+
+  DUMP
+    ✔ transformArguments
+    ✔ client.client.dump (60ms)
+    ✔ cluster.client.dump (49ms)
+
+  ECHO
+    ✔ transformArguments
+    ✔ client.echo (56ms)
+
+  EVAL_RO
+    ✔ transformArguments
+    ✔ client.evalRo (38ms)
+    ✔ cluster.evalRo (44ms)
+
+  EVAL
+    ✔ transformArguments
+    ✔ client.eval (77ms)
+    ✔ cluster.eval (42ms)
+
+  EVALSHA_RO
+    ✔ transformArguments
+
+  EVALSHA
+    ✔ transformArguments
+
+  EXISTS
+    ✔ client.exists (63ms)
+    ✔ cluster.exists (43ms)
+    parseCommand
+      ✔ string
+      ✔ array
+
+  EXPIRE
+    ✔ client.expire (53ms)
+    ✔ cluster.expire
+    transformArguments
+      ✔ simple
+      ✔ with set option
+
+  EXPIREAT
+    ✔ client.expireAt (41ms)
+    ✔ cluster.expireAt (43ms)
+    transformArguments
+      ✔ number
+      ✔ date
+      ✔ with set option
+
+  EXPIRETIME
+    ✔ transformArguments
+    ✔ client.expireTime (64ms)
+    ✔ cluster.expireTime (46ms)
+
+  FAILOVER
+    transformArguments
+      ✔ simple
+      ✔ with ABORT
+      ✔ with TIMEOUT
+      ✔ with TO, ABORT, TIMEOUT
+      with TO
+        ✔ simple
+        ✔ with FORCE
+
+  FCALL_RO
+    ✔ transformArguments
+    ✔ client.fCallRo (54ms)
+
+  FCALL
+    ✔ transformArguments
+    ✔ client.fCall (47ms)
+
+  FLUSHALL
+    ✔ client.flushAll (72ms)
+    transformArguments
+      ✔ default
+      ✔ ASYNC
+      ✔ SYNC
+
+  FLUSHDB
+    ✔ client.flushDb (47ms)
+    transformArguments
+      ✔ default
+      ✔ ASYNC
+      ✔ SYNC
+
+  FUNCTION DELETE
+    ✔ transformArguments
+    ✔ client.functionDelete (46ms)
+
+  FUNCTION DUMP
+    ✔ transformArguments
+    ✔ client.functionDump (47ms)
+
+  FUNCTION FLUSH
+    ✔ client.functionFlush (48ms)
+    transformArguments
+      ✔ simple
+      ✔ with mode
+
+  FUNCTION KILL
+    ✔ transformArguments
+
+  FUNCTION LIST WITHCODE
+    ✔ client.functionListWithCode (46ms)
+    transformArguments
+      ✔ simple
+      ✔ with LIBRARYNAME
+
+  FUNCTION LIST
+    ✔ client.functionList (46ms)
+    transformArguments
+      ✔ simple
+      ✔ with LIBRARYNAME
+
+  FUNCTION RESTORE
+    ✔ client.functionRestore (46ms)
+    transformArguments
+      ✔ simple
+      ✔ with mode
+
+  FUNCTION STATS
+    ✔ transformArguments
+    ✔ client.functionStats (48ms)
+
+  GEOADD
+    ✔ client.geoAdd (48ms)
+    ✔ cluster.geoAdd (38ms)
+    transformArguments
+      ✔ one member
+      ✔ multiple members
+      ✔ with condition
+      ✔ with NX (backwards compatibility)
+      ✔ with CH
+      ✔ with condition, CH
+
+  GEODIST
+    ✔ client.geoDist null (58ms)
+    ✔ cluster.geoDist null (43ms)
+    ✔ client.geoDist with member (60ms)
+    ✔ cluster.geoDist with member
+    transformArguments
+      ✔ simple
+      ✔ with unit
+
+  GEOHASH
+    ✔ client.geoHash (50ms)
+    ✔ cluster.geoHash (42ms)
+    transformArguments
+      ✔ single member
+      ✔ multiple members
+
+  GEOPOS
+    ✔ client.geoPos null (64ms)
+    ✔ cluster.geoPos null (55ms)
+    ✔ client.geoPos with member (48ms)
+    ✔ cluster.geoPos with member (47ms)
+    transformArguments
+      ✔ single member
+      ✔ multiple members
+
+  compareWithPrecision
+    ✔ should match exact same numbers
+    ✔ should match when actual has more precision than needed
+    ✔ should match when expected has more precision than needed
+    ✔ should fail when decimals differ within precision
+    ✔ should handle negative numbers
+    ✔ should fail when integer parts differ
+    ✔ should handle zero decimal places
+    ✔ should handle numbers without decimal points
+    ✔ should handle one number without decimal point
+    ✔ should match Redis coordinates with different precision
+    ✔ should match Redis latitude with different precision
+
+  GEORADIUS_RO WITH
+    ✔ transformArguments
+    ✔ client.geoRadiusRoWith (65ms)
+    ✔ cluster.geoRadiusRoWith (49ms)
+
+  GEORADIUS_RO
+    ✔ transformArguments
+    ✔ client.geoRadiusRo (59ms)
+    ✔ cluster.geoRadiusRo (43ms)
+
+  GEORADIUS STORE
+    ✔ client.geoRadiusStore (60ms)
+    ✔ cluster.geoRadiusStore (43ms)
+    transformArguments
+      ✔ STORE
+      ✔ STOREDIST
+
+  GEORADIUS WITH
+    ✔ transformArguments
+    ✔ client.geoRadiusWith (59ms)
+    ✔ cluster.geoRadiusWith
+
+  GEORADIUS
+    ✔ transformArguments
+    ✔ client.geoRadius (59ms)
+    ✔ cluster.geoRadius (43ms)
+
+  GEORADIUSBYMEMBER_RO WITH
+    ✔ transformArguments
+    ✔ client.geoRadiusByMemberRoWith (66ms)
+    ✔ cluster.geoRadiusByMemberRoWith (43ms)
+
+  GEORADIUSBYMEMBER_RO
+    ✔ transformArguments
+    ✔ client.geoRadiusByMemberRo (60ms)
+    ✔ cluster.geoRadiusByMemberRo (42ms)
+
+  GEORADIUSBYMEMBER STORE
+    ✔ client.geoRadiusByMemberStore (59ms)
+    ✔ cluster.geoRadiusByMemberStore (44ms)
+    transformArguments
+      ✔ STORE
+      ✔ STOREDIST
+
+  GEORADIUSBYMEMBER WITH
+    ✔ transformArguments
+    ✔ client.geoRadiusByMemberWith (60ms)
+    ✔ cluster.geoRadiusByMemberWith (42ms)
+
+  GEORADIUSBYMEMBER
+    ✔ transformArguments
+    ✔ client.geoRadiusByMember (54ms)
+    ✔ cluster.geoRadiusByMember (44ms)
+
+  GEOSEARCH WITH
+    ✔ transformArguments
+    ✔ client..geoSearchWith (42ms)
+    ✔ cluster..geoSearchWith
+
+  GEOSEARCH
+    ✔ client.geoSearch (61ms)
+    ✔ cluster.geoSearch (38ms)
+    transformArguments
+      ✔ FROMMEMBER, BYRADIUS, without options
+      ✔ FROMLONLAT, BYBOX, without options
+      ✔ with SORT
+      with COUNT
+        ✔ number
+        ✔ with ANY
+
+  GEOSEARCHSTORE
+    ✔ client.geoSearchStore (66ms)
+    ✔ cluster.geoSearchStore (48ms)
+    transformArguments
+      ✔ simple
+      ✔ with STOREDIST
+
+  GET
+    ✔ transformArguments
+    ✔ client.get (52ms)
+    ✔ cluster.get
+
+  GETBIT
+    ✔ processCommand
+    ✔ client.getBit (53ms)
+    ✔ cluster.getBit (42ms)
+
+  GETDEL
+    ✔ transformArguments
+    ✔ client.getDel (65ms)
+    ✔ cluster.getDel (50ms)
+
+  GETEX
+    ✔ client.getEx (55ms)
+    ✔ cluster.getEx (46ms)
+    transformArguments
+      ✔ EX | PX
+      ✔ EX (backwards compatibility)
+      ✔ PX (backwards compatibility)
+      ✔ PERSIST (backwards compatibility)
+      EXAT | PXAT
+        ✔ number
+        ✔ date
+      EXAT (backwards compatibility)
+        ✔ number
+        ✔ date
+      PXAT (backwards compatibility)
+        ✔ number
+        ✔ date
+
+  GETRANGE
+    ✔ processCommand
+    ✔ client.getRange (59ms)
+    ✔ cluster.getRange (38ms)
+
+  GETSET
+    ✔ transformArguments
+    ✔ client.getSet (49ms)
+    ✔ cluster.getSet (45ms)
+
+  HDEL
+    ✔ client.hDel (58ms)
+    ✔ cluster.hDel (39ms)
+    transformArguments
+      ✔ string
+      ✔ array
+
+  HELLO
+    ✔ client.hello (46ms)
+    transformArguments
+      ✔ simple
+      ✔ with protover
+      ✔ with protover, AUTH
+      ✔ with protover, SETNAME
+      ✔ with protover, AUTH, SETNAME
+
+  HEXISTS
+    ✔ processCommand
+    ✔ client.hExists
+    ✔ cluster.hExists
+
+  HEXPIRE
+TestUtils: Version 7.2 is less than minimum version 7.4, skipping test
+    - hexpire
+    transformArguments
+      - string
+      - array
+      - with set option
+
+  HEXPIREAT
+TestUtils: Version 7.2 is less than minimum version 7.4, skipping test
+    - expireAt
+    transformArguments
+      - string + number
+      - array + number
+      - date
+      - with set option
+
+  HEXPIRETIME
+TestUtils: Version 7.2 is less than minimum version 7.4, skipping test
+    - hExpireTime
+    transformArguments
+      - string
+      - array
+
+  HGET
+    ✔ transformArguments
+    ✔ client.hGet (53ms)
+    ✔ cluster.hGet (43ms)
+
+  HGETALL
+    ✔ client.hGetAll empty (59ms)
+    ✔ cluster.hGetAll empty
+    ✔ client.hGetAll with value (54ms)
+    ✔ cluster.hGetAll with value (44ms)
+
+  HGETDEL parseCommand
+    ✔ hGetDel parseCommand base
+    ✔ hGetDel parseCommand variadic
+
+  HGETEX parseCommand
+    ✔ hGetEx parseCommand base
+    ✔ hGetEx parseCommand expiration PERSIST string
+    ✔ hGetEx parseCommand expiration PERSIST obj
+    ✔ hGetEx parseCommand expiration EX obj
+    ✔ hGetEx parseCommand expiration EXAT obj variadic
+
+  HINCRBY
+    ✔ transformArguments
+    ✔ client.hIncrBy (64ms)
+    ✔ cluster.hIncrBy
+
+  HINCRBYFLOAT
+    ✔ transformArguments
+    ✔ client.hIncrByFloat (61ms)
+    ✔ cluster.hIncrByFloat (48ms)
+
+  HKEYS
+    ✔ transformArguments
+    ✔ client.hKeys (54ms)
+    ✔ cluster.hKeys (44ms)
+
+  HLEN
+    ✔ transformArguments
+    ✔ client.hLen (53ms)
+    ✔ cluster.hLen (48ms)
+
+  HMGET
+    ✔ client.hmGet (46ms)
+    ✔ cluster.hmGet
+    parseCommand
+      ✔ string
+      ✔ array
+
+  HPERSIST
+TestUtils: Version 7.2 is less than minimum version 7.4, skipping test
+    - hPersist
+    transformArguments
+      - string
+      - array
+
+  HEXPIRE
+TestUtils: Version 7.2 is less than minimum version 7.4, skipping test
+    - hexpire
+    transformArguments
+      - string
+      - array
+      - with set option
+
+  HPEXPIREAT
+TestUtils: Version 7.2 is less than minimum version 7.4, skipping test
+    - hpExpireAt
+    transformArguments
+      - string + number
+      - array + number
+      - date
+      - with set option
+
+  HPEXPIRETIME
+TestUtils: Version 7.2 is less than minimum version 7.4, skipping test
+    - hpExpireTime
+    transformArguments
+      - string
+      - array
+
+  HPTTL
+TestUtils: Version 7.2 is less than minimum version 7.4, skipping test
+    - hpTTL
+    transformArguments
+      - string
+      - array
+
+  HRANDFIELD COUNT
+    ✔ transformArguments
+    ✔ client.hRandFieldCount (51ms)
+    ✔ cluster.hRandFieldCount (43ms)
+
+  HRANDFIELD
+    ✔ transformArguments
+    ✔ client.hRandField (48ms)
+    ✔ cluster.hRandField
+
+  HSCAN_NOVALUES
+TestUtils: Version 7.2 is less than minimum version 7.4, skipping test
+    - client.hScanNoValues
+    transformArguments
+      - cusror only
+      - with MATCH
+      - with COUNT
+      - with MATCH & COUNT
+    transformReply
+      - without keys
+      - with keys
+
+  HSCAN
+    ✔ client.hScan (54ms)
+    transformArguments
+      ✔ cusror only
+      ✔ with MATCH
+      ✔ with COUNT
+      ✔ with MATCH & COUNT
+    transformReply
+      ✔ without tuples
+      ✔ with tuples
+
+  HSET
+    ✔ client.hSet (44ms)
+    ✔ cluster.hSet
+    transformArguments
+      ✔ Map
+      ✔ Array
+      field, value
+        ✔ string
+        ✔ number
+        ✔ Buffer
+      Object
+        ✔ string
+        ✔ Buffer
+
+  HSETEX parseCommand
+    ✔ hSetEx parseCommand base
+    ✔ hSetEx parseCommand base empty obj
+    ✔ hSetEx parseCommand base one key obj
+    ✔ hSetEx parseCommand array
+    ✔ hSetEx parseCommand array invalid args, throws an error
+    ✔ hSetEx parseCommand array in array
+    ✔ hSetEx parseCommand map
+    ✔ hSetEx parseCommand obj
+    ✔ hSetEx parseCommand options FNX KEEPTTL
+    ✔ hSetEx parseCommand options FXX EX 500
+
+  HSETNX
+    ✔ transformArguments
+    ✔ client.hSetNX (51ms)
+    ✔ cluster.hSetNX (43ms)
+
+  HSTRLEN
+    ✔ transformArguments
+    ✔ client.hStrLen (65ms)
+    ✔ cluster.hStrLen (42ms)
+
+  HTTL
+TestUtils: Version 7.2 is less than minimum version 7.4, skipping test
+    - hTTL
+    transformArguments
+      - string
+      - array
+
+  HVALS
+    ✔ processCommand
+    ✔ client.hVals (66ms)
+    ✔ cluster.hVals (47ms)
+
+  INCR
+    ✔ transformArguments
+    ✔ client.incr (64ms)
+    ✔ cluster.incr (42ms)
+
+  INCRBY
+    ✔ transformArguments
+    ✔ client.incrBy (65ms)
+    ✔ cluster.incrBy (48ms)
+
+  INCRBYFLOAT
+    ✔ transformArguments
+    ✔ client.incrByFloat (60ms)
+    ✔ cluster.incrByFloat (52ms)
+
+  INFO
+    ✔ client.info (54ms)
+    transformArguments
+      ✔ simple
+      ✔ server section
+
+  KEYS
+    ✔ keys (47ms)
+
+  LASTSAVE
+    ✔ transformArguments
+    ✔ client.lastSave (48ms)
+
+  LATENCY DOCTOR
+    ✔ transformArguments
+    ✔ client.latencyDoctor
+
+  LATENCY GRAPH
+    ✔ transformArguments
+    ✔ client.latencyGraph
+
+  LATENCY HISTORY
+    ✔ transformArguments
+    ✔ client.latencyHistory (1041ms)
+
+  LATENCY LATEST
+    ✔ transformArguments
+    ✔ client.latencyLatest (1045ms)
+
+  LCS IDX WITHMATCHLEN
+    ✔ transformArguments
+    ✔ client.lcsIdxWithMatchLen (39ms)
+
+  LCS IDX
+    ✔ transformArguments
+    ✔ client.lcsIdx (38ms)
+
+  LCS_LEN
+    ✔ transformArguments
+    ✔ client.lcsLen (49ms)
+    ✔ cluster.lcsLen (44ms)
+
+  LCS
+    ✔ transformArguments
+    ✔ client.lcs (48ms)
+    ✔ cluster.lcs (45ms)
+
+  LINDEX
+    ✔ transformArguments
+    ✔ client.lIndex (54ms)
+    ✔ cluster.lIndex (43ms)
+
+  LINSERT
+    ✔ transformArguments
+    ✔ client.lInsert (59ms)
+    ✔ cluster.lInsert
+
+  LLEN
+    ✔ transformArguments
+    ✔ client.lLen (59ms)
+    ✔ cluster.lLen
+
+  LMOVE
+    ✔ transformArguments
+    ✔ client.lMove (42ms)
+    ✔ cluster.lMove
+
+  LMPOP
+    ✔ client.lmPop - null (59ms)
+    ✔ cluster.lmPop - null (42ms)
+    ✔ client.lmPop - with member (42ms)
+    ✔ cluster.lmPop - with member
+    transformArguments
+      ✔ simple
+      ✔ with COUNT
+
+  LOLWUT
+    ✔ client.LOLWUT (48ms)
+    transformArguments
+      ✔ simple
+      ✔ with version
+      ✔ with version and optional arguments
+
+  LPOP COUNT
+    ✔ transformArguments
+    ✔ client.lPopCount
+    ✔ cluster.lPopCount (42ms)
+
+  LPOP
+    ✔ transformArguments
+    ✔ client.lPop (53ms)
+    ✔ cluster.lPop (40ms)
+
+  LPOS COUNT
+    ✔ client.lPosCount (44ms)
+    ✔ cluster.lPosCount
+    processCommand
+      ✔ simple
+      ✔ with RANK
+      ✔ with MAXLEN
+      ✔ with RANK, MAXLEN
+
+  LPOS
+    ✔ client.lPos (60ms)
+    ✔ cluster.lPos (43ms)
+    processCommand
+      ✔ simple
+      ✔ with RANK
+      ✔ with MAXLEN
+      ✔ with RANK, MAXLEN
+
+  LPUSH
+    ✔ client.lPush (60ms)
+    ✔ cluster.lPush (38ms)
+    transformArguments
+      ✔ string
+      ✔ array
+
+  LPUSHX
+    ✔ client.lPushX (54ms)
+    ✔ cluster.lPushX
+    transformArguments
+      ✔ string
+      ✔ array
+
+  LRANGE
+    ✔ processCommand
+    ✔ client.lRange (48ms)
+    ✔ cluster.lRange (42ms)
+
+  LREM
+    ✔ transformArguments
+    ✔ client.lRem (57ms)
+    ✔ cluster.lRem
+
+  LSET
+    ✔ transformArguments
+    ✔ client.lSet (58ms)
+    ✔ cluster.lSet
+
+  LTRIM
+    ✔ transformArguments
+    ✔ client.lTrim (54ms)
+    ✔ cluster.lTrim
+
+  MEMORY DOCTOR
+    ✔ transformArguments
+    ✔ client.memoryDoctor (48ms)
+
+  MEMORY MALLOC-STATS
+    ✔ transformArguments
+    ✔ client.memoryMallocStats (41ms)
+
+  MEMORY PURGE
+    ✔ transformArguments
+    ✔ client.memoryPurge (41ms)
+
+  MEMORY STATS
+    ✔ transformArguments
+    ✔ client.memoryStats
+
+  MEMORY USAGE
+    ✔ client.memoryUsage
+    transformArguments
+      ✔ simple
+      ✔ with SAMPLES
+
+  MGET
+    ✔ processCommand
+    ✔ client.mGet
+    ✔ cluster.mGet
+
+  MIGRATE
+    transformArguments
+      ✔ single key
+      ✔ multiple keys
+      ✔ with COPY
+      ✔ with REPLACE
+      ✔ with COPY, REPLACE, AUTH
+      with AUTH
+        ✔ password only
+        ✔ username & password
+
+  MODULE LIST
+    ✔ transformArguments
+
+  MODULE LOAD
+    transformArguments
+      ✔ simple
+      ✔ with module args
+
+  MODULE UNLOAD
+    ✔ transformArguments
+
+  MOVE
+    ✔ transformArguments
+    ✔ client.move (52ms)
+
+  MSET
+    ✔ client.mSet
+    ✔ cluster.mSet
+    transformArguments
+      ✔ ['key1', 'value1', 'key2', 'value2']
+      ✔ [['key1', 'value1'], ['key2', 'value2']]
+      ✔ {key1: 'value1'. key2: 'value2'}
+
+  MSETNX
+    ✔ client.mSetNX (42ms)
+    ✔ cluster.mSetNX
+    transformArguments
+      ✔ ['key1', 'value1', 'key2', 'value2']
+      ✔ [['key1', 'value1'], ['key2', 'value2']]
+      ✔ {key1: 'value1'. key2: 'value2'}
+
+  OBJECT ENCODING
+    ✔ transformArguments
+    ✔ client.objectEncoding (53ms)
+    ✔ cluster.objectEncoding
+
+  OBJECT FREQ
+    ✔ transformArguments
+    ✔ client.client.objectFreq (58ms)
+    ✔ cluster.client.objectFreq
+
+  OBJECT IDLETIME
+    ✔ transformArguments
+    ✔ client.client.objectIdleTime (59ms)
+    ✔ cluster.client.objectIdleTime
+
+  OBJECT REFCOUNT
+    ✔ transformArguments
+    ✔ client.client.objectRefCount (47ms)
+    ✔ cluster.client.objectRefCount
+
+  PERSIST
+    ✔ transformArguments
+    ✔ client.persist (58ms)
+    ✔ cluster.persist (42ms)
+
+  PEXPIRE
+    ✔ client.pExpire (62ms)
+    ✔ cluster.pExpire
+    transformArguments
+      ✔ simple
+      ✔ with set option
+
+  PEXPIREAT
+    ✔ client.pExpireAt (59ms)
+    ✔ cluster.pExpireAt
+    transformArguments
+      ✔ number
+      ✔ date
+      ✔ with set option
+
+  PEXPIRETIME
+    ✔ transformArguments
+    ✔ client.pExpireTime (47ms)
+    ✔ cluster.pExpireTime (44ms)
+
+  PFADD
+    ✔ client.pfAdd (66ms)
+    ✔ cluster.pfAdd (43ms)
+    transformArguments
+      ✔ string
+      ✔ array
+
+  PFCOUNT
+    ✔ client.pfCount (42ms)
+    ✔ cluster.pfCount (46ms)
+    transformArguments
+      ✔ string
+      ✔ array
+
+  PFMERGE
+    ✔ client.pfMerge (70ms)
+    ✔ cluster.pfMerge (45ms)
+    transformArguments
+      ✔ string
+      ✔ array
+
+  PING
+    ✔ client.ping (54ms)
+    ✔ cluster.ping
+    transformArguments
+      ✔ default
+      ✔ with message
+
+  PSETEX
+    ✔ transformArguments
+    ✔ client.pSetEx (70ms)
+    ✔ cluster.pSetEx (47ms)
+
+  PTTL
+    ✔ transformArguments
+    ✔ client.pTTL (64ms)
+    ✔ cluster.pTTL (45ms)
+
+  PUBLISH
+    ✔ transformArguments
+    ✔ client.publish (60ms)
+
+  PUBSUB CHANNELS
+    ✔ client.pubSubChannels (45ms)
+    transformArguments
+      ✔ simple
+      ✔ with pattern
+
+  PUBSUB NUMPAT
+    ✔ transformArguments
+    ✔ client.pubSubNumPat (48ms)
+
+  PUBSUB NUMSUB
+    ✔ client.pubSubNumSub (47ms)
+    transformArguments
+      ✔ simple
+      ✔ string
+      ✔ array
+
+  PUBSUB SHARDCHANNELS
+    ✔ client.pubSubShardChannels (54ms)
+    transformArguments
+      ✔ without pattern
+      ✔ with pattern
+
+  PUBSUB SHARDNUMSUB
+    ✔ client.pubSubShardNumSub (49ms)
+    transformArguments
+      ✔ simple
+      ✔ string
+      ✔ array
+
+  RANDOMKEY
+    ✔ transformArguments
+    ✔ client.randomKey (39ms)
+    ✔ cluster.randomKey (52ms)
+
+  READONLY
+    ✔ transformArguments
+
+  READWRITE
+    ✔ transformArguments
+
+  RENAME
+    ✔ transformArguments
+    ✔ client.rename (66ms)
+    ✔ cluster.rename (45ms)
+
+  RENAMENX
+    ✔ transformArguments
+    ✔ client.renameNX (56ms)
+    ✔ cluster.renameNX (42ms)
+
+  REPLICAOF
+    ✔ transformArguments
+
+  RESTORE-ASKING
+    ✔ transformArguments
+
+  RESTORE
+    ✔ client.restore (61ms)
+    transformArguments
+      ✔ simple
+      ✔ with REPLACE
+      ✔ with ABSTTL
+      ✔ with IDLETIME
+      ✔ with FREQ
+      ✔ with REPLACE, ABSTTL, IDLETIME and FREQ
+
+  ROLE
+    ✔ transformArguments
+    ✔ client.role (59ms)
+    transformReply
+      ✔ master
+      ✔ replica
+      ✔ sentinel
+
+  RPOP COUNT
+    ✔ transformArguments
+    ✔ client.rPopCount (49ms)
+    ✔ cluster.rPopCount (49ms)
+
+  RPOP
+    ✔ transformArguments
+    ✔ client.rPop (59ms)
+    ✔ cluster.rPop (48ms)
+
+  RPOPLPUSH
+    ✔ transformArguments
+    ✔ client.rPopLPush (65ms)
+    ✔ cluster.rPopLPush (46ms)
+
+  RPUSH
+    ✔ client.rPush (70ms)
+    ✔ cluster.rPush (41ms)
+    transformArguments
+      ✔ string
+      ✔ array
+
+  RPUSHX
+    ✔ client.rPushX (55ms)
+    ✔ cluster.rPushX (42ms)
+    transformArguments
+      ✔ string
+      ✔ array
+
+  SADD
+    ✔ client.sAdd (67ms)
+    ✔ cluster.sAdd (48ms)
+    transformArguments
+      ✔ string
+      ✔ array
+
+  SAVE
+    ✔ transformArguments
+
+  SCAN
+    ✔ client.scan (69ms)
+    transformArguments
+      ✔ cusror only
+      ✔ with MATCH
+      ✔ with COUNT
+      ✔ with TYPE
+      ✔ with MATCH & COUNT & TYPE
+
+  SCARD
+    ✔ transformArguments
+    ✔ client.sCard (55ms)
+    ✔ cluster.sCard (40ms)
+
+  SCRIPT DEBUG
+    ✔ transformArguments
+    ✔ client.scriptDebug (65ms)
+
+  SCRIPT EXISTS
+    ✔ client.scriptExists (48ms)
+    transformArguments
+      ✔ string
+      ✔ array
+
+  SCRIPT FLUSH
+    ✔ client.scriptFlush (46ms)
+    transformArguments
+      ✔ simple
+      ✔ with mode
+
+  SCRIPT KILL
+    ✔ transformArguments
+
+  SCRIPT LOAD
+    ✔ transformArguments
+    ✔ client.scriptLoad (46ms)
+
+  SDIFF
+    ✔ client.sDiff (47ms)
+    ✔ cluster.sDiff (44ms)
+    processCommand
+      ✔ string
+      ✔ array
+
+  SDIFFSTORE
+    ✔ client.sDiffStore (50ms)
+    ✔ cluster.sDiffStore (42ms)
+    transformArguments
+      ✔ string
+      ✔ array
+
+  SET
+    ✔ client.set (42ms)
+    ✔ cluster.set
+    transformArguments
+      ✔ with GET
+      ✔ with expiration, condition, GET
+      value
+        ✔ string
+        ✔ number
+      expiration
+        ✔ 'KEEPTTL'
+        ✔ { type: 'KEEPTTL' }
+        ✔ { type: 'EX' }
+        ✔ with EX (backwards compatibility)
+        ✔ with PX (backwards compatibility)
+        ✔ with EXAT (backwards compatibility)
+        ✔ with PXAT (backwards compatibility)
+        ✔ with KEEPTTL (backwards compatibility)
+      condition
+        ✔ with condition
+        ✔ with NX (backwards compatibility)
+        ✔ with XX (backwards compatibility)
+
+  SETBIT
+    ✔ transformArguments
+    ✔ client.setBit
+    ✔ cluster.setBit (41ms)
+
+  SETEX
+    ✔ transformArguments
+    ✔ client.setEx (69ms)
+    ✔ cluster.setEx (44ms)
+
+  SETNX
+    ✔ transformArguments
+    ✔ client.setNX (65ms)
+    ✔ cluster.setNX
+
+  SETRANGE
+    ✔ transformArguments
+    ✔ client.setRange (59ms)
+    ✔ cluster.setRange (50ms)
+
+  SHUTDOWN
+    transformArguments
+      ✔ simple
+      ✔ with mode
+      ✔ with NOW
+      ✔ with FORCE
+      ✔ with ABORT
+
+  SINTER
+    ✔ client.sInter (46ms)
+    ✔ cluster.sInter (42ms)
+    processCommand
+      ✔ string
+      ✔ array
+
+  SINTERCARD
+    ✔ client.sInterCard (65ms)
+    ✔ cluster.sInterCard (56ms)
+    transformArguments
+      ✔ simple
+      ✔ with limit (backwards compatibility)
+      ✔ with LIMIT
+
+  SINTERSTORE
+    ✔ client.sInterStore (52ms)
+    ✔ cluster.sInterStore (42ms)
+    transformArguments
+      ✔ string
+      ✔ array
+
+  SISMEMBER
+    ✔ processCommand
+    ✔ client.sIsMember (53ms)
+    ✔ cluster.sIsMember (43ms)
+
+  SMEMBERS
+    ✔ processCommand
+    ✔ client.sMembers (53ms)
+    ✔ cluster.sMembers
+
+  SMISMEMBER
+    ✔ processCommand
+    ✔ client.smIsMember (59ms)
+    ✔ cluster.smIsMember (38ms)
+
+  SMOVE
+    ✔ transformArguments
+    ✔ client.sMove (59ms)
+    ✔ cluster.sMove (43ms)
+
+  SORT_RO
+    ✔ client.sortRo (55ms)
+    ✔ cluster.sortRo (44ms)
+    transformArguments
+      ✔ simple
+      ✔ with BY
+      ✔ with LIMIT
+      ✔ with DIRECTION
+      ✔ with ALPHA
+      ✔ with BY, LIMIT, GET, DIRECTION, ALPHA
+      with GET
+        ✔ string
+        ✔ array
+
+  SORT STORE
+    ✔ client.sortStore (59ms)
+    ✔ cluster.sortStore (51ms)
+    transformArguments
+      ✔ simple
+      ✔ with BY
+      ✔ with LIMIT
+      ✔ with DIRECTION
+      ✔ with ALPHA
+      ✔ with BY, LIMIT, GET, DIRECTION, ALPHA
+      with GET
+        ✔ string
+        ✔ array
+
+  SORT
+    ✔ client.sort (76ms)
+    ✔ cluster.sort
+    transformArguments
+      ✔ simple
+      ✔ with BY
+      ✔ with LIMIT
+      ✔ with DIRECTION
+      ✔ with ALPHA
+      ✔ with BY, LIMIT, GET, DIRECTION, ALPHA
+      with GET
+        ✔ string
+        ✔ array
+
+  SPOP_COUNT
+    ✔ transformArguments
+    ✔ client.sPopCount (61ms)
+    ✔ cluster.sPopCount (43ms)
+
+  SPOP
+    ✔ transformArguments
+    ✔ client.sPop (66ms)
+    ✔ cluster.sPop (41ms)
+
+  SPUBLISH
+    ✔ transformArguments
+    ✔ client.sPublish (67ms)
+    ✔ cluster.sPublish (50ms)
+
+  SRANDMEMBER COUNT
+    ✔ transformArguments
+    ✔ client.sRandMemberCount (66ms)
+    ✔ cluster.sRandMemberCount (43ms)
+
+  SRANDMEMBER
+    ✔ transformArguments
+    ✔ client.sRandMember (54ms)
+    ✔ cluster.sRandMember (38ms)
+
+  SREM
+    ✔ client.sRem (61ms)
+    ✔ cluster.sRem
+    transformArguments
+      ✔ string
+      ✔ array
+
+  SSCAN
+    ✔ client.sScan (60ms)
+    ✔ cluster.sScan
+    transformArguments
+      ✔ cusror only
+      ✔ with MATCH
+      ✔ with COUNT
+      ✔ with MATCH & COUNT
+
+  STRLEN
+    ✔ transformArguments
+    ✔ client.strLen (59ms)
+    ✔ cluster.strLen (38ms)
+
+  SUNION
+    ✔ client.sUnion (60ms)
+    ✔ cluster.sUnion
+    transformArguments
+      ✔ string
+      ✔ array
+
+  SUNIONSTORE
+    ✔ client.sUnionStore (61ms)
+    ✔ cluster.sUnionStore
+    transformArguments
+      ✔ string
+      ✔ array
+
+  SWAPDB
+    ✔ transformArguments
+    ✔ client.swapDb (49ms)
+
+  TIME
+    ✔ transformArguments
+    ✔ client.time (48ms)
+
+  TOUCH
+    ✔ client.touch (48ms)
+    ✔ cluster.touch
+    transformArguments
+      ✔ string
+      ✔ array
+
+  TTL
+    ✔ transformArguments
+    ✔ client.ttl (59ms)
+    ✔ cluster.ttl (44ms)
+
+  TYPE
+    ✔ processCommand
+    ✔ client.type (72ms)
+    ✔ cluster.type (43ms)
+
+  UNLINK
+    ✔ client.unlink (55ms)
+    ✔ cluster.unlink (45ms)
+    transformArguments
+      ✔ string
+      ✔ array
+
+  VADD
+    - client.vAdd
+    - cluster.vAdd
+    - vAdd with RESP3
+    parseCommand
+      ✔ basic usage
+      ✔ with REDUCE option
+      ✔ with quantization options
+      ✔ with all options
+
+  VCARD
+    ✔ parseCommand
+    - client.vCard
+    - cluster.vCard
+    - vCard with RESP3
+
+  VDIM
+    ✔ parseCommand
+    - client.vDim
+    - cluster.vDim
+    - vDim with RESP3
+
+  VEMB_RAW
+    ✔ parseCommand
+    - client.vEmbRaw
+    - cluster.vEmbRaw
+    - vEmbRaw with RESP3
+
+  VEMB
+    ✔ parseCommand
+    - client.vEmb
+    - cluster.vEmb
+    - vEmb with RESP3
+
+  VGETATTR
+    ✔ parseCommand
+    - client.vGetAttr
+    - cluster.vGetAttr
+    - vGetAttr with RESP3
+
+  VINFO
+    ✔ parseCommand
+    - client.vInfo
+    - cluster.vInfo
+    - vInfo with RESP3
+
+  VLINKS WITHSCORES
+    ✔ parseCommand
+    - client.vLinksWithScores
+    - cluster.vLinksWithScores
+    - vLinksWithScores with RESP3
+
+  VLINKS
+    ✔ parseCommand
+    - client.vLinks
+    - cluster.vLinks
+    - vLinks with RESP3
+
+  VRANDMEMBER
+    parseCommand
+      ✔ without count
+      ✔ with count
+    RESP2 tests
+      - client.vRandMember without count - returns single element as string
+      - cluster.vRandMember without count - returns single element as string
+      - client.vRandMember with positive count - returns distinct elements
+      - cluster.vRandMember with positive count - returns distinct elements
+      - client.vRandMember with negative count - allows duplicates
+      - cluster.vRandMember with negative count - allows duplicates
+      - client.vRandMember count exceeds set size - returns entire set
+      - cluster.vRandMember count exceeds set size - returns entire set
+      - client.vRandMember on non-existent key
+      - cluster.vRandMember on non-existent key
+    RESP3 tests
+      - vRandMember without count - returns single element as string
+      - vRandMember with positive count - returns distinct elements
+      - vRandMember with negative count - allows duplicates
+      - vRandMember count exceeds set size - returns entire set
+      - vRandMember on non-existent key
+
+  VREM
+    ✔ parseCommand
+    - client.vRem
+    - cluster.vRem
+    - vRem with RESP3
+
+  VSETATTR
+    - client.vSetAttr
+    - cluster.vSetAttr
+    - vSetAttr with RESP3 - returns boolean
+    parseCommand
+      ✔ with object
+      ✔ with string
+
+  VSIM WITHSCORES
+    ✔ parseCommand
+    - client.vSimWithScores
+    - cluster.vSimWithScores
+    - vSimWithScores with RESP3 - returns Map with scores
+
+  VSIM
+    - client.vSim
+    - cluster.vSim
+    - client.vSim with options
+    - cluster.vSim with options
+    - vSim with RESP3
+    parseCommand
+      ✔ with vector
+      ✔ with element
+      ✔ with options
+
+  WAIT
+    ✔ transformArguments
+    ✔ client.wait (62ms)
+
+  XACK
+    ✔ client.xAck (46ms)
+    ✔ cluster.xAck (42ms)
+    transformArguments
+      ✔ string
+      ✔ array
+
+  XACKDEL
+    - client.XACKDEL non-existing key - without policy
+    - cluster.XACKDEL non-existing key - without policy
+    - client.XACKDEL existing key - without policy
+    - cluster.XACKDEL existing key - without policy
+    - client.XACKDEL existing key - with policy
+    - cluster.XACKDEL existing key - with policy
+    - client.XACKDEL acknowledge policy - with consumer group
+    - cluster.XACKDEL acknowledge policy - with consumer group
+    - client.XACKDEL multiple keys
+    - cluster.XACKDEL multiple keys
+    transformArguments
+      ✔ string - without policy
+      ✔ string - with policy
+      ✔ array - without policy
+      ✔ array - with policy
+
+  XADD NOMKSTREAM
+    ✔ client.xAddNoMkStream - null when stream does not exist (64ms)
+    ✔ cluster.xAddNoMkStream - null when stream does not exist (43ms)
+    - client.xAddNoMkStream - with all TRIM options
+    - cluster.xAddNoMkStream - with all TRIM options
+    transformArguments
+      ✔ single field
+      ✔ multiple fields
+      ✔ with TRIM
+      ✔ with TRIM.strategy
+      ✔ with TRIM.strategyModifier
+      ✔ with TRIM.limit
+      ✔ with TRIM.policy
+      ✔ with all TRIM options
+
+  XADD
+    ✔ client.xAdd (63ms)
+    ✔ cluster.xAdd
+    - client.xAdd with TRIM policy
+    - cluster.xAdd with TRIM policy
+    - client.xAdd with all TRIM options
+    - cluster.xAdd with all TRIM options
+    transformArguments
+      ✔ single field
+      ✔ multiple fields
+      ✔ with TRIM
+      ✔ with TRIM.strategy
+      ✔ with TRIM.strategyModifier
+      ✔ with TRIM.limit
+      ✔ with TRIM.policy
+      ✔ with all TRIM options
+
+  XAUTOCLAIM JUSTID
+    ✔ transformArguments
+    ✔ client.xAutoClaimJustId (57ms)
+
+  XAUTOCLAIM
+    ✔ client.xAutoClaim (48ms)
+    ✔ cluster.xAutoClaim (43ms)
+    transformArguments
+      ✔ simple
+      ✔ with COUNT
+
+  XCLAIM JUSTID
+    ✔ transformArguments
+    ✔ client.xClaimJustId (64ms)
+
+  XCLAIM
+    ✔ client.xClaim (47ms)
+    ✔ cluster.xClaim (45ms)
+    transformArguments
+      ✔ single id (string)
+      ✔ multiple ids (array)
+      ✔ with IDLE
+      ✔ with RETRYCOUNT
+      ✔ with FORCE
+      ✔ with LASTID
+      ✔ with IDLE, TIME, RETRYCOUNT, FORCE, LASTID
+      with TIME
+        ✔ number
+        ✔ Date
+
+  XDEL
+    ✔ client.xDel (64ms)
+    ✔ cluster.xDel
+    transformArguments
+      ✔ string
+      ✔ array
+
+  XDELEX
+    - client.XDELEX non-existing key - without policy
+    - cluster.XDELEX non-existing key - without policy
+    - client.XDELEX existing key - without policy
+    - cluster.XDELEX existing key - without policy
+    - client.XDELEX existing key - with policy
+    - cluster.XDELEX existing key - with policy
+    - client.XDELEX acknowledge policy - with consumer group
+    - cluster.XDELEX acknowledge policy - with consumer group
+    - client.XDELEX multiple keys
+    - cluster.XDELEX multiple keys
+    transformArguments
+      ✔ string - without policy
+      ✔ string - with policy
+      ✔ array - without policy
+      ✔ array - with policy
+
+  XGROUP CREATE
+    ✔ client.xGroupCreate (64ms)
+    ✔ cluster.xGroupCreate
+    transformArguments
+      ✔ simple
+      ✔ with MKSTREAM
+      ✔ with ENTRIESREAD
+
+  XGROUP CREATECONSUMER
+    ✔ transformArguments
+    ✔ client.xGroupCreateConsumer (47ms)
+    ✔ cluster.xGroupCreateConsumer
+
+  XGROUP DELCONSUMER
+    ✔ transformArguments
+    ✔ client.xGroupDelConsumer (59ms)
+    ✔ cluster.xGroupDelConsumer (39ms)
+
+  XGROUP DESTROY
+    ✔ transformArguments
+    ✔ client.xGroupDestroy (40ms)
+    ✔ cluster.xGroupDestroy (39ms)
+
+  XGROUP SETID
+    ✔ transformArguments
+    ✔ client.xGroupSetId (54ms)
+    ✔ cluster.xGroupSetId (44ms)
+
+  XINFO CONSUMERS
+    ✔ transformArguments
+    ✔ client.xInfoConsumers (59ms)
+    ✔ cluster.xInfoConsumers (51ms)
+
+  XINFO GROUPS
+    ✔ transformArguments
+    ✔ client.xInfoGroups (60ms)
+    ✔ cluster.xInfoGroups
+
+  XINFO STREAM
+    ✔ transformArguments
+    ✔ client.xInfoStream (48ms)
+    ✔ cluster.xInfoStream
+
+  XLEN
+    ✔ processCommand
+    ✔ client.xLen (42ms)
+    ✔ cluster.xLen
+
+  XPENDING RANGE
+    ✔ client.xPendingRange (54ms)
+    ✔ cluster.xPendingRange (51ms)
+    transformArguments
+      ✔ simple
+      ✔ with IDLE
+      ✔ with consumer
+      ✔ with IDLE, consumer
+
+  XPENDING
+    transformArguments
+      ✔ transformArguments
+    client.xPending
+      ✔ simple (64ms)
+      ✔ with consumers (48ms)
+
+  XRANGE
+    ✔ client.xRange (46ms)
+    ✔ cluster.xRange (55ms)
+    transformArguments
+      ✔ simple
+      ✔ with COUNT
+
+  XREAD
+    ✔ client.client.xRead (54ms)
+    ✔ cluster.client.xRead (44ms)
+    ✔ client.xRead should throw with resp3 and unstableResp3: false (66ms)
+    ✔ client.xRead should not throw with resp3 and unstableResp3: true (68ms)
+    FIRST_KEY_INDEX
+      ✔ single stream
+      ✔ multiple streams
+    transformArguments
+      ✔ single stream
+      ✔ multiple streams
+      ✔ with COUNT
+      ✔ with BLOCK
+      ✔ with COUNT, BLOCK
+
+  XREADGROUP
+    ✔ client.xReadGroup - null (60ms)
+    ✔ cluster.xReadGroup - null
+    ✔ client.xReadGroup - with a message (50ms)
+    ✔ cluster.xReadGroup - with a message (45ms)
+    ✔ client.xReadGroup should throw with resp3 and unstableResp3: false (62ms)
+    ✔ client.xReadGroup should not throw with resp3 and unstableResp3: true (56ms)
+    FIRST_KEY_INDEX
+      ✔ single stream
+      ✔ multiple streams
+    transformArguments
+      ✔ single stream
+      ✔ multiple streams
+      ✔ with COUNT
+      ✔ with BLOCK
+      ✔ with NOACK
+      ✔ with COUNT, BLOCK, NOACK
+
+  XREVRANGE
+    ✔ client.xRevRange (66ms)
+    ✔ cluster.xRevRange (43ms)
+    transformArguments
+      ✔ simple
+      ✔ with COUNT
+
+  XSETID
+    ✔ client.xSetId (60ms)
+    ✔ cluster.xSetId (47ms)
+    transformArguments
+      ✔ simple
+      ✔ with ENTRIESADDED
+      ✔ with MAXDELETEDID
+
+  XTRIM
+    ✔ client.xTrim with MAXLEN (66ms)
+    ✔ cluster.xTrim with MAXLEN (50ms)
+    ✔ client.xTrim with MINID (55ms)
+    ✔ cluster.xTrim with MINID
+    ✔ client.xTrim with string MINID (64ms)
+    ✔ cluster.xTrim with string MINID (43ms)
+    ✔ client.xTrim with LIMIT (60ms)
+    ✔ cluster.xTrim with LIMIT (38ms)
+    - client.xTrim with policy
+    - cluster.xTrim with policy
+    - client.xTrim with all options
+    - cluster.xTrim with all options
+    transformArguments
+      ✔ simple
+      ✔ simple - MINID
+      ✔ with strategyModifier
+      ✔ with LIMIT
+      ✔ with strategyModifier, LIMIT
+      ✔ with policy
+      ✔ with all options
+
+  ZADD INCR
+    ✔ client.zAddIncr (65ms)
+    ✔ cluster.zAddIncr (43ms)
+    transformArguments
+      ✔ single member
+      ✔ multiple members
+      ✔ with condition
+      ✔ with comparison
+      ✔ with CH
+      ✔ with condition, comparison, CH
+
+  ZADD
+    ✔ client.zAdd (64ms)
+    ✔ cluster.zAdd (43ms)
+    transformArguments
+      ✔ single member
+      ✔ multiple members
+      ✔ with CH
+      ✔ with condition, comparison, CH
+      with condition
+        ✔ condition property
+        ✔ with NX (backwards compatibility)
+        ✔ with XX (backwards compatibility)
+      with comparison
+        ✔ with LT
+        ✔ with LT (backwards compatibility)
+        ✔ with GT (backwards compatibility)
+
+  ZCARD
+    ✔ transformArguments
+    ✔ client.zCard (62ms)
+    ✔ cluster.zCard (49ms)
+
+  ZCOUNT
+    ✔ transformArguments
+    ✔ client.zCount (66ms)
+    ✔ cluster.zCount (53ms)
+
+  ZDIFF WITHSCORES
+    ✔ client.zDiffWithScores (59ms)
+    ✔ cluster.zDiffWithScores (55ms)
+    transformArguments
+      ✔ string
+      ✔ array
+
+  ZDIFF
+    ✔ client.zDiff (58ms)
+    ✔ cluster.zDiff
+    transformArguments
+      ✔ string
+      ✔ array
+
+  ZDIFFSTORE
+    ✔ client.zDiffStore (66ms)
+    ✔ cluster.zDiffStore (42ms)
+    transformArguments
+      ✔ string
+      ✔ array
+
+  ZINCRBY
+    ✔ transformArguments
+    ✔ client.zIncrBy (65ms)
+    ✔ cluster.zIncrBy (38ms)
+
+  ZINTER WITHSCORES
+    ✔ client.zInterWithScores (54ms)
+    ✔ cluster.zInterWithScores
+    transformArguments
+      ✔ key (string)
+      ✔ keys (Array<string>)
+      ✔ key & weight
+      ✔ keys & weights
+      ✔ with AGGREGATE
+
+  ZINTER
+    ✔ client.zInter (52ms)
+    ✔ cluster.zInter (42ms)
+    transformArguments
+      ✔ key (string)
+      ✔ keys (Array<string>)
+      ✔ key & weight
+      ✔ keys & weights
+      ✔ with AGGREGATE
+
+  ZINTERCARD
+    ✔ client.zInterCard (54ms)
+    ✔ cluster.zInterCard (44ms)
+    transformArguments
+      ✔ simple
+      with LIMIT
+        ✔ plain number (backwards compatibility)
+        ✔ { LIMIT: number }
+
+  ZINTERSTORE
+    ✔ client.zInterStore (65ms)
+    ✔ cluster.zInterStore
+    transformArguments
+      ✔ key (string)
+      ✔ keys (Array<string>)
+      ✔ key & weight
+      ✔ keys & weights
+      ✔ with AGGREGATE
+
+  ZLEXCOUNT
+    ✔ transformArguments
+    ✔ client.zLexCount (59ms)
+    ✔ cluster.zLexCount (42ms)
+
+  ZMPOP
+    ✔ client.zmPop - null (60ms)
+    ✔ cluster.zmPop - null
+    ✔ client.zmPop - with members (54ms)
+    ✔ cluster.zmPop - with members
+    transformArguments
+      ✔ simple
+      ✔ with count
+
+  ZMSCORE
+    ✔ client.zmScore (71ms)
+    ✔ cluster.zmScore (49ms)
+    transformArguments
+      ✔ string
+      ✔ array
+
+  ZPOPMAX COUNT
+    ✔ transformArguments
+    ✔ client.zPopMaxCount (61ms)
+    ✔ cluster.zPopMaxCount (43ms)
+
+  ZPOPMAX
+    ✔ transformArguments
+    ✔ client.zPopMax - null (53ms)
+    ✔ cluster.zPopMax - null
+    ✔ client.zPopMax - with member (49ms)
+    ✔ cluster.zPopMax - with member (44ms)
+
+  ZPOPMIN COUNT
+    ✔ transformArguments
+    ✔ client.zPopMinCount (44ms)
+    ✔ cluster.zPopMinCount
+
+  ZPOPMIN
+    ✔ transformArguments
+    ✔ client.zPopMin - null (44ms)
+    ✔ cluster.zPopMin - null
+    ✔ client.zPopMax - with member (67ms)
+    ✔ cluster.zPopMax - with member
+
+  ZRANDMEMBER COUNT WITHSCORES
+    ✔ transformArguments
+    ✔ client.zRandMemberCountWithScores (55ms)
+    ✔ cluster.zRandMemberCountWithScores (67ms)
+
+  ZRANDMEMBER COUNT
+    ✔ transformArguments
+    ✔ client.zRandMemberCount (60ms)
+    ✔ cluster.zRandMemberCount (38ms)
+
+  ZRANDMEMBER
+    ✔ transformArguments
+    ✔ client.zRandMember (49ms)
+    ✔ cluster.zRandMember (44ms)
+
+  ZRANGE WITHSCORES
+    ✔ client.zRangeWithScores (66ms)
+    ✔ cluster.zRangeWithScores (44ms)
+    transformArguments
+      ✔ simple
+      ✔ with BY
+      ✔ with REV
+      ✔ with LIMIT
+      ✔ with BY & REV & LIMIT
+
+  ZRANGE
+    ✔ client.zRange (54ms)
+    ✔ cluster.zRange (42ms)
+    transformArguments
+      ✔ simple
+      ✔ with BYSCORE
+      ✔ with BYLEX
+      ✔ with REV
+      ✔ with LIMIT
+      ✔ with BY & REV & LIMIT
+
+  ZRANGEBYLEX
+    ✔ client.zRangeByLex (64ms)
+    ✔ cluster.zRangeByLex (43ms)
+    transformArguments
+      ✔ simple
+      ✔ with LIMIT
+
+  ZRANGEBYSCORE WITHSCORES
+    ✔ client.zRangeByScoreWithScores (53ms)
+    ✔ cluster.zRangeByScoreWithScores (43ms)
+    transformArguments
+      ✔ simple
+      ✔ with LIMIT
+
+  ZRANGEBYSCORE
+    ✔ client.zRangeByScore (55ms)
+    ✔ cluster.zRangeByScore (44ms)
+    transformArguments
+      ✔ simple
+      ✔ with LIMIT
+
+  ZRANGESTORE
+    ✔ client.zRangeStore (60ms)
+    transformArguments
+      ✔ simple
+      ✔ with BYSCORE
+      ✔ with BYLEX
+      ✔ with REV
+      ✔ with LIMIT
+      ✔ with BY & REV & LIMIT
+
+  ZRANK WITHSCORE
+    ✔ transformArguments
+    ✔ client.zRankWithScore - null (45ms)
+    ✔ cluster.zRankWithScore - null (43ms)
+    ✔ client.zRankWithScore - with member (61ms)
+    ✔ cluster.zRankWithScore - with member
+
+  ZRANK
+    ✔ transformArguments
+    ✔ client.zRank (83ms)
+    ✔ cluster.zRank (43ms)
+
+  ZREM
+    ✔ client.zRem (59ms)
+    ✔ cluster.zRem
+    transformArguments
+      ✔ string
+      ✔ array
+
+  ZREMRANGEBYLEX
+    ✔ transformArguments
+    ✔ client.zRemRangeByLex (48ms)
+    ✔ cluster.zRemRangeByLex (42ms)
+
+  ZREMRANGEBYRANK
+    ✔ transformArguments
+    ✔ client.zRemRangeByRank (63ms)
+    ✔ cluster.zRemRangeByRank
+
+  ZREMRANGEBYSCORE
+    ✔ transformArguments
+    ✔ client.zRemRangeByScore (49ms)
+    ✔ cluster.zRemRangeByScore (44ms)
+
+  ZREVRANK
+    ✔ transformArguments
+    ✔ client.zRevRank (59ms)
+    ✔ cluster.zRevRank (44ms)
+
+  ZSCAN
+    ✔ zScan (62ms)
+    transformArguments
+      ✔ cusror only
+      ✔ with MATCH
+      ✔ with COUNT
+      ✔ with MATCH & COUNT
+
+  ZSCORE
+    ✔ transformArguments
+    ✔ client.zScore (40ms)
+    ✔ cluster.zScore
+
+  ZUNION WITHSCORES
+    ✔ client.zUnionWithScores (65ms)
+    ✔ cluster.zUnionWithScores
+    transformArguments
+      ✔ key (string)
+      ✔ keys (Array<string>)
+      ✔ key & weight
+      ✔ keys & weights
+      ✔ with AGGREGATE
+
+  ZUNION
+    ✔ client.zUnion (49ms)
+    ✔ cluster.zUnion (42ms)
+    transformArguments
+      ✔ key (string)
+      ✔ keys (Array<string>)
+      ✔ key & weight
+      ✔ keys & weights
+      ✔ with AGGREGATE
+
+  ZUNIONSTORE
+    ✔ client.zUnionStore (59ms)
+    ✔ cluster.zUnionStore (51ms)
+    transformArguments
+      ✔ key (string)
+      ✔ keys (Array<string>)
+      ✔ key & weight
+      ✔ keys & weights
+      ✔ with AGGREGATE
+
+  Multi Command
+    ✔ addCommand
+    ✔ transformReplies
+    addScript
+      ✔ should use EVAL
+      ✔ should use EVALSHA
+      ✔ without NUMBER_OF_KEYS
+    exec
+      ✔ without commands
+      ✔ with commands
+
+  RESP Decoder
+    Null
+      ✔ single chunk
+      ✔ byte by byte
+    Boolean
+      true
+        ✔ single chunk
+        ✔ byte by byte
+      false
+        ✔ single chunk
+        ✔ byte by byte
+    Number
+      0
+        ✔ single chunk
+        ✔ byte by byte
+      1
+        ✔ single chunk
+        ✔ byte by byte
+      +1
+        ✔ single chunk
+        ✔ byte by byte
+      -1
+        ✔ single chunk
+        ✔ byte by byte
+      1 as string
+        ✔ single chunk
+        ✔ byte by byte
+    BigNumber
+      0
+        ✔ single chunk
+        ✔ byte by byte
+      1
+        ✔ single chunk
+        ✔ byte by byte
+      +1
+        ✔ single chunk
+        ✔ byte by byte
+      -1
+        ✔ single chunk
+        ✔ byte by byte
+      1 as string
+        ✔ single chunk
+        ✔ byte by byte
+    Double
+      0
+        ✔ single chunk
+        ✔ byte by byte
+      1
+        ✔ single chunk
+        ✔ byte by byte
+      +1
+        ✔ single chunk
+        ✔ byte by byte
+      -1
+        ✔ single chunk
+        ✔ byte by byte
+      1.1
+        ✔ single chunk
+        ✔ byte by byte
+      nan
+        ✔ single chunk
+        ✔ byte by byte
+      inf
+        ✔ single chunk
+        ✔ byte by byte
+      +inf
+        ✔ single chunk
+        ✔ byte by byte
+      -inf
+        ✔ single chunk
+        ✔ byte by byte
+      1e1
+        ✔ single chunk
+        ✔ byte by byte
+      -1.1E+1
+        ✔ single chunk
+        ✔ byte by byte
+      1 as string
+        ✔ single chunk
+        ✔ byte by byte
+    SimpleString
+      'OK'
+        ✔ single chunk
+        ✔ byte by byte
+      'OK' as Buffer
+        ✔ single chunk
+        ✔ byte by byte
+    BlobString
+      ''
+        ✔ single chunk
+        ✔ byte by byte
+      '1234567890'
+        ✔ single chunk
+        ✔ byte by byte
+      null (RESP2 backwards compatibility)
+        ✔ single chunk
+        ✔ byte by byte
+      'OK' as Buffer
+        ✔ single chunk
+        ✔ byte by byte
+    VerbatimString
+      ''
+        ✔ single chunk
+        ✔ byte by byte
+      '123456'
+        ✔ single chunk
+        ✔ byte by byte
+      'OK' as VerbatimString
+        ✔ single chunk
+        ✔ byte by byte
+      'OK' as Buffer
+        ✔ single chunk
+        ✔ byte by byte
+    SimpleError
+      ✔ single chunk
+      ✔ byte by byte
+    BlobError
+      ✔ single chunk
+      ✔ byte by byte
+    Array
+      []
+        ✔ single chunk
+        ✔ byte by byte
+      [0..9]
+        ✔ single chunk
+        ✔ byte by byte
+      with all types
+        ✔ single chunk
+        ✔ byte by byte
+      null (RESP2 backwards compatibility)
+        ✔ single chunk
+        ✔ byte by byte
+    Set
+      empty
+        ✔ single chunk
+        ✔ byte by byte
+      of 0..9
+        ✔ single chunk
+        ✔ byte by byte
+      0..9 as Set
+        ✔ single chunk
+        ✔ byte by byte
+    Map
+      {}
+        ✔ single chunk
+        ✔ byte by byte
+      { '0'..'9': <key> }
+        ✔ single chunk
+        ✔ byte by byte
+      { '0'..'9': <key> } as Map
+        ✔ single chunk
+        ✔ byte by byte
+      { '0'..'9': <key> } as Array
+        ✔ single chunk
+        ✔ byte by byte
+    Push
+      []
+        ✔ single chunk
+        ✔ byte by byte
+      [0..9]
+        ✔ single chunk
+        ✔ byte by byte
+
+  RESP Encoder
+    ✔ 1 byte
+    ✔ 2 bytes
+    ✔ 4 bytes
+    ✔ buffer
+
+  RedisSentinel
+    initialization
+      clientSideCache validation
+        ✔ should throw error when clientSideCache is enabled with RESP 2
+        ✔ should throw error when clientSideCache is enabled with RESP undefined
+        ✔ should not throw when clientSideCache is enabled with RESP 3
+        ✔ should successfully connect to sentinel (75ms)
+
+  test with password - undefined
+    ✔ client should be authenticated (83ms)
+    ✔ try to connect multiple times (83ms)
+    ✔ should respect type mapping (75ms)
+    ✔ many readers (115ms)
+    ✔ use (89ms)
+Returning a client with active WATCH
+    ✔ watch does not carry over leases (102ms)
+    ✔ plain pubsub - channel (1079ms)
+    ✔ plain pubsub - pattern (1075ms)
+
+  test with password - test_password
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6409, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6410, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6411, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6412, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6413, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6414, Mode: sentinel
+    ✔ client should be authenticated (77ms)
+    ✔ try to connect multiple times (105ms)
+    ✔ should respect type mapping (76ms)
+    ✔ many readers (115ms)
+    ✔ use (92ms)
+Returning a client with active WATCH
+    ✔ watch does not carry over leases (97ms)
+    ✔ plain pubsub - channel (1075ms)
+    ✔ plain pubsub - pattern (1069ms)
+
+  test with scripts
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6415, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6416, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6417, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6418, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6419, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6420, Mode: sentinel
+    ✔ with script (117ms)
+    ✔ with script multi (78ms)
+    ✔ use with script (79ms)
+
+  test with functions
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6421, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6422, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6423, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6424, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6425, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6426, Mode: sentinel
+    ✔ with function (102ms)
+    ✔ with function multi (78ms)
+    ✔ use with function (90ms)
+
+  test with modules
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6427, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6428, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6429, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6430, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6431, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6432, Mode: sentinel
+    ✔ with module (148ms)
+    ✔ with module multi (106ms)
+    ✔ use with module (87ms)
+
+  test with replica pool size 1
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6433, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6434, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6435, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6436, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6437, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6438, Mode: sentinel
+    ✔ client lease (4136ms)
+    ✔ block on pool (1108ms)
+    ✔ pipeline (125ms)
+
+  test with masterPoolSize 2, reserve client true
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6439, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6440, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6441, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6442, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6443, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6444, Mode: sentinel
+    - reserve client, takes a client out of pool
+
+  test with masterPoolSize 2
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6445, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6446, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6447, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6448, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6449, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6450, Mode: sentinel
+    ✔ multple clients (97ms)
+    ✔ use - watch - clean (84ms)
+    ✔ use - watch - dirty (78ms)
+    ✔ lease - watch - clean (77ms)
+    ✔ lease - watch - dirty (72ms)
+
+  legacy tests
+    Sentinel Client
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6451, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6452, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6453, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6454, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6455, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6456, Mode: sentinel
+      ✔ use (4867ms)
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6457, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6458, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6459, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6460, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6461, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6462, Mode: sentinel
+      ✔ stop master (3451ms)
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6463, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6464, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6465, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6466, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6467, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6468, Mode: sentinel
+      ✔ watch across master change (3943ms)
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6469, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6470, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6471, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6472, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6473, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6474, Mode: sentinel
+      ✔ watch before and after master change (4241ms)
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6475, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6476, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6477, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6478, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6479, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6480, Mode: sentinel
+      ✔ pubsub - channel - with master change (3865ms)
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6481, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6482, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6483, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6484, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6485, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6486, Mode: sentinel
+      ✔ pubsub - pattern - with master change (4873ms)
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6487, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6488, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6489, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6490, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6491, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6492, Mode: sentinel
+      ✔ command immeaditely after stopping master (4299ms)
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6493, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6494, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6495, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6496, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6497, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6498, Mode: sentinel
+      ✔ shutdown sentinel node (1219ms)
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6499, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6500, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6501, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6502, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6503, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6504, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6505, Mode: sentinel
+      ✔ timer works, and updates sentinel list (3038ms)
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6506, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6507, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6508, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6509, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6510, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6511, Mode: sentinel
+      ✔ stop replica, bring back replica (2401ms)
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6512, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6513, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6514, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6515, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6516, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6517, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6518, Mode: server
+      ✔ add a node / new replica (8078ms)
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6519, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6520, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6521, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6522, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6523, Mode: sentinel
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6524, Mode: sentinel
+      ✔ with client side caching (41ms)
+
+  SingleEntryCache
+    ✔ should return undefined when getting from empty cache
+    ✔ should return the cached instance when getting with the same key object
+    ✔ should return undefined when getting with a different key object
+    ✔ should update the cached instance when setting with the same key object
+    ✔ should handle undefined key object
+    ✔ should handle complex objects as keys
+    ✔ should consider objects with same properties but different order as different keys
+    ✔ should handle circular structures
+
+
+  1654 passing (3m)
+  144 pending
+
+
+=============================== Coverage summary ===============================
+Statements   : 93.69% ( 14492/15467 )
+Branches     : 74.15% ( 5196/7007 )
+Functions    : 92.3% ( 3648/3952 )
+Lines        : 100% ( 824/824 )
+================================================================================
+
+> test
+> nyc -r text-summary -r lcov mocha -r tsx './lib/**/*.spec.ts'
+
+
+
+  TestUtils
+    parseVersionNumber
+      ✔ should handle special versions
+      ✔ should parse simple version numbers
+      ✔ should handle versions with multiple dashes and prefixes
+      ✔ should handle various version number formats
+      ✔ should throw TypeError for invalid version strings
+
+  Version Comparison
+    ✔ should correctly compare versions
+    ✔ should correctly compare versions
+    ✔ isVersionInRange should work correctly
+
+
+  8 passing (4ms)
+
+
+=============================== Coverage summary ===============================
+Statements   : 32.35% ( 198/612 )
+Branches     : 29.51% ( 67/227 )
+Functions    : 32.65% ( 48/147 )
+Lines        : 81.81% ( 9/11 )
+================================================================================
+
+> @redis/bloom@5.8.3 test
+> nyc -r text-summary -r lcov mocha -r tsx './lib/**/*.spec.ts'
+
+
+
+  BF.ADD
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6379, Mode: server
+    ✔ transformArguments
+    ✔ client.bf.add (46ms)
+
+  BF.CARD
+    ✔ transformArguments
+    ✔ client.bf.card
+
+  BF.EXISTS
+    ✔ transformArguments
+    ✔ client.bf.exists
+
+  BF.INFO
+    ✔ transformArguments
+    ✔ client.bf.info
+
+  BF.INSERT
+    ✔ client.bf.insert
+    transformArguments
+      ✔ simple
+      ✔ with CAPACITY
+      ✔ with ERROR
+      ✔ with EXPANSION
+      ✔ with NOCREATE
+      ✔ with NONSCALING
+      ✔ with CAPACITY, ERROR, EXPANSION, NOCREATE and NONSCALING
+
+  BF.LOADCHUNK
+    ✔ transformArguments
+    ✔ client.bf.loadChunk (45ms)
+
+  BF.MADD
+    ✔ transformArguments
+    ✔ client.ts.mAdd (54ms)
+
+  BF.MEXISTS
+    ✔ transformArguments
+    ✔ client.bf.mExists
+
+  BF.RESERVE
+    ✔ client.bf.reserve
+    transformArguments
+      ✔ simple
+      ✔ with EXPANSION
+      ✔ with NONSCALING
+      ✔ with EXPANSION and NONSCALING
+
+  BF.SCANDUMP
+    ✔ transformArguments
+    ✔ client.bf.scanDump
+
+  CMS.INCRBY
+    ✔ client.cms.incrBy
+    transformArguments
+      ✔ single item
+      ✔ multiple items
+
+  CMS.INFO
+    ✔ transformArguments
+    ✔ client.cms.info
+
+  CMS.INITBYDIM
+    ✔ transformArguments
+    ✔ client.cms.initByDim
+
+  CMS.INITBYPROB
+    ✔ transformArguments
+    ✔ client.cms.initByProb
+
+  CMS.MERGE
+    ✔ client.cms.merge
+    transformArguments
+      ✔ without WEIGHTS
+      ✔ with WEIGHTS
+
+  CMS.QUERY
+    ✔ transformArguments
+    ✔ client.cms.query
+
+  CF.ADD
+    ✔ transformArguments
+    ✔ client.cf.add
+
+  CF.ADDNX
+    ✔ transformArguments
+    ✔ client.cf.add
+
+  CF.COUNT
+    ✔ transformArguments
+    ✔ client.cf.count
+
+  CF.DEL
+    ✔ transformArguments
+    ✔ client.cf.del
+
+  CF.EXISTS
+    ✔ transformArguments
+    ✔ client.cf.exists
+
+  CF.INFO
+    ✔ transformArguments
+    ✔ client.cf.info
+
+  CF.INSERT
+    ✔ transformArguments
+    ✔ client.cf.insert
+
+  CF.INSERTNX
+    ✔ transformArguments
+    ✔ client.cf.insertnx
+
+  CF.LOADCHUNK
+    ✔ transformArguments
+    ✔ client.cf.loadChunk (42ms)
+
+  CF.RESERVE
+    ✔ client.cf.reserve (49ms)
+    transformArguments
+      ✔ simple
+      ✔ with EXPANSION
+      ✔ with BUCKETSIZE
+      ✔ with MAXITERATIONS
+
+  CF.SCANDUMP
+    ✔ transformArguments
+    ✔ client.cf.scanDump
+
+  TDIGEST.ADD
+    ✔ transformArguments
+    ✔ client.tDigest.add
+
+  TDIGEST.BYRANK
+    ✔ transformArguments
+    ✔ client.tDigest.byRank
+
+  TDIGEST.BYREVRANK
+    ✔ transformArguments
+    ✔ client.tDigest.byRevRank
+
+  TDIGEST.CDF
+    ✔ transformArguments
+    ✔ client.tDigest.cdf
+
+  TDIGEST.CREATE
+    ✔ client.tDigest.create
+    transformArguments
+      ✔ without options
+      ✔ with COMPRESSION
+
+  TDIGEST.INFO
+    ✔ transformArguments
+    ✔ client.tDigest.info
+
+  TDIGEST.MAX
+    ✔ transformArguments
+    ✔ client.tDigest.max (40ms)
+
+  TDIGEST.MERGE
+    ✔ client.tDigest.merge
+    transformArguments
+      ✔ with COMPRESSION
+      ✔ with OVERRIDE
+      source
+        ✔ string
+        ✔ Array
+
+  TDIGEST.MIN
+    ✔ transformArguments
+    ✔ client.tDigest.min
+
+  TDIGEST.QUANTILE
+    ✔ transformArguments
+    ✔ client.tDigest.quantile
+
+  TDIGEST.RANK
+    ✔ transformArguments
+    ✔ client.tDigest.rank
+
+  TDIGEST.RESET
+    ✔ transformArguments
+    ✔ client.tDigest.reset
+
+  TDIGEST.REVRANK
+    ✔ transformArguments
+    ✔ client.tDigest.revRank
+
+  TDIGEST.TRIMMED_MEAN
+    ✔ transformArguments
+    ✔ client.tDigest.trimmedMean
+
+  TOPK.ADD
+    ✔ transformArguments
+    ✔ client.topK.add
+
+  TOPK.COUNT
+    ✔ transformArguments
+    ✔ client.topK.count
+
+  TOPK.INCRBY
+    ✔ client.topK.incrby
+    transformArguments
+      ✔ single item
+      ✔ multiple items
+
+  TOPK INFO
+    ✔ transformArguments
+    ✔ client.topK.info
+
+  TOPK.LIST WITHCOUNT
+    ✔ transformArguments
+    ✔ client.topK.listWithCount
+
+  TOPK.LIST
+    ✔ transformArguments
+    ✔ client.topK.list
+
+  TOPK.QUERY
+    ✔ transformArguments
+    ✔ client.topK.query
+
+  TOPK.RESERVE
+    ✔ client.topK.reserve
+    transformArguments
+      ✔ simple
+      ✔ with options
+
+
+  118 passing (2s)
+
+
+=============================== Coverage summary ===============================
+Statements   : 99.62% ( 1614/1620 )
+Branches     : 74.05% ( 551/744 )
+Functions    : 100% ( 427/427 )
+Lines        : 100% ( 114/114 )
+================================================================================
+
+> @redis/json@5.8.3 test
+> nyc -r text-summary -r lcov mocha -r tsx './lib/**/*.spec.ts'
+
+
+
+  JSON.ARRAPPEND
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6379, Mode: server
+    ✔ client.json.arrAppend (56ms)
+    transformArguments
+      ✔ single element
+      ✔ multiple elements
+
+  JSON.ARRINDEX
+    ✔ client.json.arrIndex
+    transformArguments
+      ✔ simple
+      with range
+        ✔ start only
+        ✔ with start and stop
+
+  JSON.ARRINSERT
+    ✔ client.json.arrInsert
+    transformArguments
+      ✔ single element
+      ✔ multiple elements
+
+  JSON.ARRLEN
+    ✔ client.json.arrLen
+    transformArguments
+      ✔ simple
+      ✔ with path
+
+  JSON.ARRPOP
+    transformArguments
+      ✔ simple
+      ✔ with path
+      ✔ with path and index
+    client.json.arrPop
+      ✔ without path and value
+      ✔ . path with value
+      ✔ $ path with value
+
+  JSON.ARRTRIM
+    ✔ transformArguments
+    ✔ client.json.arrTrim
+
+  JSON.CLEAR
+    ✔ client.json.clear
+    transformArguments
+      ✔ simple
+      ✔ with path
+
+  JSON.DEBUG MEMORY
+    ✔ client.json.debugMemory
+    transformArguments
+      ✔ simple
+      ✔ with path
+
+  JSON.DEL
+    ✔ client.json.del
+    transformArguments
+      ✔ simple
+      ✔ with path
+
+  JSON.FORGET
+    ✔ client.json.forget
+    transformArguments
+      ✔ key
+      ✔ key, path
+
+  JSON.GET
+    ✔ client.json.get
+    transformArguments
+      ✔ simple
+      with path
+        ✔ string
+        ✔ array
+
+  JSON.MERGE
+    ✔ transformArguments
+    ✔ client.json.merge
+
+  JSON.MGET
+    ✔ transformArguments
+    ✔ client.json.mGet
+
+  JSON.MSET
+    ✔ transformArguments
+    ✔ client.json.mSet
+
+  JSON.NUMINCRBY
+    ✔ transformArguments
+    ✔ client.json.numIncrBy
+
+  JSON.NUMMULTBY
+    ✔ transformArguments
+    ✔ client.json.numMultBy
+
+  JSON.OBJKEYS
+    ✔ client.json.objKeys
+    transformArguments
+      ✔ simple
+      ✔ with path
+
+  JSON.OBJLEN
+    ✔ client.json.objLen
+    transformArguments
+      ✔ simple
+      ✔ with path
+
+  RESP
+    transformArguments
+      ✔ without path
+      ✔ with path
+
+  JSON.SET
+    ✔ client.json.set
+    transformArguments
+      ✔ transformArguments
+      ✔ NX
+      ✔ XX
+
+  JSON.STRAPPEND
+    ✔ client.json.strAppend
+    transformArguments
+      ✔ simple
+      ✔ with path
+
+  JSON.STRLEN
+    ✔ client.json.strLen
+    transformArguments
+      ✔ simple
+      ✔ with path
+
+  JSON.TOGGLE
+    ✔ transformArguments
+    ✔ client.json.toggle
+
+  JSON.TYPE
+    ✔ client.json.type
+    transformArguments
+      ✔ simple
+      ✔ with path
+
+
+  70 passing (1s)
+
+
+=============================== Coverage summary ===============================
+Statements   : 99.31% ( 729/734 )
+Branches     : 75.5% ( 262/347 )
+Functions    : 97.91% ( 188/192 )
+Lines        : 100% ( 52/52 )
+================================================================================
+
+> @redis/search@5.8.3 test
+> nyc -r text-summary -r lcov mocha -r tsx './lib/**/*.spec.ts'
+
+Skipping test setSearchConfigGloballyTest because server version 7.2 is not within range 8 - LATEST
+Skipping test client.ft.create vector types small floats and ints because server version 7.2 is not within range 8 - LATEST
+Skipping test client.ft.create vector svs-vamana because server version 7.2 is not within range 8.2 - LATEST
+Skipping test client.ft.info because server version 7.2 is not within range 8 - LATEST
+Skipping test client.ft.info because server version 7.2 is not within range 7.4.2 - 7.4.2
+Skipping test client.ft.search because server version 7.2 is not within range 8 - LATEST
+Skipping test [RESP3] client.ft.search because server version 7.2 is not within range 8 - LATEST
+Skipping test client.ft.search because server version 7.2 is not within range 8 - LATEST
+Skipping test null because server version 7.2 is not within range 8 - LATEST
+Skipping test null because server version 7.2 is not within range 8 - LATEST
+Skipping test with suggestions because server version 7.2 is not within range 8 - LATEST
+Skipping test null because server version 7.2 is not within range 8 - LATEST
+Skipping test with suggestions because server version 7.2 is not within range 8 - LATEST
+Skipping test null because server version 7.2 is not within range 8 - LATEST
+
+
+  _LIST
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6379, Mode: server
+    ✔ transformArguments
+    ✔ client.ft._list (69ms)
+
+  AGGREGATE WITHCURSOR
+    ✔ client.ft.aggregateWithCursor
+    transformArguments
+      ✔ without options
+      ✔ with COUNT
+      ✔ with MAXIDLE
+
+  AGGREGATE
+    ✔ client.ft.aggregate
+    transformArguments
+      ✔ without options
+      ✔ with VERBATIM
+      ✔ with ADDSCORES
+      ✔ with PARAMS
+      ✔ with DIALECT
+      ✔ with TIMEOUT
+      with LOAD
+        ✔ multiple
+        single
+          ✔ with alias
+          without alias
+            ✔ string
+            ✔ { identifier: string }
+      with STEPS
+        GROUPBY
+          ✔ COUNT_DISTINCT
+          ✔ COUNT_DISTINCTISH
+          ✔ SUM
+          ✔ MIN
+          ✔ MAX
+          ✔ AVG
+          ✔ STDDEV
+          ✔ QUANTILE
+          ✔ TOLIST
+          ✔ RANDOM_SAMPLE
+          COUNT
+            without properties
+              ✔ without alias
+              ✔ with alias
+            with properties
+              ✔ single
+              ✔ multiple
+          FIRST_VALUE
+            ✔ simple
+            with BY
+              ✔ with direction
+              without direction
+                ✔ string
+                ✔ { property: string }
+        SORTBY
+          ✔ string
+          ✔ Array
+          ✔ with MAX
+
+  FT.ALIASADD
+    ✔ transformArguments
+    ✔ client.ft.aliasAdd
+
+  FT.ALIASDEL
+    ✔ transformArguments
+    ✔ client.ft.aliasAdd
+
+  FT.ALIASUPDATE
+    ✔ transformArguments
+    ✔ client.ft.aliasUpdate
+
+  FT.ALTER
+    ✔ client.ft.create (53ms)
+    transformArguments
+      ✔ with NOINDEX
+
+  FT.CONFIG GET
+    ✔ transformArguments
+    ✔ client.ft.configGet (46ms)
+
+  FT.CONFIG SET
+    ✔ transformArguments
+    ✔ client.ft.configSet (47ms)
+
+  FT.CREATE
+    ✔ client.ft.create (46ms)
+    ✔ client.ft.create vector types big floats  [7] - [LATEST]  (47ms)
+    transformArguments
+      ✔ simple
+      ✔ with ON
+      ✔ with FILTER
+      ✔ with LANGUAGE
+      ✔ with LANGUAGE_FIELD
+      ✔ with SCORE
+      ✔ with SCORE_FIELD
+      ✔ with MAXTEXTFIELDS
+      ✔ with TEMPORARY
+      ✔ with NOOFFSETS
+      ✔ with NOHL
+      ✔ with NOFIELDS
+      ✔ with NOFREQS
+      ✔ with SKIPINITIALSCAN
+      with fields
+        ✔ NUMERIC
+        ✔ GEO
+        ✔ with AS
+        ✔ with NOINDEX
+        ✔ with INDEXMISSING
+        TEXT
+          ✔ without options
+          ✔ with NOSTEM
+          ✔ with WEIGHT
+          ✔ with PHONETIC
+          ✔ with WITHSUFFIXTRIE
+        TAG
+          ✔ with SEPARATOR
+          ✔ with CASESENSITIVE
+          ✔ with WITHSUFFIXTRIE
+          ✔ with INDEXEMPTY
+          without options
+            ✔ SCHEMA_FIELD_TYPE.TAG
+            ✔ { type: SCHEMA_FIELD_TYPE.TAG }
+        VECTOR
+          ✔ Flat algorithm
+          ✔ HNSW algorithm
+          ✔ VAMANA algorithm
+        GEOSHAPE
+          ✔ with COORD_SYSTEM
+          without options
+            ✔ SCHEMA_FIELD_TYPE.GEOSHAPE
+            ✔ { type: SCHEMA_FIELD_TYPE.GEOSHAPE }
+        with SORTABLE
+          ✔ true
+          ✔ UNF
+      with PREFIX
+        ✔ string
+        ✔ Array
+      with STOPWORDS
+        ✔ string
+        ✔ Array
+
+  FT.CURSOR DEL
+    ✔ transformArguments
+    ✔ client.ft.cursorDel (48ms)
+
+  FT.CURSOR READ
+    ✔ client.ft.cursorRead (53ms)
+    transformArguments
+      ✔ without options
+      ✔ with COUNT
+
+  FT.DICTADD
+    ✔ client.ft.dictAdd (39ms)
+    transformArguments
+      ✔ string
+      ✔ Array
+
+  FT.DICTDEL
+    ✔ client.ft.dictDel
+    transformArguments
+      ✔ string
+      ✔ Array
+
+  FT.DICTDUMP
+    ✔ transformArguments
+    ✔ client.ft.dictDump (38ms)
+
+  FT.DROPINDEX
+    ✔ client.ft.dropIndex (42ms)
+    transformArguments
+      ✔ without options
+      ✔ with DD
+
+  EXPLAIN
+    ✔ client.ft.dropIndex
+    transformArguments
+      ✔ simple
+      ✔ with PARAMS
+      ✔ with DIALECT
+
+  EXPLAINCLI
+    ✔ transformArguments
+    ✔ with dialect
+
+  INFO
+    ✔ transformArguments
+    ✔ client.ft.info  [7.2.0] - [7.2.0]  (40ms)
+
+  PROFILE AGGREGATE
+    ✔ client.ft.search  [7.2.0] - [7.4.0]
+    transformArguments
+      ✔ without options
+      ✔ with options
+
+  PROFILE SEARCH
+    ✔ client.ft.search  [7.2.0] - [7.4.0]  (38ms)
+    transformArguments
+      ✔ without options
+      ✔ with options
+
+  FT.SEARCH NOCONTENT
+    transformArguments
+      ✔ without options
+    client.ft.searchNoContent
+      ✔ returns total and keys (41ms)
+
+  FT.SEARCH
+    transformArguments
+      ✔ without options
+      ✔ with VERBATIM
+      ✔ with NOSTOPWORDS
+      ✔ with INKEYS
+      ✔ with INFIELDS
+      ✔ with RETURN
+      ✔ with SLOP
+      ✔ with TIMEOUT
+      ✔ with INORDER
+      ✔ with LANGUAGE
+      ✔ with EXPANDER
+      ✔ with SCORER
+      ✔ with SORTBY
+      ✔ with LIMIT
+      ✔ with PARAMS
+      ✔ with DIALECT
+      with SUMMARIZE
+        ✔ true
+        ✔ with FRAGS
+        ✔ with LEN
+        ✔ with SEPARATOR
+        with FIELDS
+          ✔ string
+          ✔ Array
+      with HIGHLIGHT
+        ✔ true
+        ✔ with TAGS
+        with FIELDS
+          ✔ string
+          ✔ Array
+    client.ft.search
+      ✔ without optional options
+      ✔ RETURN [] (38ms)
+      ✔ properly parse content/nocontent scenarios
+
+  FT.SPELLCHECK
+    ✔ client.ft.spellCheck
+    transformArguments
+      ✔ without options
+      ✔ with DISTANCE
+      ✔ with DIALECT
+      with TERMS
+        ✔ single
+        ✔ multiple
+
+  FT.SUGADD
+    ✔ client.ft.sugAdd (41ms)
+    transformArguments
+      ✔ without options
+      ✔ with INCR
+      ✔ with PAYLOAD
+
+  FT.SUGDEL
+    ✔ transformArguments
+    ✔ client.ft.sugDel (41ms)
+
+  FT.SUGGET WITHPAYLOADS
+    ✔ transformArguments
+    ✔ null  [6] - [7.4.0]  (41ms)
+    with suggestions
+      ✔ with suggestions (42ms)
+
+  FT.SUGGET WITHSCORES WITHPAYLOADS
+    ✔ transformArguments
+
+  FT.SUGGET WITHSCORES
+    ✔ transformArguments
+
+  FT.SUGGET
+    transformArguments
+      ✔ without options
+      ✔ with FUZZY
+      ✔ with MAX
+    client.ft.sugGet
+      ✔ null  [6.2.0] - [7.4.0]
+      ✔ with suggestions
+
+  FT.SUGLEN
+    ✔ transformArguments
+    ✔ client.ft.sugLen (40ms)
+
+  FT.SYNDUMP
+    ✔ transformArguments
+    ✔ client.ft.synDump
+
+  FT.SYNUPDATE
+    ✔ client.ft.synUpdate (41ms)
+    transformArguments
+      ✔ single term
+      ✔ multiple terms
+      ✔ with SKIPINITIALSCAN
+
+  FT.TAGVALS
+    ✔ transformArguments
+    ✔ client.ft.tagVals
+
+
+  187 passing (2s)
+
+
+=============================== Coverage summary ===============================
+Statements   : 95.59% ( 1366/1429 )
+Branches     : 79.58% ( 616/774 )
+Functions    : 92.98% ( 305/328 )
+Lines        : 100% ( 74/74 )
+================================================================================
+
+> @redis/time-series@5.8.3 test
+> nyc -r text-summary -r lcov mocha -r tsx './lib/**/*.spec.ts'
+
+
+
+  TS.ADD
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6379, Mode: server
+    ✔ client.ts.add (75ms)
+    transformArguments
+      ✔ without options
+      ✔ with RETENTION
+      ✔ with ENCODING
+      ✔ with CHUNK_SIZE
+      ✔ with ON_DUPLICATE
+      ✔ with LABELS
+      ✔ with IGNORE
+      ✔ with RETENTION, ENCODING, CHUNK_SIZE, ON_DUPLICATE, LABELS, IGNORE
+
+  TS.ALTER
+    ✔ client.ts.alter (44ms)
+    transformArguments
+      ✔ without options
+      ✔ with RETENTION
+      ✔ with CHUNK_SIZE
+      ✔ with DUPLICATE_POLICY
+      ✔ with LABELS
+      ✔ with IGNORE with MAX_TIME_DIFF
+      ✔ with RETENTION, CHUNK_SIZE, DUPLICATE_POLICY, LABELS, IGNORE
+
+  TS.CREATE
+    ✔ client.ts.create (39ms)
+    transformArguments
+      ✔ without options
+      ✔ with RETENTION
+      ✔ with ENCODING
+      ✔ with CHUNK_SIZE
+      ✔ with DUPLICATE_POLICY
+      ✔ with LABELS
+      ✔ with IGNORE with MAX_TIME_DIFF
+      ✔ with RETENTION, ENCODING, CHUNK_SIZE, DUPLICATE_POLICY, LABELS, IGNORE
+
+  TS.CREATERULE
+    ✔ client.ts.createRule (39ms)
+    transformArguments
+      ✔ without options
+      ✔ with alignTimestamp
+
+  TS.DECRBY
+    ✔ client.ts.decrBy
+    transformArguments
+      ✔ without options
+      ✔ with TIMESTAMP
+      ✔ with RETENTION
+      ✔ with UNCOMPRESSED
+      ✔ with CHUNK_SIZE
+      ✔ with LABELS
+      ✔ with IGNORE
+      ✔ with TIMESTAMP, RETENTION, UNCOMPRESSED, CHUNK_SIZE and LABELS
+
+  TS.DEL
+    ✔ transformArguments
+    ✔ client.ts.del (40ms)
+
+  TS.DELETERULE
+    ✔ transformArguments
+    ✔ client.ts.deleteRule (38ms)
+
+  TS.GET
+    transformArguments
+      ✔ without options
+      ✔ with LATEST
+    client.ts.get
+      ✔ null (46ms)
+      ✔ with sample (46ms)
+
+  TS.INCRBY
+    ✔ client.ts.incrBy (47ms)
+    transformArguments
+      ✔ without options
+      ✔ with TIMESTAMP
+      ✔ with RETENTION
+      ✔ with UNCOMPRESSED
+      ✔ without UNCOMPRESSED
+      ✔ with CHUNK_SIZE
+      ✔ with LABELS
+      ✔ with IGNORE
+      ✔ with TIMESTAMP, RETENTION, UNCOMPRESSED, CHUNK_SIZE and LABELS
+
+  TS.INFO
+    ✔ transformArguments
+    ✔ client.ts.info (41ms)
+
+  TS.INFO_DEBUG
+    ✔ transformArguments
+    ✔ client.ts.infoDebug
+
+  TS.MADD
+    ✔ transformArguments
+    ✔ client.ts.mAdd
+
+  TS.MGET_SELECTED_LABELS
+    ✔ transformArguments
+    ✔ client.ts.mGetSelectedLabels
+
+  TS.MGET_WITHLABELS
+    ✔ transformArguments
+    ✔ client.ts.mGetWithLabels
+
+  TS.MGET
+    ✔ client.ts.mGet (47ms)
+    transformArguments
+      ✔ without options
+      ✔ with LATEST
+
+  TS.MRANGE_GROUPBY
+    ✔ transformArguments
+    ✔ client.ts.mRangeGroupBy (45ms)
+
+  TS.MRANGE_SELECTED_LABELS_GROUPBY
+    ✔ transformArguments
+    ✔ client.ts.mRangeSelectedLabelsGroupBy (47ms)
+
+  TS.MRANGE_SELECTED_LABELS
+    ✔ transformArguments
+    ✔ client.ts.mRangeSelectedLabels (46ms)
+
+  TS.MRANGE_WITHLABELS_GROUPBY
+    ✔ transformArguments
+    ✔ client.ts.mRangeWithLabelsGroupBy (46ms)
+
+  TS.MRANGE_WITHLABELS
+    ✔ transformArguments
+    ✔ client.ts.mRangeWithLabels (47ms)
+
+  TS.MRANGE
+    ✔ transformArguments
+    ✔ client.ts.mRange (47ms)
+
+  TS.MREVRANGE_GROUPBY
+    ✔ transformArguments
+    ✔ client.ts.mRevRangeGroupBy (46ms)
+
+  TS.MREVRANGE_SELECTED_LABELS_GROUPBY
+    ✔ transformArguments
+    ✔ client.ts.mRevRangeSelectedLabelsGroupBy (46ms)
+
+  TS.MREVRANGE_SELECTED_LABELS
+    ✔ transformArguments
+    ✔ client.ts.mRevRangeSelectedLabels (44ms)
+
+  TS.MREVRANGE_WITHLABELS_GROUPBY
+    ✔ transformArguments
+    ✔ client.ts.mRevRangeWithLabelsGroupBy (46ms)
+
+  TS.MREVRANGE_WITHLABELS
+    ✔ transformArguments
+    ✔ client.ts.mRevRangeWithLabels (47ms)
+
+  TS.MREVRANGE
+    ✔ transformArguments
+    ✔ client.ts.mRevRange (46ms)
+
+  TS.QUERYINDEX
+    ✔ client.ts.queryIndex (42ms)
+    transformArguments
+      ✔ single filter
+      ✔ multiple filters
+
+  TS.RANGE
+    ✔ transformArguments
+    ✔ client.ts.range (40ms)
+
+  TS.REVRANGE
+    ✔ transformArguments
+    ✔ client.ts.revRange (45ms)
+
+
+  100 passing (2s)
+
+
+=============================== Coverage summary ===============================
+Statements   : 92.49% ( 1183/1279 )
+Branches     : 72.22% ( 390/540 )
+Functions    : 90.27% ( 325/360 )
+Lines        : 100% ( 66/66 )
+================================================================================
+
+> @redis/entraid@5.8.3 test
+> nyc -r text-summary -r lcov mocha -r tsx './lib/**/*.spec.ts'
+
+
+
+  EntraID authentication in cluster mode
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6379, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6380, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6381, Mode: server
+[Docker] Spawning Redis container - Image: redislabs/client-libs-test:7.2, Port: 6382, Mode: server
+    ✔ sendCommand (73ms)
+
+  EntraID CredentialsProvider Subscription Behavior
+    ✔ should properly handle token refresh sequence for multiple subscribers (192ms)
+
+
+  2 passing (13s)
+
+
+=============================== Coverage summary ===============================
+Statements   : 79.12% ( 72/91 )
+Branches     : 68.42% ( 26/38 )
+Functions    : 62.06% ( 18/29 )
+Lines        : 100% ( 2/2 )
+================================================================================
