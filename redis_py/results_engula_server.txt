@@ -1,0 +1,412 @@
+Starting Redis tests
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/kerry/ws/src_learn/redis-py
+configfile: pyproject.toml
+plugins: asyncio-1.2.0, timeout-2.4.0, profiling-1.8.1, cov-7.0.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=function, asyncio_default_test_loop_scope=function
+timeout: 30.0s
+timeout method: signal
+timeout func_only: False
+collected 3523 items / 661 deselected / 2862 selected
+
+tests/test_asyncio/test_bloom.py ................................................
+tests/test_asyncio/test_commands.py ........ss..ss....................ssss............FF....................ssss......................................ssssssssssss....................................................................................................................................................................ss..ss....................................................................................................................................................................................................................ssFF....................ss............................................................ssssssss......................
+tests/test_asyncio/test_connect.py ........
+tests/test_asyncio/test_connection.py .......s........s......................
+tests/test_asyncio/test_connection_pool.py ...............................................................................XXXXXXXXXXXXXXXXXXXX
+tests/test_asyncio/test_credentials.py .........................ssssssssssss
+tests/test_asyncio/test_cwe_404.py ........
+tests/test_asyncio/test_encoding.py ................XX......
+tests/test_asyncio/test_hash.py ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+tests/test_asyncio/test_json.py ..................ss......ss......................................................
+tests/test_asyncio/test_lock.py ..........................................................
+tests/test_asyncio/test_monitor.py ............ss
+tests/test_asyncio/test_pipeline.py ............................................................
+tests/test_asyncio/test_pubsub.py ......................................................................................................
+tests/test_asyncio/test_retry.py ............................................................
+tests/test_asyncio/test_scripting.py ................
+tests/test_asyncio/test_search.py ....ss......................XX..............ss....ss......ssss......ssssssssss
+tests/test_asyncio/test_sentinel.py .....................
+tests/test_asyncio/test_sentinel_managed_connection.py .
+tests/test_asyncio/test_ssl.py ..
+tests/test_asyncio/test_timeseries.py ......ss................................ss......ssssssssss
+tests/test_asyncio/test_vsets.py ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+tests/test_auth/test_token.py ..
+tests/test_auth/test_token_manager.py ..................
+tests/test_backoff.py .
+tests/test_bloom.py .........................
+tests/test_cache.py ssssssssssssssssssssssssss....................
+tests/test_command_parser.py .....
+tests/test_commands.py .....s.s............ss...........F.......s.............ss.....s..s.....................ssssss......F...............................................................................ss...................................s.s...........................................................................................................................sF.............s.................................................ssss............................X.......
+tests/test_connect.py .........
+tests/test_connection.py ..........s.............................
+tests/test_connection_pool.py ...............s.........................................................
+tests/test_credentials.py ...............ssssss
+tests/test_encoding.py ...........
+tests/test_function.py .......
+tests/test_hash.py sssssssssssssssssssssssssssssssssssssssssssss
+tests/test_helpers.py .....
+tests/test_json.py .........s...s..................................
+tests/test_lock.py ................................
+tests/test_max_connections_error.py ...
+tests/test_monitor.py ......s
+tests/test_multiprocessing.py ...........
+tests/test_parsers/test_helpers.py ...
+tests/test_pipeline.py .............................
+tests/test_pubsub.py .........................................................
+tests/test_retry.py .......................................................................................................
+tests/test_scripting.py ..................
+tests/test_search.py ..s...........X......s..s.....ss...................ss.......ss.......sss.sssss.sssssssssssssssssssss
+tests/test_sentinel.py .....................
+tests/test_sentinel_managed_connection.py .
+tests/test_ssl.py ...........ssssssss.
+tests/test_timeseries.py ....s..........................s....sssssss
+tests/test_utils.py .......
+tests/test_vsets.py sssssssssssssssssssssssssssssss
+
+=================================== FAILURES ===================================
+________________ TestRedisCommands.test_client_setinfo[single] _________________
+
+self = <tests.test_asyncio.test_commands.TestRedisCommands object at 0x78a99fadf860>
+r = <redis.asyncio.client.Redis(<redis.asyncio.connection.ConnectionPool(<redis.asyncio.connection.Connection(host=localhost,port=6379,db=0,protocol=2)>)>)>
+
+    @skip_if_server_version_lt("7.2.0")
+    async def test_client_setinfo(self, r: redis.Redis):
+        await r.ping()
+        info = await r.client_info()
+        assert info["lib-name"] == "redis-py"
+>       assert info["lib-ver"] == redis.__version__
+E       AssertionError: assert '7.0.1' == '6.4.0'
+E
+E         - 6.4.0
+E         + 7.0.1
+
+tests/test_asyncio/test_commands.py:531: AssertionError
+_________________ TestRedisCommands.test_client_setinfo[pool] __________________
+
+self = <tests.test_asyncio.test_commands.TestRedisCommands object at 0x78a99fadec60>
+r = <redis.asyncio.client.Redis(<redis.asyncio.connection.ConnectionPool(<redis.asyncio.connection.Connection(host=localhost,port=6379,db=0,protocol=2)>)>)>
+
+    @skip_if_server_version_lt("7.2.0")
+    async def test_client_setinfo(self, r: redis.Redis):
+        await r.ping()
+        info = await r.client_info()
+        assert info["lib-name"] == "redis-py"
+>       assert info["lib-ver"] == redis.__version__
+E       AssertionError: assert '7.0.1' == '6.4.0'
+E
+E         - 6.4.0
+E         + 7.0.1
+
+tests/test_asyncio/test_commands.py:531: AssertionError
+________ TestRedisCommands.test_readonly_invalid_cluster_state[single] _________
+
+self = <tests.test_asyncio.test_commands.TestRedisCommands object at 0x78a99f6ccfe0>
+r = <redis.asyncio.client.Redis(<redis.asyncio.connection.ConnectionPool(<redis.asyncio.connection.Connection(host=localhost,port=6379,db=0,protocol=2)>)>)>
+
+    @skip_if_server_version_lt("3.0.0")
+    @pytest.mark.onlynoncluster
+    async def test_readonly_invalid_cluster_state(self, r: redis.Redis):
+>       with pytest.raises(exceptions.RedisError):
+E       Failed: DID NOT RAISE <class 'redis.exceptions.RedisError'>
+
+tests/test_asyncio/test_commands.py:2677: Failed
+_________ TestRedisCommands.test_readonly_invalid_cluster_state[pool] __________
+
+self = <tests.test_asyncio.test_commands.TestRedisCommands object at 0x78a99f6cd0a0>
+r = <redis.asyncio.client.Redis(<redis.asyncio.connection.ConnectionPool(<redis.asyncio.connection.Connection(host=localhost,port=6379,db=0,protocol=2)>)>)>
+
+    @skip_if_server_version_lt("3.0.0")
+    @pytest.mark.onlynoncluster
+    async def test_readonly_invalid_cluster_state(self, r: redis.Redis):
+>       with pytest.raises(exceptions.RedisError):
+E       Failed: DID NOT RAISE <class 'redis.exceptions.RedisError'>
+
+tests/test_asyncio/test_commands.py:2677: Failed
+____________________ TestRedisCommands.test_client_setinfo _____________________
+
+self = <tests.test_commands.TestRedisCommands object at 0x78a99eefed80>
+r = <redis.client.Redis(<redis.connection.ConnectionPool(<redis.connection.Connection(host=localhost,port=6379,db=0,protocol=2)>)>)>
+
+    @skip_if_server_version_lt("7.2.0")
+    def test_client_setinfo(self, r: redis.Redis):
+        r.ping()
+        info = r.client_info()
+        assert info["lib-name"] == "redis-py"
+>       assert info["lib-ver"] == redis.__version__
+E       AssertionError: assert '7.0.1' == '6.4.0'
+E
+E         - 6.4.0
+E         + 7.0.1
+
+tests/test_commands.py:734: AssertionError
+_________________________ TestRedisCommands.test_decr __________________________
+
+self = <tests.test_commands.TestRedisCommands object at 0x78a99ef3c080>
+r = <redis.client.Redis(<redis.connection.ConnectionPool(<redis.connection.Connection(host=localhost,port=6379,db=0,protocol=2)>)>)>
+
+    def test_decr(self, r):
+>       assert r.decr("a") == -1
+               ^^^^^^^^^^^
+
+tests/test_commands.py:1472:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+redis/commands/core.py:1704: in decrby
+    return self.execute_command("DECRBY", name, amount)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+redis/client.py:621: in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+redis/client.py:632: in _execute_command
+    return conn.retry.call_with_retry(
+redis/retry.py:105: in call_with_retry
+    return do()
+           ^^^^
+redis/client.py:633: in <lambda>
+    lambda: self._send_command_parse_response(
+redis/client.py:604: in _send_command_parse_response
+    return self.parse_response(conn, command_name, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+redis/client.py:651: in parse_response
+    response = connection.read_response()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <redis.connection.Connection(host=localhost,port=6379,db=0)>
+disable_decoding = False
+
+    def read_response(
+        self,
+        disable_decoding=False,
+        *,
+        disconnect_on_error=True,
+        push_request=False,
+    ):
+        """Read the response from a previously sent command"""
+
+        host_error = self._host_error()
+
+        try:
+            if self.protocol in ["3", 3]:
+                response = self._parser.read_response(
+                    disable_decoding=disable_decoding, push_request=push_request
+                )
+            else:
+                response = self._parser.read_response(disable_decoding=disable_decoding)
+        except socket.timeout:
+            if disconnect_on_error:
+                self.disconnect()
+            raise TimeoutError(f"Timeout reading from {host_error}")
+        except OSError as e:
+            if disconnect_on_error:
+                self.disconnect()
+            raise ConnectionError(f"Error while reading from {host_error} : {e.args}")
+        except BaseException:
+            # Also by default close in case of BaseException.  A lot of code
+            # relies on this behaviour when doing Command/Response pairs.
+            # See #1128.
+            if disconnect_on_error:
+                self.disconnect()
+            raise
+
+        if self.health_check_interval:
+            self.next_health_check = time.monotonic() + self.health_check_interval
+
+        if isinstance(response, ResponseError):
+            try:
+>               raise response
+E               redis.exceptions.ResponseError: value is not an integer or out of range
+
+redis/connection.py:672: ResponseError
+____________ TestRedisCommands.test_readonly_invalid_cluster_state _____________
+
+self = <tests.test_commands.TestRedisCommands object at 0x78a99ef33140>
+r = <redis.client.Redis(<redis.connection.ConnectionPool(<redis.connection.Connection(host=localhost,port=6379,db=0,protocol=2)>)>)>
+
+    @pytest.mark.onlynoncluster
+    @skip_if_server_version_lt("3.0.0")
+    def test_readonly_invalid_cluster_state(self, r):
+>       with pytest.raises(exceptions.RedisError):
+E       Failed: DID NOT RAISE <class 'redis.exceptions.RedisError'>
+
+tests/test_commands.py:3767: Failed
+=============================== warnings summary ===============================
+tests/test_asyncio/test_connection_pool.py::TestConnection::test_busy_loading_from_pipeline_immediate_command[pool]
+  /home/kerry/ws/src_learn/redis-py/redis/asyncio/client.py:612: ResourceWarning: Unclosed client session <redis.asyncio.client.Pipeline(<redis.asyncio.connection.ConnectionPool(<redis.asyncio.connection.Connection(host=localhost,port=6379,db=0,protocol=2)>)>)>
+    _warn(f"Unclosed client session {self!r}", ResourceWarning, source=self)
+
+  Object allocated at:
+    File "/home/kerry/ws/src_learn/redis-py/redis/asyncio/client.py", line 464
+      return Pipeline(
+
+tests/test_asyncio/test_connection_pool.py::TestConnection::test_read_only_error[single]
+  /home/kerry/ws/src_learn/redis-py/redis/asyncio/client.py:612: ResourceWarning: Unclosed client session <redis.asyncio.client.Pipeline(<redis.asyncio.connection.ConnectionPool(<redis.asyncio.connection.Connection(host=localhost,port=6379,db=0,protocol=2)>)>)>
+    _warn(f"Unclosed client session {self!r}", ResourceWarning, source=self)
+
+  Object allocated at:
+    File "/home/kerry/.local/lib/python3.12/site-packages/coverage/collector.py", line 239
+      def lock_data(self) -> None:
+
+tests/test_asyncio/test_search.py::test_client[single]
+tests/test_asyncio/test_search.py::test_client[pool]
+  /home/kerry/ws/src_learn/redis-py/tests/test_asyncio/test_search.py:230: DeprecationWarning: Call to deprecated delete_document. (deprecated since redisearch 2.0) -- Deprecated since version 2.0.0.
+    assert 1 == await decoded_r.ft().delete_document("doc-5ghs2")
+
+tests/test_asyncio/test_search.py::test_client[single]
+tests/test_asyncio/test_search.py::test_client[pool]
+  /home/kerry/ws/src_learn/redis-py/tests/test_asyncio/test_search.py:233: DeprecationWarning: Call to deprecated delete_document. (deprecated since redisearch 2.0) -- Deprecated since version 2.0.0.
+    assert 0 == await decoded_r.ft().delete_document("doc-5ghs2")
+
+tests/test_asyncio/test_search.py::test_client[single]
+tests/test_asyncio/test_search.py::test_client[pool]
+  /home/kerry/ws/src_learn/redis-py/tests/test_asyncio/test_search.py:238: DeprecationWarning: Call to deprecated delete_document. (deprecated since redisearch 2.0) -- Deprecated since version 2.0.0.
+    await decoded_r.ft().delete_document("doc-5ghs2")
+
+tests/test_asyncio/test_search.py::test_get[single]
+tests/test_asyncio/test_search.py::test_get[pool]
+  /home/kerry/ws/src_learn/redis-py/tests/test_asyncio/test_search.py:1186: DeprecationWarning: Call to deprecated get. (deprecated since redisearch 2.0) -- Deprecated since version 2.0.0.
+    assert [None] == await decoded_r.ft().get("doc1")
+
+tests/test_asyncio/test_search.py::test_get[single]
+tests/test_asyncio/test_search.py::test_get[pool]
+  /home/kerry/ws/src_learn/redis-py/tests/test_asyncio/test_search.py:1187: DeprecationWarning: Call to deprecated get. (deprecated since redisearch 2.0) -- Deprecated since version 2.0.0.
+    assert [None, None] == await decoded_r.ft().get("doc2", "doc1")
+
+tests/test_asyncio/test_search.py::test_get[single]
+tests/test_asyncio/test_search.py::test_get[pool]
+  /home/kerry/ws/src_learn/redis-py/tests/test_asyncio/test_search.py:1198: DeprecationWarning: Call to deprecated get. (deprecated since redisearch 2.0) -- Deprecated since version 2.0.0.
+    ] == await decoded_r.ft().get("doc2")
+
+tests/test_asyncio/test_search.py::test_get[single]
+tests/test_asyncio/test_search.py::test_get[pool]
+  /home/kerry/ws/src_learn/redis-py/tests/test_asyncio/test_search.py:1202: DeprecationWarning: Call to deprecated get. (deprecated since redisearch 2.0) -- Deprecated since version 2.0.0.
+    ] == await decoded_r.ft().get("doc1", "doc2")
+
+tests/test_asyncio/test_search.py::test_config[single]
+tests/test_asyncio/test_search.py::test_config[pool]
+  /home/kerry/ws/src_learn/redis-py/tests/test_asyncio/test_search.py:1210: DeprecationWarning: Call to deprecated config_set. (deprecated since Redis 8.0, call config_set from core module instead) -- Deprecated since version 8.0.0.
+    assert await decoded_r.ft().config_set("TIMEOUT", "100")
+
+tests/test_asyncio/test_search.py::test_config[single]
+tests/test_asyncio/test_search.py::test_config[pool]
+  /home/kerry/ws/src_learn/redis-py/tests/test_asyncio/test_search.py:1212: DeprecationWarning: Call to deprecated config_set. (deprecated since Redis 8.0, call config_set from core module instead) -- Deprecated since version 8.0.0.
+    await decoded_r.ft().config_set("TIMEOUT", "null")
+
+tests/test_asyncio/test_search.py::test_config[single]
+tests/test_asyncio/test_search.py::test_config[pool]
+  /home/kerry/ws/src_learn/redis-py/tests/test_asyncio/test_search.py:1213: DeprecationWarning: Call to deprecated config_get. (deprecated since Redis 8.0, call config_get from core module instead) -- Deprecated since version 8.0.0.
+    res = await decoded_r.ft().config_get("*")
+
+tests/test_asyncio/test_search.py::test_config[single]
+tests/test_asyncio/test_search.py::test_config[pool]
+  /home/kerry/ws/src_learn/redis-py/tests/test_asyncio/test_search.py:1215: DeprecationWarning: Call to deprecated config_get. (deprecated since Redis 8.0, call config_get from core module instead) -- Deprecated since version 8.0.0.
+    res = await decoded_r.ft().config_get("TIMEOUT")
+
+tests/test_asyncio/test_sentinel.py::test_repr_correctly_represents_connection_object
+  /home/kerry/ws/src_learn/redis-py/redis/asyncio/connection.py:232: ResourceWarning: unclosed Connection <redis.asyncio.sentinel.SentinelManagedConnection,host=127.0.0.1,port=6379)>
+    _warnings.warn(
+
+  Object allocated at:
+    File "/usr/lib/python3.12/asyncio/events.py", line 88
+      self._context.run(self._callback, *self._args)
+
+tests/test_asyncio/test_sentinel.py::test_get_sentinels
+tests/test_asyncio/test_sentinel.py::test_get_sentinels
+tests/test_asyncio/test_sentinel.py::test_get_sentinels
+tests/test_asyncio/test_sentinel.py::test_get_master_addr_by_name
+tests/test_asyncio/test_sentinel.py::test_get_master_addr_by_name
+tests/test_asyncio/test_sentinel.py::test_get_master_addr_by_name
+tests/test_asyncio/test_sentinel.py::test_redis_master_usage
+tests/test_asyncio/test_sentinel.py::test_redis_master_usage
+tests/test_asyncio/test_sentinel.py::test_redis_master_usage
+  /home/kerry/ws/src_learn/redis-py/tests/test_asyncio/test_sentinel.py:113: DeprecationWarning: Call to deprecated close. (Use aclose() instead) -- Deprecated since version 5.0.1.
+    await s.close()
+
+tests/test_asyncio/test_sentinel.py::test_redis_master_usage
+  /home/kerry/ws/src_learn/redis-py/redis/asyncio/connection.py:232: ResourceWarning: unclosed Connection <redis.asyncio.sentinel.SentinelManagedConnection,host=localhost,port=6379)>
+    _warnings.warn(
+
+  Object allocated at:
+    File "/usr/lib/python3.12/asyncio/events.py", line 88
+      self._context.run(self._callback, *self._args)
+
+tests/test_multiprocessing.py: 11 warnings
+  /usr/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=125205) is multi-threaded, use of fork() may lead to deadlocks in the child.
+    self.pid = os.fork()
+
+tests/test_search.py::test_client
+  /home/kerry/ws/src_learn/redis-py/tests/test_search.py:224: DeprecationWarning: Call to deprecated delete_document. (deprecated since redisearch 2.0) -- Deprecated since version 2.0.0.
+    assert 1 == client.ft().delete_document("doc-5ghs2")
+
+tests/test_search.py::test_client
+  /home/kerry/ws/src_learn/redis-py/tests/test_search.py:227: DeprecationWarning: Call to deprecated delete_document. (deprecated since redisearch 2.0) -- Deprecated since version 2.0.0.
+    assert 0 == client.ft().delete_document("doc-5ghs2")
+
+tests/test_search.py::test_client
+  /home/kerry/ws/src_learn/redis-py/tests/test_search.py:232: DeprecationWarning: Call to deprecated delete_document. (deprecated since redisearch 2.0) -- Deprecated since version 2.0.0.
+    client.ft().delete_document("doc-5ghs2")
+
+tests/test_search.py::test_get
+  /home/kerry/ws/src_learn/redis-py/tests/test_search.py:1068: DeprecationWarning: Call to deprecated get. (deprecated since redisearch 2.0) -- Deprecated since version 2.0.0.
+    assert [None] == client.ft().get("doc1")
+
+tests/test_search.py::test_get
+  /home/kerry/ws/src_learn/redis-py/tests/test_search.py:1069: DeprecationWarning: Call to deprecated get. (deprecated since redisearch 2.0) -- Deprecated since version 2.0.0.
+    assert [None, None] == client.ft().get("doc2", "doc1")
+
+tests/test_search.py::test_get
+  /home/kerry/ws/src_learn/redis-py/tests/test_search.py:1080: DeprecationWarning: Call to deprecated get. (deprecated since redisearch 2.0) -- Deprecated since version 2.0.0.
+    ] == client.ft().get("doc2")
+
+tests/test_search.py::test_get
+  /home/kerry/ws/src_learn/redis-py/tests/test_search.py:1084: DeprecationWarning: Call to deprecated get. (deprecated since redisearch 2.0) -- Deprecated since version 2.0.0.
+    ] == client.ft().get("doc1", "doc2")
+
+tests/test_search.py::test_config
+  /home/kerry/ws/src_learn/redis-py/tests/test_search.py:1092: DeprecationWarning: Call to deprecated config_set. (deprecated since Redis 8.0, call config_set from core module instead) -- Deprecated since version 8.0.0.
+    assert client.ft().config_set("TIMEOUT", "100")
+
+tests/test_search.py::test_config
+  /home/kerry/ws/src_learn/redis-py/tests/test_search.py:1094: DeprecationWarning: Call to deprecated config_set. (deprecated since Redis 8.0, call config_set from core module instead) -- Deprecated since version 8.0.0.
+    client.ft().config_set("TIMEOUT", "null")
+
+tests/test_search.py::test_config
+  /home/kerry/ws/src_learn/redis-py/tests/test_search.py:1095: DeprecationWarning: Call to deprecated config_get. (deprecated since Redis 8.0, call config_get from core module instead) -- Deprecated since version 8.0.0.
+    res = client.ft().config_get("*")
+
+tests/test_search.py::test_config
+  /home/kerry/ws/src_learn/redis-py/tests/test_search.py:1097: DeprecationWarning: Call to deprecated config_get. (deprecated since Redis 8.0, call config_get from core module instead) -- Deprecated since version 8.0.0.
+    res = client.ft().config_get("TIMEOUT")
+
+tests/test_search.py::test_dialect_config
+  /home/kerry/ws/src_learn/redis-py/tests/test_search.py:2513: DeprecationWarning: Call to deprecated config_get. (deprecated since Redis 8.0, call config_get from core module instead) -- Deprecated since version 8.0.0.
+    assert client.ft().config_get("DEFAULT_DIALECT")
+
+tests/test_search.py::test_dialect_config
+  /home/kerry/ws/src_learn/redis-py/tests/test_search.py:2514: DeprecationWarning: Call to deprecated config_set. (deprecated since Redis 8.0, call config_set from core module instead) -- Deprecated since version 8.0.0.
+    client.ft().config_set("DEFAULT_DIALECT", 2)
+
+tests/test_search.py::test_dialect_config
+  /home/kerry/ws/src_learn/redis-py/tests/test_search.py:2515: DeprecationWarning: Call to deprecated config_get. (deprecated since Redis 8.0, call config_get from core module instead) -- Deprecated since version 8.0.0.
+    assert client.ft().config_get("DEFAULT_DIALECT") == {"DEFAULT_DIALECT": "2"}
+
+tests/test_search.py::test_dialect_config
+  /home/kerry/ws/src_learn/redis-py/tests/test_search.py:2517: DeprecationWarning: Call to deprecated config_set. (deprecated since Redis 8.0, call config_set from core module instead) -- Deprecated since version 8.0.0.
+    client.ft().config_set("DEFAULT_DIALECT", 0)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: /home/kerry/ws/src_learn/redis-py/standalone-resp2-results.xml -
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.3-final-0 ________________
+
+Coverage XML written to file coverage_resp2.xml
+=========================== short test summary info ============================
+FAILED tests/test_asyncio/test_commands.py::TestRedisCommands::test_client_setinfo[single]
+FAILED tests/test_asyncio/test_commands.py::TestRedisCommands::test_client_setinfo[pool]
+FAILED tests/test_asyncio/test_commands.py::TestRedisCommands::test_readonly_invalid_cluster_state[single]
+FAILED tests/test_asyncio/test_commands.py::TestRedisCommands::test_readonly_invalid_cluster_state[pool]
+FAILED tests/test_commands.py::TestRedisCommands::test_client_setinfo - Asser...
+FAILED tests/test_commands.py::TestRedisCommands::test_decr - redis.exception...
+FAILED tests/test_commands.py::TestRedisCommands::test_readonly_invalid_cluster_state
+= 7 failed, 2408 passed, 421 skipped, 661 deselected, 26 xpassed, 61 warnings in 176.22s (0:02:56) =
