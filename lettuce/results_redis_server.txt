@@ -1,0 +1,32 @@
+[INFO] Results:
+[INFO]
+[ERROR] Failures:
+[ERROR]   ReactiveConnectionIntegrationTests.testCancelCommand:117
+Expecting empty but was: [java.util.concurrent.CancellationException
+        at io.lettuce.core.protocol.CommandWrapper.cancel(CommandWrapper.java:112)
+        at io.lettuce.core.protocol.CommandWrapper.cancel(CommandWrapper.java:111)
+        at io.lettuce.core.protocol.CommandHandler.cancelCommands(CommandHandler.java:955)
+        ...(18 remaining lines not displayed - this can be changed with Assertions.setMaxStackTraceElementsDisplayed)]
+[ERROR] Errors:
+[ERROR]   SslIntegrationTests.masterSlaveSslWithOneInvalidHostWillSucceed:360->verifyMasterSlaveConnection:428 » RedisConnection Unable to connect to [rediss://localhost:8443, rediss://localhost:8444, rediss://localhost:8445]
+[ERROR]   SslIntegrationTests.masterSlaveWithJdkSsl:295->verifyMasterSlaveConnection:428 » RedisConnection Unable to connect to [rediss://localhost:8443, rediss://localhost:8444]
+[ERROR]   SslIntegrationTests.masterSlaveWithJdkSslUsingTruststoreUrl:307->verifyMasterSlaveConnection:428 » RedisConnection Unable to connect to [rediss://localhost:8443, rediss://localhost:8444]
+[ERROR]   SslIntegrationTests.pubSubSsl:390 » IllegalState java.util.concurrent.TimeoutException: Objects are not equal: 2 and 0
+[ERROR]   SslIntegrationTests.standaloneWithClientCertificates:193->verifyConnection:421 » RedisConnection Unable to connect to localhost/<unresolved>:6445
+[ERROR]   SslIntegrationTests.standaloneWithJdkSsl:127->verifyConnection:421 » RedisConnection Unable to connect to localhost/<unresolved>:6443
+[ERROR]   SslIntegrationTests.standaloneWithJdkSslUsingTruststoreUrl:180->verifyConnection:421 » RedisConnection Unable to connect to localhost/<unresolved>:6443
+[ERROR]   SslIntegrationTests.standaloneWithVerifyCaOnly:139->verifyConnection:421 » RedisConnection Unable to connect to localhost/<unresolved>:6444
+[ERROR]   UnixDomainSocketIntegrationTests.sentinel_ConnectToSocket:132 » RedisConnection Cannot connect to a Redis Sentinel: [redis-socket:///home/kerry/ws/src_learn/lettuce/work/socket-26379]
+[ERROR]   UnixDomainSocketIntegrationTests.sentinel_RedisClientWithSocket:107 » RedisConnection Cannot connect to a Redis Sentinel: [redis-socket:///home/kerry/ws/src_learn/lettuce/work/socket-26379]
+[ERROR]   UnixDomainSocketIntegrationTests.sentinel_socket_and_inet:159 » RedisConnection Unable to connect
+[ERROR]   UnixDomainSocketIntegrationTests.standalone_ConnectToSocket:88 » RedisConnection Unable to connect to /home/kerry/ws/src_learn/lettuce/work/socket-6479
+[ERROR]   UnixDomainSocketIntegrationTests.standalone_RedisClientWithSocket:72 » RedisConnection Unable to connect to /home/kerry/ws/src_learn/lettuce/work/socket-6479
+[ERROR]   SentinelSslIntegrationTests.shouldConnectToMasterUsingSentinel:94 » RedisConnection Cannot connect to a Redis Sentinel: [rediss://localhost:26379]
+[INFO]
+[ERROR] Tests run: 2324, Failures: 1, Errors: 14, Skipped: 49
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:40 min
+[INFO] Finished at: 2025-10-20T14:17:34+08:00

@@ -44,7 +44,7 @@ export PATH=$PATH:$JAVA_HOME/bin
 java -version
 wget https://dlcdn.apache.org/maven/maven-3/3.9.11/binaries/apache-maven-3.9.11-bin.tar.gz
 tar -zxvf apache-maven-3.9.11-bin.tar.gz
-export MAVEN_HOME=/home/$(whoami)/apache-maven-3.9.11
+export MAVEN_HOME=$(pwd)/apache-maven-3.9.11
 export PATH=$PATH:$MAVEN_HOME/bin
 mvn -v
 ```
@@ -59,12 +59,12 @@ Update file ~/.m2/settings.xml
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
 <mirrors>
-	<mirror>
-        <id>nexus-163</id>
-        <mirrorOf>*</mirrorOf>
-        <name>Nexus 163</name>
-        <url>http://mirrors.163.com/maven/repository/maven-public/</url>
-	</mirror>
+<mirror>
+  <id>aliyunmaven</id>
+  <mirrorOf>*</mirrorOf>
+  <name>阿里云公共仓库</name>
+  <url>https://maven.aliyun.com/repository/public</url>
+</mirror>
   </mirrors>
 </settings>
 ```
