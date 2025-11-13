@@ -1,0 +1,179 @@
+  NRedisStack net8.0 已成功 (0.0 秒) → src/NRedisStack/bin/Debug/net8.0/NRedisStack.dll
+  NRedisStack.Tests net9.0 已成功 (0.2 秒) → tests/NRedisStack.Tests/bin/Debug/net9.0/NRedisStack.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.3+b1b99bdeb3 (64-bit .NET 9.0.4)
+[xUnit.net 00:00:00.09]   Discovering: NRedisStack.Tests
+[xUnit.net 00:00:00.35]   Discovered:  NRedisStack.Tests
+[xUnit.net 00:00:00.62]   Starting:    NRedisStack.Tests
+[xUnit.net 00:00:01.36]     NRedisStack.Tests.TimeSeries.TestAPI.TestIncrBy.TestIncrByAndIgnoreValues [SKIP]
+[xUnit.net 00:00:01.36]       Test skipped, because: Redis server version (7.2.4) is less than 7.4.0.
+[xUnit.net 00:00:01.39]     NRedisStack.Tests.TimeSeries.TestAPI.TestCreate.TestCreateAndIgnoreValues [SKIP]
+[xUnit.net 00:00:01.39]       Test skipped, because: Redis server version (7.2.4) is less than 7.4.0.
+[xUnit.net 00:00:14.54]     NRedisStack.Tests.Search.SearchTests.CreateWithFieldNames(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:14.54]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:14.54]     NRedisStack.Tests.Search.SearchTests.TestAggregationsLoad(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:14.54]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:16.57]     NRedisStack.Tests.Search.SearchTests.QueryingVectorFields(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:16.57]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:16.58]     NRedisStack.Tests.Search.SearchTests.TestAliasAsync(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:16.58]       legacy failure
+[xUnit.net 00:00:16.60]     NRedisStack.Tests.Search.SearchTests.TestProfileSearchAsync [SKIP]
+[xUnit.net 00:00:16.60]       Test skipped, because: Redis server version (7.2.4) is less than 7.9.
+[xUnit.net 00:00:17.17]     NRedisStack.Tests.Search.SearchTests.TestCursor(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:17.17]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:18.18]     NRedisStack.Tests.Search.SearchTests.TestCrossTermDictionaryAsync(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:18.18]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:18.20]     NRedisStack.Tests.Search.SearchTests.dropIndexDD(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:18.20]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:20.24]     NRedisStack.Tests.Search.SearchTests.AlterAddSortable(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:20.25]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:20.25]     NRedisStack.Tests.Search.SearchTests.TestQueryParamsWithParams_DefaultDialect(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:20.25]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:20.25]     NRedisStack.Tests.Search.SearchTests.TestProfileSearch_WithoutCoordinator(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:20.25]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:22.28]     NRedisStack.Tests.Search.SearchTests.AlterAddAsync(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:22.28]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:22.28]     NRedisStack.Tests.Search.SearchTests.TestQueryParamsWithParams_DefaultDialectAsync(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:22.28]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:22.28]     NRedisStack.Tests.Search.SearchTests.CreateNoParams(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:22.28]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:22.29]     NRedisStack.Tests.Search.SearchTests.TestFilters(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:22.29]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:22.31]     NRedisStack.Tests.Search.SearchTests.GeoShapeFilterSphericalAsync(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:22.31]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:22.32]     NRedisStack.Tests.Search.SearchTests.TestAggregationsAsync(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:22.32]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:22.32]     NRedisStack.Tests.Search.SearchTests.TestCursorEnumerableAsync(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:22.32]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:22.33]     NRedisStack.Tests.Search.SearchTests.TestGetTagFieldWithNonDefaultSeparatorSyncAsync(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:22.33]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:22.34]     NRedisStack.Tests.Search.SearchTests.TestDropIndexAsync(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:22.34]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:22.36]     NRedisStack.Tests.Search.SearchTests.TestProfileIssue306 [SKIP]
+[xUnit.net 00:00:22.36]       Test skipped, because: Redis server version (7.2.4) is less than 7.3.240.
+[xUnit.net 00:00:22.37]     NRedisStack.Tests.Search.SearchTests.TestLimitAsync(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:22.37]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:22.37]     NRedisStack.Tests.Search.SearchTests.GetTagFieldSyncAsync(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:22.37]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:22.38]     NRedisStack.Tests.Search.SearchTests.TestNumericLogicalOperatorsInDialect4 [SKIP]
+[xUnit.net 00:00:22.38]       Test skipped, because: Redis server version (7.2.4) is less than 7.3.240.
+[xUnit.net 00:00:22.38]     NRedisStack.Tests.Search.SearchTests.GeoShapeFilterSpherical(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:22.38]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:22.40]     NRedisStack.Tests.Search.SearchTests.dropIndexDDAsync(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:22.40]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:24.43]     NRedisStack.Tests.Search.SearchTests.AlterAddSortableAsync(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:24.43]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:24.44]     NRedisStack.Tests.Search.SearchTests.TestCreateAsync(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:24.44]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:24.53]     NRedisStack.Tests.Search.SearchTests.CreateNoParamsAsync(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:24.53]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:24.53]     NRedisStack.Tests.Search.SearchTests.TestProfile [SKIP]
+[xUnit.net 00:00:24.53]       Test skipped, because: Redis server version (7.2.4) is less than 7.9.
+[xUnit.net 00:00:24.55]     NRedisStack.Tests.Search.SearchTests.TestDropIndex(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:24.55]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:26.58]     NRedisStack.Tests.Search.SearchTests.AlterAdd(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:26.58]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:26.59]     NRedisStack.Tests.Search.SearchTests.TestFiltersAsync(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:26.59]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:26.60]     NRedisStack.Tests.Search.SearchTests.TestQueryAddParam_DefaultDialectAsync(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:26.60]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:26.60]     NRedisStack.Tests.Search.SearchTests.TestQueryAddParam_DefaultDialect(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:26.60]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:26.60]     NRedisStack.Tests.Search.SearchTests.TestProfileAsyncIssue306 [SKIP]
+[xUnit.net 00:00:26.60]       Test skipped, because: Redis server version (7.2.4) is less than 7.3.240.
+[xUnit.net 00:00:26.61]     NRedisStack.Tests.Search.SearchTests.VectorSimilaritySearch(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:26.61]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:26.61]     NRedisStack.Tests.Search.SearchTests.TestDictionaryAsync(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:26.61]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:26.61]     NRedisStack.Tests.Search.SearchTests.TestProfileAsync [SKIP]
+[xUnit.net 00:00:26.61]       Test skipped, because: Redis server version (7.2.4) is less than 7.9.
+[xUnit.net 00:00:26.62]     NRedisStack.Tests.Search.SearchTests.TestCursorAsync(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:26.62]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:27.62]     NRedisStack.Tests.Search.SearchTests.TestAggregationsLoadAsync(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:27.62]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:27.63]     NRedisStack.Tests.Search.SearchTests.GeoShapeFilterFlat(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:27.63]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:27.65]     NRedisStack.Tests.Search.SearchTests.TestProfile_WithoutCoordinator(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:27.65]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:27.66]     NRedisStack.Tests.Search.SearchTests.GeoShapeFilterFlatAsync(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:27.66]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:27.67]     NRedisStack.Tests.Search.SearchTests.CreateWithFieldNamesAsync(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:27.67]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:27.69]     NRedisStack.Tests.Search.SearchTests.TestNumericOperatorsInDialect4 [SKIP]
+[xUnit.net 00:00:27.69]       Test skipped, because: Redis server version (7.2.4) is less than 7.3.240.
+[xUnit.net 00:00:27.70]     NRedisStack.Tests.Search.SearchTests.TestAlias(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:27.70]       legacy failure
+[xUnit.net 00:00:27.71]     NRedisStack.Tests.Search.SearchTests.TestCursorEnumerable(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:27.71]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:27.72]     NRedisStack.Tests.Search.SearchTests.TestProfileAsync_WithoutCoordinator(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:27.72]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:27.73]     NRedisStack.Tests.Search.SearchTests.TestProfileSearchAsync_WithoutCoordinator(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:27.74]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:27.74]     NRedisStack.Tests.Search.SearchTests.TestNumericInDialect4 [SKIP]
+[xUnit.net 00:00:27.74]       Test skipped, because: Redis server version (7.2.4) is less than 7.3.240.
+[xUnit.net 00:00:27.74]     NRedisStack.Tests.Search.SearchTests.TestLimit(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:27.74]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:27.75]     NRedisStack.Tests.Search.SearchTests.InfoWithIndexEmptyAndIndexMissing [SKIP]
+[xUnit.net 00:00:27.75]       Test skipped, because: Redis server version (7.2.4) is less than 7.3.0.
+[xUnit.net 00:00:27.75]     NRedisStack.Tests.Search.SearchTests.TestAggregations(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:27.75]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:27.75]     NRedisStack.Tests.Search.SearchTests.TestCreate(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:27.75]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:27.75]     NRedisStack.Tests.Search.SearchTests.FailWhenAttributeNotExistAsync [SKIP]
+[xUnit.net 00:00:27.75]       Test skipped, because: Redis server version (7.2.4) is less than 7.9.0.
+[xUnit.net 00:00:27.77]     NRedisStack.Tests.Search.SearchTests.TestCrossTermDictionary(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:27.77]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:27.77]     NRedisStack.Tests.Search.SearchTests.FailWhenAttributeNotExist [SKIP]
+[xUnit.net 00:00:27.77]       Test skipped, because: Redis server version (7.2.4) is less than 7.9.0.
+[xUnit.net 00:00:27.78]     NRedisStack.Tests.Search.SearchTests.TestProfileSearch [SKIP]
+[xUnit.net 00:00:27.78]       Test skipped, because: Redis server version (7.2.4) is less than 7.9.
+[xUnit.net 00:00:27.78]     NRedisStack.Tests.Search.SearchTests.TestDictionary(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:27.78]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:27.79]     NRedisStack.Tests.Search.SearchTests.TestApplyAndFilterAggregations(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:27.79]       Ignoring cluster tests for FT.SEARCH pre Redis 8.0
+[xUnit.net 00:00:27.80]     NRedisStack.Tests.Search.IndexCreationTests.TestMissingFields [SKIP]
+[xUnit.net 00:00:27.80]       Test skipped, because: Redis server version (7.2.4) is less than 7.3.240.
+[xUnit.net 00:00:27.80]     NRedisStack.Tests.Search.IndexCreationTests.TestCreate_Float16_Int32_VectorField_Svs [SKIP]
+[xUnit.net 00:00:27.80]       Test skipped, because: Redis server version (7.2.4) is less than 8.1.240.
+[xUnit.net 00:00:27.80]     NRedisStack.Tests.Search.IndexCreationTests.TestEmptyFields [SKIP]
+[xUnit.net 00:00:27.80]       Test skipped, because: Redis server version (7.2.4) is less than 7.3.240.
+[xUnit.net 00:00:27.80]     NRedisStack.Tests.Search.IndexCreationTests.TestCreateFloat16VectorField [SKIP]
+[xUnit.net 00:00:27.80]       Test skipped, because: Redis server version (7.2.4) is less than 7.3.240.
+[xUnit.net 00:00:27.80]     NRedisStack.Tests.Search.IndexCreationTests.TestCombiningMissingEmptySortableFields [SKIP]
+[xUnit.net 00:00:27.80]       Test skipped, because: Redis server version (7.2.4) is less than 7.3.240.
+[xUnit.net 00:00:27.80]     NRedisStack.Tests.Search.IndexCreationTests.TestCreateInt8VectorField [SKIP]
+[xUnit.net 00:00:27.80]       Test skipped, because: Redis server version (7.2.4) is less than 7.9.0.
+[xUnit.net 00:00:27.80]     NRedisStack.Tests.Search.IndexCreationTests.TestCreate_Float16_Int32_VectorField_Svs_WithCompression [SKIP]
+[xUnit.net 00:00:27.80]       Test skipped, because: Redis server version (7.2.4) is less than 8.1.240.
+[xUnit.net 00:00:28.06]     NRedisStack.Tests.TimeSeries.TestAPI.TestAlter.TestAlterAndIgnoreValues [SKIP]
+[xUnit.net 00:00:28.06]       Test skipped, because: Redis server version (7.2.4) is less than 7.4.0.
+[xUnit.net 00:00:28.78]     NRedisStack.Tests.PipelineTests.TestModulesPipeline [SKIP]
+[xUnit.net 00:00:28.78]       Test skipped, because: Redis server version (7.2.4) is greater than or equal to 7.1.242.
+[xUnit.net 00:00:28.98]     NRedisStack.Tests.CommunityEditionUpdatesTests.ConfigSearchSettings [SKIP]
+[xUnit.net 00:00:28.98]       Test skipped, because: Redis server version (7.2.4) is less than 7.9.0.
+[xUnit.net 00:00:28.98]     NRedisStack.Tests.CommunityEditionUpdatesTests.ConfigTimeSeriesSettings [SKIP]
+[xUnit.net 00:00:28.98]       Test skipped, because: Redis server version (7.2.4) is less than 7.9.0.
+[xUnit.net 00:00:28.98]     NRedisStack.Tests.CommunityEditionUpdatesTests.ConfigProbabilisticSettings [SKIP]
+[xUnit.net 00:00:28.98]       Test skipped, because: Redis server version (7.2.4) is less than 7.9.0.
+[xUnit.net 00:00:28.98]     NRedisStack.Tests.CommunityEditionUpdatesTests.InfoSearchSection [SKIP]
+[xUnit.net 00:00:28.98]       Test skipped, because: Redis server version (7.2.4) is less than 7.9.0.
+[xUnit.net 00:00:30.14]     NRedisStack.Tests.TimeSeries.TestAPI.TestAdd.TestAddAndIgnoreValues [SKIP]
+[xUnit.net 00:00:30.14]       Test skipped, because: Redis server version (7.2.4) is less than 7.4.0.
+[xUnit.net 00:00:36.45]     NRedisStack.Tests.ExampleTests.PipelineExample(endpointId: "standalone") [SKIP]
+[xUnit.net 00:00:36.45]       FIXME: JsonSet is not executed in pipeline, see https://github.com/redis/NRedisStack/issues/379
+[xUnit.net 00:00:36.45]     NRedisStack.Tests.ExampleTests.PipelineExample(endpointId: "cluster") [SKIP]
+[xUnit.net 00:00:36.45]       FIXME: JsonSet is not executed in pipeline, see https://github.com/redis/NRedisStack/issues/379
+[xUnit.net 00:00:46.53]     NRedisStack.Tests.TimeSeries.TestAPI.TestDecrBy.TestIncrDecryByAndIgnoreValues [SKIP]
+[xUnit.net 00:00:46.53]       Test skipped, because: Redis server version (7.2.4) is less than 7.4.0.
+[xUnit.net 00:00:46.58]     NRedisTimeSeries.Test.TestDataTypes.TestInformation.TestInformationSync_CE80 [SKIP]
+[xUnit.net 00:00:46.58]       Test skipped, because: Redis server version (7.2.4) is less than 7.9.240.
+[xUnit.net 00:00:46.58]     NRedisTimeSeries.Test.TestDataTypes.TestInformation.TestInformationAsync_CE80 [SKIP]
+[xUnit.net 00:00:46.58]       Test skipped, because: Redis server version (7.2.4) is less than 7.9.240.
+[xUnit.net 00:00:46.59]     NRedisStack.Tests.TransactionTests.TestModulesTransaction [SKIP]
+[xUnit.net 00:00:46.59]       Test skipped, because: Redis server version (7.2.4) is greater than or equal to 7.1.242.
+[xUnit.net 00:00:46.59]     NRedisStack.Tests.TokenBasedAuthentication.AuthenticationTests.TestTokenBasedAuthentication [SKIP]
+[xUnit.net 00:00:46.59]       The connection with id 'standalone-entraid' is not configured.
+[xUnit.net 00:00:46.59]   Finished:    NRedisStack.Tests
+  NRedisStack.Tests 测试 net9.0 已成功 (47.4 秒)
+
+测试摘要: 总计: 806, 失败: 0, 成功: 722, 已跳过: 84, 持续时间: 47.4 秒
+在 47.7 秒内生成 已成功
