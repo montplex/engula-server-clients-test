@@ -42,9 +42,9 @@ sudo apt-get install openjdk-17-jdk
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 export PATH=$PATH:$JAVA_HOME/bin
 java -version
-wget https://dlcdn.apache.org/maven/maven-3/3.9.11/binaries/apache-maven-3.9.11-bin.tar.gz
-tar -zxvf apache-maven-3.9.11-bin.tar.gz
-export MAVEN_HOME=$(pwd)/apache-maven-3.9.11
+wget https://archive.apache.org/dist/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.tar.gz
+tar -zxvf apache-maven-3.9.9-bin.tar.gz
+export MAVEN_HOME=$(pwd)/apache-maven-3.9.9
 export PATH=$PATH:$MAVEN_HOME/bin
 mvn -v
 ```
