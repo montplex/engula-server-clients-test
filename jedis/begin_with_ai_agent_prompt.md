@@ -6,6 +6,7 @@
 
 ## 环境信息
 
+- **JDK版本**: openjdk-17 (21 Jedis部分ByteBuddy不兼容，不能用21测试)
 - **Jedis版本**: v6.2.0
 - **Redis v6源码**: `/home/kerry/ws/redis_v6` (已构建, 版本: 6.2.18)
 - **Redis v7源码**: `/home/kerry/ws/redis` (已构建, 版本: 7.2.11)
